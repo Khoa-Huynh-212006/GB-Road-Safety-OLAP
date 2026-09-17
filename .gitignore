@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Ignore large CSV files in raw directory
+raw/*.csv
+raw/**/*.csv
