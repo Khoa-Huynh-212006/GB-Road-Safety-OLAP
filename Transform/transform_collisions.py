@@ -170,7 +170,7 @@ def standardize_unknown_labels(series):
 
 
 def read_data_guide():
-    """Đọc Data Guide (Excel - sheet 2024_code_list)."""
+    """Đọc Data Guide (CSV). keep_default_na=False ngăn pandas hiểu 'None' là NaN."""
     if not DATA_GUIDE_PATH.exists():
         raise FileNotFoundError(f"Không tìm thấy Data Guide: {DATA_GUIDE_PATH}")
     guide = pd.read_csv(
@@ -191,14 +191,6 @@ def read_data_guide():
     guide["code/format"] = normalize_code_series(guide["code/format"])
     guide["label"] = normalize_text_series(guide["label"])
     return guide
-
-
-def read_historic_guide():
-    """
-    Đọc bảng chuyển đổi historic → 2024 từ Data Guide.
-    (Đã loại bỏ vì file CSV không hỗ trợ sheet 2011_to_2024_conversion)
-    """
-    return {}
 
 
 def get_lookup(guide, table_name, field_name):
