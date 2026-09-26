@@ -420,3 +420,5 @@ __marimo__/
 /Data/Raw/
 /Data/Processed/
 /Data/Warehouse/
+# Visual Studio local cache
+/SSIS/STATS19_ETL/.vs/
