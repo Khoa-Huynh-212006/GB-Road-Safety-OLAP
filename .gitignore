@@ -414,3 +414,9 @@ __marimo__/
 
 # Ignore all CSV files
 *.csv
+
+
+# Dữ liệu cục bộ và database SQL Server
+/Data/Raw/
+/Data/Processed/
+/Data/Warehouse/
