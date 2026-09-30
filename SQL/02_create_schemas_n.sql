@@ -1,0 +1,12 @@
+USE RoadSafetyDWH;
+GO
+
+IF SCHEMA_ID(N'stg') IS NULL
+    EXEC(N'CREATE SCHEMA stg');
+GO
+
+IF SCHEMA_ID(N'dwh') IS NULL
+    EXEC(N'CREATE SCHEMA dwh');
+GO
+
+
