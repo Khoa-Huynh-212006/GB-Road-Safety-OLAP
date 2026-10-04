@@ -1,5 +1,13 @@
-IF DB_ID(N'STATS19_DW') IS NULL
+USE master;
+GO
+
+IF DB_ID(N'RoadSafetyDWH') IS NULL
 BEGIN
-    CREATE DATABASE STATS19_DW;
+    CREATE DATABASE RoadSafetyDWH;
+    PRINT N'Đã tạo database RoadSafetyDWH.';
+END
+ELSE
+BEGIN
+    PRINT N'Database RoadSafetyDWH đã tồn tại.';
 END;
 GO

@@ -1,395 +1,411 @@
-USE STATS19_DW;
+USE RoadSafetyDWH;
 GO
 
-IF SCHEMA_ID(N'dw') IS NULL
-    EXEC(N'CREATE SCHEMA dw');
+SET NOCOUNT ON;
 GO
 
-IF OBJECT_ID(N'dw.DimDate', N'U') IS NULL
+
+/*============================================================
+  1. DIM DATE
+  Grain: one row per date
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimDate', N'U') IS NULL
 BEGIN
-    CREATE TABLE dw.DimDate
+    CREATE TABLE dwh.DimDate
     (
-        DateKey       INT          NOT NULL,
-        FullDate      DATE         NULL,
-        Day           TINYINT      NULL,
-        DayOfWeek     NVARCHAR(20) NULL,
-        DayOfWeekSort TINYINT      NULL,
-        Month         NVARCHAR(20) NULL,
-        Quarter       TINYINT      NULL,
-        Year          SMALLINT     NULL,
+        DateKey
+            INT NOT NULL,
 
-        CONSTRAINT PK_DimDate PRIMARY KEY (DateKey),
-        CONSTRAINT UQ_DimDate_FullDate UNIQUE (FullDate)
+        FullDate
+            DATE NOT NULL,
+
+        [Day]
+            TINYINT NOT NULL,
+
+        MonthNumber
+            TINYINT NOT NULL,
+
+        MonthName
+            NVARCHAR(20) NOT NULL,
+
+        [Quarter]
+            TINYINT NOT NULL,
+
+        [Year]
+            SMALLINT NOT NULL,
+
+        DayOfWeekNumber
+            TINYINT NOT NULL,
+
+        DayOfWeekName
+            NVARCHAR(20) NOT NULL,
+
+        IsWeekend
+            BIT NOT NULL,
+
+        CONSTRAINT PK_DimDate
+            PRIMARY KEY (DateKey),
+
+        CONSTRAINT UQ_DimDate_FullDate
+            UNIQUE (FullDate),
+
+        CONSTRAINT CK_DimDate_Month
+            CHECK (MonthNumber BETWEEN 1 AND 12),
+
+        CONSTRAINT CK_DimDate_Quarter
+            CHECK ([Quarter] BETWEEN 1 AND 4),
+
+        CONSTRAINT CK_DimDate_DayOfWeek
+            CHECK (DayOfWeekNumber BETWEEN 1 AND 7)
     );
+
+    PRINT N'Đã tạo dwh.DimDate.';
 END;
 GO
 
-IF OBJECT_ID(N'dw.DimTimeBand', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimTimeBand
-    (
-        TimeBandKey  INT          IDENTITY(1,1) NOT NULL,
-        TimeBand     NVARCHAR(50) NOT NULL,
-        StartHour    TINYINT      NULL,
-        EndHour      TINYINT      NULL,
-        TimeBandSort TINYINT      NULL,
 
-        CONSTRAINT PK_DimTimeBand PRIMARY KEY (TimeBandKey),
-        CONSTRAINT UQ_DimTimeBand_TimeBand UNIQUE (TimeBand)
+/*============================================================
+  2. DIM TIME
+  Grain: one row per minute
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimTime', N'U') IS NULL
+BEGIN
+    CREATE TABLE dwh.DimTime
+    (
+        TimeKey
+            INT NOT NULL,
+
+        FullTime
+            TIME(0) NOT NULL,
+
+        [Hour]
+            TINYINT NOT NULL,
+
+        [Minute]
+            TINYINT NOT NULL,
+
+        TimeBand
+            NVARCHAR(20) NOT NULL,
+
+        CONSTRAINT PK_DimTime
+            PRIMARY KEY (TimeKey),
+
+        CONSTRAINT UQ_DimTime_FullTime
+            UNIQUE (FullTime),
+
+        CONSTRAINT CK_DimTime_Hour
+            CHECK ([Hour] BETWEEN 0 AND 23),
+
+        CONSTRAINT CK_DimTime_Minute
+            CHECK ([Minute] BETWEEN 0 AND 59),
+
+        CONSTRAINT CK_DimTime_Band
+            CHECK (
+                TimeBand IN (
+                    N'Night',
+                    N'Morning',
+                    N'Afternoon',
+                    N'Evening'
+                )
+            )
     );
+
+    PRINT N'Đã tạo dwh.DimTime.';
 END;
 GO
 
-IF OBJECT_ID(N'dw.DimTime', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimTime
-    (
-        TimeKey      INT          IDENTITY(1,1) NOT NULL,
-        FullTime     TIME(0)      NULL,
-        Hour         TINYINT      NULL,
-        Minute       TINYINT      NULL,
-        TimeBandKey  INT          NULL,
 
-        CONSTRAINT PK_DimTime PRIMARY KEY (TimeKey),
-        CONSTRAINT UQ_DimTime_FullTime UNIQUE (FullTime),
-        CONSTRAINT FK_DimTime_DimTimeBand
-            FOREIGN KEY (TimeBandKey)
-            REFERENCES dw.DimTimeBand(TimeBandKey)
+/*============================================================
+  3. DIM LOCATION
+  Grain: one row per official ONS district
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimLocation', N'U') IS NULL
+BEGIN
+    CREATE TABLE dwh.DimLocation
+    (
+        LocationKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        LocalAuthorityCode
+            VARCHAR(20) NOT NULL,
+
+        LocalAuthorityName
+            NVARCHAR(150) NOT NULL,
+
+        CONSTRAINT PK_DimLocation
+            PRIMARY KEY (LocationKey),
+
+        CONSTRAINT UQ_DimLocation_Code
+            UNIQUE (LocalAuthorityCode)
     );
+
+    PRINT N'Đã tạo dwh.DimLocation.';
 END;
 GO
 
-IF OBJECT_ID(N'dw.DimRegion', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimRegion
-    (
-        RegionKey  INT IDENTITY(1,1) NOT NULL,
-        RegionName NVARCHAR(100)     NOT NULL,
 
-        CONSTRAINT PK_DimRegion PRIMARY KEY (RegionKey),
-        CONSTRAINT UQ_DimRegion_RegionName UNIQUE (RegionName)
+/*============================================================
+  4. DIM ROAD
+  Grain: one distinct road-attribute combination
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimRoad', N'U') IS NULL
+BEGIN
+    CREATE TABLE dwh.DimRoad
+    (
+        RoadKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        FirstRoadClass
+            NVARCHAR(100) NOT NULL,
+
+        RoadType
+            NVARCHAR(150) NOT NULL,
+
+        SpeedLimit
+            SMALLINT NULL,
+
+        UrbanOrRuralArea
+            NVARCHAR(100) NOT NULL,
+
+        CONSTRAINT PK_DimRoad
+            PRIMARY KEY (RoadKey),
+
+        CONSTRAINT CK_DimRoad_SpeedLimit
+            CHECK (
+                SpeedLimit IS NULL
+                OR SpeedLimit IN (20, 30, 40, 50, 60, 70)
+            )
     );
+
+    PRINT N'Đã tạo dwh.DimRoad.';
 END;
 GO
 
-IF OBJECT_ID(N'dw.DimLocalAuthority', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimLocalAuthority
-    (
-        LocalAuthorityKey  INT         IDENTITY(1,1) NOT NULL,
-        LocalAuthorityCode VARCHAR(20) NOT NULL,
 
-        CONSTRAINT PK_DimLocalAuthority PRIMARY KEY (LocalAuthorityKey),
-        CONSTRAINT UQ_DimLocalAuthority_Code UNIQUE (LocalAuthorityCode)
+/*============================================================
+  5. DIM JUNCTION
+  Grain: one distinct junction-attribute combination
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimJunction', N'U') IS NULL
+BEGIN
+    CREATE TABLE dwh.DimJunction
+    (
+        JunctionKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        JunctionDetail
+            NVARCHAR(200) NOT NULL,
+
+        JunctionControl
+            NVARCHAR(200) NOT NULL,
+
+        PedestrianCrossing
+            NVARCHAR(250) NOT NULL,
+
+        CONSTRAINT PK_DimJunction
+            PRIMARY KEY (JunctionKey)
     );
+
+    PRINT N'Đã tạo dwh.DimJunction.';
 END;
 GO
 
-IF OBJECT_ID(N'dw.DimRoad', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimRoad
-    (
-        RoadKey        INT IDENTITY(1,1) NOT NULL,
-        FirstRoadClass NVARCHAR(100) NULL,
-        RoadType       NVARCHAR(100) NULL,
-        SpeedLimitMph  SMALLINT      NULL,
-        AreaType       NVARCHAR(50)  NULL,
 
-        CONSTRAINT PK_DimRoad PRIMARY KEY (RoadKey)
+/*============================================================
+  6. DIM ENVIRONMENT
+  Grain: one distinct environment combination
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimEnvironment', N'U') IS NULL
+BEGIN
+    CREATE TABLE dwh.DimEnvironment
+    (
+        EnvironmentKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        LightConditions
+            NVARCHAR(200) NOT NULL,
+
+        WeatherConditions
+            NVARCHAR(200) NOT NULL,
+
+        RoadSurfaceConditions
+            NVARCHAR(200) NOT NULL,
+
+        CONSTRAINT PK_DimEnvironment
+            PRIMARY KEY (EnvironmentKey)
     );
+
+    PRINT N'Đã tạo dwh.DimEnvironment.';
 END;
 GO
 
-IF OBJECT_ID(N'dw.DimEnvironment', N'U') IS NULL
+
+/*============================================================
+  7. DIM VEHICLE
+  Grain: one distinct vehicle-attribute combination
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimVehicle', N'U') IS NULL
 BEGIN
-    CREATE TABLE dw.DimEnvironment
+    CREATE TABLE dwh.DimVehicle
     (
-        EnvironmentKey       INT IDENTITY(1,1) NOT NULL,
-        LightConditions      NVARCHAR(150) NULL,
-        WeatherConditions    NVARCHAR(150) NULL,
-        RoadSurfaceConditions NVARCHAR(150) NULL,
+        VehicleKey
+            INT IDENTITY(1,1) NOT NULL,
 
-        CONSTRAINT PK_DimEnvironment PRIMARY KEY (EnvironmentKey)
-    );
-END;
-GO
+        VehicleType
+            NVARCHAR(250) NOT NULL,
 
-IF OBJECT_ID(N'dw.DimJunction', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimJunction
-    (
-        JunctionKey        INT IDENTITY(1,1) NOT NULL,
-        JunctionDetail     NVARCHAR(150) NULL,
-        JunctionControl    NVARCHAR(150) NULL,
-        PedestrianCrossing NVARCHAR(150) NULL,
+        VehicleManoeuvre
+            NVARCHAR(250) NOT NULL,
 
-        CONSTRAINT PK_DimJunction PRIMARY KEY (JunctionKey)
-    );
-END;
-GO
+        SkiddingAndOverturning
+            NVARCHAR(250) NOT NULL,
 
-IF OBJECT_ID(N'dw.DimSeverity', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimSeverity
-    (
-        SeverityKey  INT IDENTITY(1,1) NOT NULL,
-        SeverityName NVARCHAR(50)     NOT NULL,
-
-        CONSTRAINT PK_DimSeverity PRIMARY KEY (SeverityKey),
-        CONSTRAINT UQ_DimSeverity_Name UNIQUE (SeverityName)
-    );
-END;
-GO
-
-IF OBJECT_ID(N'dw.DimPedestrianContext', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimPedestrianContext
-    (
-        PedestrianContextKey INT IDENTITY(1,1) NOT NULL,
-        PedestrianLocation   NVARCHAR(150) NULL,
-        PedestrianMovement   NVARCHAR(150) NULL,
-
-        CONSTRAINT PK_DimPedestrianContext
-            PRIMARY KEY (PedestrianContextKey)
-    );
-END;
-GO
-
-IF OBJECT_ID(N'dw.DimCasualtyProfile', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimCasualtyProfile
-    (
-        CasualtyProfileKey INT IDENTITY(1,1) NOT NULL,
-        CasualtyAgeBand    NVARCHAR(100) NULL,
-        CasualtySex        NVARCHAR(50)  NULL,
-        CasualtyClass      NVARCHAR(100) NULL,
-        CasualtyType       NVARCHAR(150) NULL,
-
-        CONSTRAINT PK_DimCasualtyProfile
-            PRIMARY KEY (CasualtyProfileKey)
-    );
-END;
-GO
-
-IF OBJECT_ID(N'dw.DimVehicleProfile', N'U') IS NULL
-BEGIN
-    CREATE TABLE dw.DimVehicleProfile
-    (
-        VehicleProfileKey          INT IDENTITY(1,1) NOT NULL,
-        VehicleType                NVARCHAR(150) NULL,
-        DriverAgeBand              NVARCHAR(100) NULL,
-        DriverSex                  NVARCHAR(50)  NULL,
-        VehicleManoeuvre           NVARCHAR(150) NULL,
-        SkiddingAndOverturning     NVARCHAR(150) NULL,
-        VehicleLeavingCarriageway  NVARCHAR(150) NULL,
-
-        CONSTRAINT PK_DimVehicleProfile
-            PRIMARY KEY (VehicleProfileKey)
-    );
-END;
-GO
-
--- unique constraint
-IF NOT EXISTS (
-    SELECT 1 FROM sys.key_constraints
-    WHERE name = N'UQ_DimRoad_BusinessKey'
-)
-    ALTER TABLE dw.DimRoad
-    ADD CONSTRAINT UQ_DimRoad_BusinessKey
-    UNIQUE (FirstRoadClass, RoadType, SpeedLimitMph, AreaType);
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM sys.key_constraints
-    WHERE name = N'UQ_DimEnvironment_BusinessKey'
-)
-    ALTER TABLE dw.DimEnvironment
-    ADD CONSTRAINT UQ_DimEnvironment_BusinessKey
-    UNIQUE (LightConditions, WeatherConditions, RoadSurfaceConditions);
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM sys.key_constraints
-    WHERE name = N'UQ_DimJunction_BusinessKey'
-)
-    ALTER TABLE dw.DimJunction
-    ADD CONSTRAINT UQ_DimJunction_BusinessKey
-    UNIQUE (JunctionDetail, JunctionControl, PedestrianCrossing);
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM sys.key_constraints
-    WHERE name = N'UQ_DimPedestrianContext_BusinessKey'
-)
-    ALTER TABLE dw.DimPedestrianContext
-    ADD CONSTRAINT UQ_DimPedestrianContext_BusinessKey
-    UNIQUE (PedestrianLocation, PedestrianMovement);
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM sys.key_constraints
-    WHERE name = N'UQ_DimCasualtyProfile_BusinessKey'
-)
-    ALTER TABLE dw.DimCasualtyProfile
-    ADD CONSTRAINT UQ_DimCasualtyProfile_BusinessKey
-    UNIQUE (CasualtyAgeBand, CasualtySex, CasualtyClass, CasualtyType);
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM sys.key_constraints
-    WHERE name = N'UQ_DimVehicleProfile_BusinessKey'
-)
-    ALTER TABLE dw.DimVehicleProfile
-    ADD CONSTRAINT UQ_DimVehicleProfile_BusinessKey
-    UNIQUE (
-        VehicleType,
-        DriverAgeBand,
-        DriverSex,
-        VehicleManoeuvre,
-        SkiddingAndOverturning,
         VehicleLeavingCarriageway
+            NVARCHAR(250) NOT NULL,
+
+        CONSTRAINT PK_DimVehicle
+            PRIMARY KEY (VehicleKey)
     );
-GO
 
--- Unknown member với key 0
-USE STATS19_DW;
-GO
-
--- DimDate dùng DateKey dạng YYYYMMDD, không dùng IDENTITY.
-IF NOT EXISTS (SELECT 1 FROM dw.DimDate WHERE DateKey = 0)
-    INSERT INTO dw.DimDate
-        (DateKey, FullDate, Day, DayOfWeek, DayOfWeekSort, Month, Quarter, Year)
-    VALUES
-        (0, NULL, NULL, N'Unknown', NULL, N'Unknown', NULL, NULL);
-GO
-
-IF NOT EXISTS (SELECT 1 FROM dw.DimTimeBand WHERE TimeBandKey = 0)
-BEGIN
-    SET IDENTITY_INSERT dw.DimTimeBand ON;
-
-    INSERT INTO dw.DimTimeBand
-        (TimeBandKey, TimeBand, StartHour, EndHour, TimeBandSort)
-    VALUES
-        (0, N'Unknown', NULL, NULL, 0);
-
-    SET IDENTITY_INSERT dw.DimTimeBand OFF;
+    PRINT N'Đã tạo dwh.DimVehicle.';
 END;
 GO
 
-IF NOT EXISTS (SELECT 1 FROM dw.DimTime WHERE TimeKey = 0)
+
+/*============================================================
+  8. DIM DRIVER
+  Grain: one distinct driver-profile combination
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimDriver', N'U') IS NULL
 BEGIN
-    SET IDENTITY_INSERT dw.DimTime ON;
+    CREATE TABLE dwh.DimDriver
+    (
+        DriverKey
+            INT IDENTITY(1,1) NOT NULL,
 
-    INSERT INTO dw.DimTime
-        (TimeKey, FullTime, Hour, Minute, TimeBandKey)
-    VALUES
-        (0, NULL, NULL, NULL, 0);
+        SexOfDriver
+            NVARCHAR(100) NOT NULL,
 
-    SET IDENTITY_INSERT dw.DimTime OFF;
+        AgeBandOfDriver
+            NVARCHAR(100) NOT NULL,
+
+        CONSTRAINT PK_DimDriver
+            PRIMARY KEY (DriverKey)
+    );
+
+    PRINT N'Đã tạo dwh.DimDriver.';
 END;
 GO
 
-IF NOT EXISTS (SELECT 1 FROM dw.DimRegion WHERE RegionKey = 0)
+
+/*============================================================
+  9. DIM CASUALTY
+  Grain: one distinct casualty-profile combination
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimCasualty', N'U') IS NULL
 BEGIN
-    SET IDENTITY_INSERT dw.DimRegion ON;
-    INSERT INTO dw.DimRegion (RegionKey, RegionName)
-    VALUES (0, N'Unknown');
-    SET IDENTITY_INSERT dw.DimRegion OFF;
+    CREATE TABLE dwh.DimCasualty
+    (
+        CasualtyKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        CasualtyClass
+            NVARCHAR(100) NOT NULL,
+
+        SexOfCasualty
+            NVARCHAR(100) NOT NULL,
+
+        AgeBandOfCasualty
+            NVARCHAR(100) NOT NULL,
+
+        CasualtyType
+            NVARCHAR(250) NOT NULL,
+
+        CONSTRAINT PK_DimCasualty
+            PRIMARY KEY (CasualtyKey)
+    );
+
+    PRINT N'Đã tạo dwh.DimCasualty.';
 END;
 GO
 
-IF NOT EXISTS (SELECT 1 FROM dw.DimLocalAuthority WHERE LocalAuthorityKey = 0)
+
+/*============================================================
+  10. DIM COLLISION SEVERITY
+  Grain: one collision-severity category
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimCollisionSeverity', N'U') IS NULL
 BEGIN
-    SET IDENTITY_INSERT dw.DimLocalAuthority ON;
-    INSERT INTO dw.DimLocalAuthority (LocalAuthorityKey, LocalAuthorityCode)
-    VALUES (0, 'UNKNOWN');
-    SET IDENTITY_INSERT dw.DimLocalAuthority OFF;
+    CREATE TABLE dwh.DimCollisionSeverity
+    (
+        CollisionSeverityKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        CollisionSeverity
+            NVARCHAR(50) NOT NULL,
+
+        CollisionSeverityGroup
+            NVARCHAR(20) NOT NULL,
+
+        CONSTRAINT PK_DimCollisionSeverity
+            PRIMARY KEY (CollisionSeverityKey),
+
+        CONSTRAINT UQ_DimCollisionSeverity
+            UNIQUE (CollisionSeverity),
+
+        CONSTRAINT CK_DimCollisionSeverity_Group
+            CHECK (
+                CollisionSeverityGroup
+                IN (N'KSI', N'Non-KSI')
+            )
+    );
+
+    PRINT N'Đã tạo dwh.DimCollisionSeverity.';
 END;
 GO
 
-IF NOT EXISTS (SELECT 1 FROM dw.DimRoad WHERE RoadKey = 0)
+
+/*============================================================
+  11. DIM CASUALTY SEVERITY
+  Grain: one casualty-severity category
+============================================================*/
+
+IF OBJECT_ID(N'dwh.DimCasualtySeverity', N'U') IS NULL
 BEGIN
-    SET IDENTITY_INSERT dw.DimRoad ON;
-    INSERT INTO dw.DimRoad
-        (RoadKey, FirstRoadClass, RoadType, SpeedLimitMph, AreaType)
-    VALUES
-        (0, N'Unknown', N'Unknown', NULL, N'Unknown');
-    SET IDENTITY_INSERT dw.DimRoad OFF;
+    CREATE TABLE dwh.DimCasualtySeverity
+    (
+        CasualtySeverityKey
+            INT IDENTITY(1,1) NOT NULL,
+
+        CasualtySeverity
+            NVARCHAR(50) NOT NULL,
+
+        CasualtySeverityGroup
+            NVARCHAR(20) NOT NULL,
+
+        CONSTRAINT PK_DimCasualtySeverity
+            PRIMARY KEY (CasualtySeverityKey),
+
+        CONSTRAINT UQ_DimCasualtySeverity
+            UNIQUE (CasualtySeverity),
+
+        CONSTRAINT CK_DimCasualtySeverity_Group
+            CHECK (
+                CasualtySeverityGroup
+                IN (N'KSI', N'Non-KSI')
+            )
+    );
+
+    PRINT N'Đã tạo dwh.DimCasualtySeverity.';
 END;
 GO
-
-IF NOT EXISTS (SELECT 1 FROM dw.DimEnvironment WHERE EnvironmentKey = 0)
-BEGIN
-    SET IDENTITY_INSERT dw.DimEnvironment ON;
-    INSERT INTO dw.DimEnvironment
-        (EnvironmentKey, LightConditions, WeatherConditions, RoadSurfaceConditions)
-    VALUES
-        (0, N'Unknown', N'Unknown', N'Unknown');
-    SET IDENTITY_INSERT dw.DimEnvironment OFF;
-END;
-GO
-
-IF NOT EXISTS (SELECT 1 FROM dw.DimJunction WHERE JunctionKey = 0)
-BEGIN
-    SET IDENTITY_INSERT dw.DimJunction ON;
-    INSERT INTO dw.DimJunction
-        (JunctionKey, JunctionDetail, JunctionControl, PedestrianCrossing)
-    VALUES
-        (0, N'Unknown', N'Unknown', N'Unknown');
-    SET IDENTITY_INSERT dw.DimJunction OFF;
-END;
-GO
-
-IF NOT EXISTS (SELECT 1 FROM dw.DimSeverity WHERE SeverityKey = 0)
-BEGIN
-    SET IDENTITY_INSERT dw.DimSeverity ON;
-    INSERT INTO dw.DimSeverity (SeverityKey, SeverityName)
-    VALUES (0, N'Unknown');
-    SET IDENTITY_INSERT dw.DimSeverity OFF;
-END;
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM dw.DimPedestrianContext
-    WHERE PedestrianContextKey = 0
-)
-BEGIN
-    SET IDENTITY_INSERT dw.DimPedestrianContext ON;
-    INSERT INTO dw.DimPedestrianContext
-        (PedestrianContextKey, PedestrianLocation, PedestrianMovement)
-    VALUES
-        (0, N'Unknown', N'Unknown');
-    SET IDENTITY_INSERT dw.DimPedestrianContext OFF;
-END;
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM dw.DimCasualtyProfile
-    WHERE CasualtyProfileKey = 0
-)
-BEGIN
-    SET IDENTITY_INSERT dw.DimCasualtyProfile ON;
-    INSERT INTO dw.DimCasualtyProfile
-        (CasualtyProfileKey, CasualtyAgeBand, CasualtySex, CasualtyClass, CasualtyType)
-    VALUES
-        (0, N'Unknown', N'Unknown', N'Unknown', N'Unknown');
-    SET IDENTITY_INSERT dw.DimCasualtyProfile OFF;
-END;
-GO
-
-IF NOT EXISTS (
-    SELECT 1 FROM dw.DimVehicleProfile
-    WHERE VehicleProfileKey = 0
-)
-BEGIN
-    SET IDENTITY_INSERT dw.DimVehicleProfile ON;
-    INSERT INTO dw.DimVehicleProfile
-        (VehicleProfileKey, VehicleType, DriverAgeBand, DriverSex,
-         VehicleManoeuvre, SkiddingAndOverturning, VehicleLeavingCarriageway)
-    VALUES
-        (0, N'Unknown', N'Unknown', N'Unknown',
-         N'Unknown', N'Unknown', N'Unknown');
-    SET IDENTITY_INSERT dw.DimVehicleProfile OFF;
-END;
-GO
-

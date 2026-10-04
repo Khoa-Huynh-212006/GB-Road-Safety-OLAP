@@ -422,3 +422,13 @@ __marimo__/
 /Data/Warehouse/
 # Visual Studio local cache
 /SSIS/STATS19_ETL/.vs/
+
+
+# Visual Studio và SSIS generated files
+**/.vs/
+**/bin/
+**/obj/
+*.suo
+*.user
+*.dtproj.user
+*.ispac
