@@ -6,10 +6,83 @@
     <Name>RoadSafetySSAS.database</Name>
     <FullPath>RoadSafetySSAS.database</FullPath>
   </Database>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Vehicle.dim</Name>
+      <FullPath>Dim Vehicle.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Casualty Severity.dim</Name>
+      <FullPath>Dim Casualty Severity.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Driver.dim</Name>
+      <FullPath>Dim Driver.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Collision Severity.dim</Name>
+      <FullPath>Dim Collision Severity.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Casualty.dim</Name>
+      <FullPath>Dim Casualty.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Environment.dim</Name>
+      <FullPath>Dim Environment.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Junction.dim</Name>
+      <FullPath>Dim Junction.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Location.dim</Name>
+      <FullPath>Dim Location.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Time.dim</Name>
+      <FullPath>Dim Time.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Road.dim</Name>
+      <FullPath>Dim Road.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>Road Safety DWH.ds</Name>
+      <FullPath>Road Safety DWH.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>Road Safety DWH.dsv</Name>
+      <FullPath>Road Safety DWH.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>Road Safety DWH</Id>
+            <Name>Road Safety DWH</Name>
+            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=LAPTOP-U8PM7US2;Integrated Security=SSPI;Initial Catalog=RoadSafetyDWH</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>Road Safety DWH</Id>
+            <Name>Road Safety DWH</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

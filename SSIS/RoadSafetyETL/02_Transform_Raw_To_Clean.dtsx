@@ -8,11 +8,11 @@
   DTS:DTSID="{9C7F277C-F0F0-4834-BAC5-CC5EA455983B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="3072"
+  DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{2D8CE616-0FC3-4703-A45D-5BE1CC7D5458}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{5E2DDEB9-A1E9-419B-8911-7732E84872E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -10148,6 +10148,10 @@ where [refTable].[RawCode] = ?</property>
           Size="188.8,41.6"
           Id="Package\02 - Transform Vehicles"
           TopLeft="446.666642261877,119.599999168317" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\03 - Transform Casualties"
+          TopLeft="458.333308291105,206.266665232314" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="376.09999002864,140.833332498637">
@@ -10170,10 +10174,6 @@ where [refTable].[RawCode] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\03 - Transform Casualties"
-          TopLeft="458.333308291105,206.266665232314" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="541.066642261877,161.199999168317">
@@ -10315,7 +10315,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10697,7 +10699,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10719,7 +10723,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10741,7 +10747,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10775,7 +10783,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11040,6 +11050,26 @@ where [refTable].[RawCode] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="224,41.6"
+          Id="Package\02 - Transform Vehicles\DRV - Normalize Vehicle Fields"
+          TopLeft="560.999991640449,62.9999990612269" />
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\02 - Transform Vehicles\LKP - Age Band of Driver"
+          TopLeft="345.999994844198,188.999997183681" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\02 - Transform Vehicles\LKP - Vehicle Manoeuvre"
+          TopLeft="810.999987915158,177.999997347593" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\02 - Transform Vehicles\LKP - Sex of Driver"
+          TopLeft="571.999991476536,181.999997287989" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\02 - Transform Vehicles\DST - Vehicles Clean CSV"
+          TopLeft="755.999985158444,331.466661651664" />
+        <NodeLayout
           Size="167.2,41.6"
           Id="Package\02 - Transform Vehicles\LKP - Vehicle Type"
           TopLeft="849.999987334013,76.9999988526106" />
@@ -11048,9 +11078,9 @@ where [refTable].[RawCode] = ?</property>
           Id="Package\02 - Transform Vehicles\LKP - Skidding and Overturning"
           TopLeft="63.9999990463257,190.999997153878" />
         <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\02 - Transform Vehicles\DST - Vehicles Clean CSV"
-          TopLeft="755.999985158444,331.466661651664" />
+          Size="219.2,41.6"
+          Id="Package\02 - Transform Vehicles\CNV - Vehicles Clean to UTF8"
+          TopLeft="363.999994575977,275.99999588728" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\02 - Transform Vehicles\SRC - Vehicles Raw"
@@ -11060,18 +11090,6 @@ where [refTable].[RawCode] = ?</property>
           Id="Package\02 - Transform Vehicles\LKP - Vehicle Leaving Carriageway"
           TopLeft="63.9999990463257,272.999995931983" />
         <NodeLayout
-          Size="194.4,41.6"
-          Id="Package\02 - Transform Vehicles\LKP - Age Band of Driver"
-          TopLeft="345.999994844198,188.999997183681" />
-        <NodeLayout
-          Size="219.2,41.6"
-          Id="Package\02 - Transform Vehicles\CNV - Vehicles Clean to UTF8"
-          TopLeft="363.999994575977,275.99999588728" />
-        <NodeLayout
-          Size="224,41.6"
-          Id="Package\02 - Transform Vehicles\DRV - Normalize Vehicle Fields"
-          TopLeft="560.999991640449,62.9999990612269" />
-        <NodeLayout
           Size="224.8,41.6"
           Id="Package\02 - Transform Vehicles\CNV - Vehicles Raw to Unicode"
           TopLeft="250.999996259809,59.9999991059303" />
@@ -11079,14 +11097,6 @@ where [refTable].[RawCode] = ?</property>
           Size="207.2,41.6"
           Id="Package\02 - Transform Vehicles\CNT - Vehicles Clean Rows"
           TopLeft="636.99999050796,264.999996051192" />
-        <NodeLayout
-          Size="196,41.6"
-          Id="Package\02 - Transform Vehicles\LKP - Vehicle Manoeuvre"
-          TopLeft="810.999987915158,177.999997347593" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\02 - Transform Vehicles\LKP - Sex of Driver"
-          TopLeft="571.999991476536,181.999997287989" />
         <EdgeLayout
           Id="Package\02 - Transform Vehicles.Paths[Row Count Output 1]"
           TopLeft="740.59999050796,306.599996051192">
@@ -11118,7 +11128,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11320,7 +11332,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11354,7 +11368,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11388,7 +11404,9 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11410,14 +11428,39 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\02 - Transform Vehicles\LKP - Sex of Driver">
+    design-time-name="Package\02 - Transform Vehicles\LKP - Age Band of Driver">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\02 - Transform Vehicles\LKP - Skidding and Overturning">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -11463,7 +11506,7 @@ where [refTable].[RawCode] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\02 - Transform Vehicles\LKP - Vehicle Type">
+    design-time-name="Package\02 - Transform Vehicles\LKP - Sex of Driver">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -11486,7 +11529,7 @@ where [refTable].[RawCode] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\02 - Transform Vehicles\LKP - Age Band of Driver">
+    design-time-name="Package\02 - Transform Vehicles\LKP - Vehicle Type">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -11531,256 +11574,91 @@ where [refTable].[RawCode] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\02 - Transform Vehicles\LKP - Skidding and Overturning">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\03 - Transform Casualties">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\03 - Transform Casualties\SRC - Casualties Raw"
-          TopLeft="243.999996364117,116.999998256564" />
-        <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\03 - Transform Casualties\CNV - Casualties Raw to Unicode"
-          TopLeft="511.999992370606,111.99999833107" />
-        <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Flat File Source Output]"
-          TopLeft="425.599996364117,135.299998293817">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86.3999960064888,0"
-              Start="0,0"
-              End="78.8999960064888,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.8999960064888,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="230.4,41.6"
-          Id="Package\03 - Transform Casualties\DRV - Normalize Casualty Fields"
-          TopLeft="524.545446729118,184.545451795513" />
-        <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Data Conversion Output]"
-          TopLeft="629.199992370606,153.59999833107">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.5454543585128,30.945453464443"
-              Start="0,0"
-              End="10.5454543585128,23.445453464443">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.4727267322215" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.4727267322215"
-                    Point2="0,15.4727267322215"
-                    Point3="4,15.4727267322215" />
-                  <mssgle:LineSegment
-                    End="6.54545435851276,15.4727267322215" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.54545435851276,15.4727267322215"
-                    Point2="10.5454543585128,15.4727267322215"
-                    Point3="10.5454543585128,19.4727267322215" />
-                  <mssgle:LineSegment
-                    End="10.5454543585128,23.445453464443" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\03 - Transform Casualties\LKP - Casualty Class"
-          TopLeft="46.3636356727643,177.272724631158" />
-        <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Derived Column Output]"
-          TopLeft="524.545446729118,201.709088213335">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-302.181811056354,0"
-              Start="0,0"
-              End="-294.681811056354,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-294.681811056354,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\03 - Transform Casualties\LKP - Sex of Casualty"
-          TopLeft="45.45454477722,259.999996125698" />
-        <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output]"
-          TopLeft="134.909090224992,218.872724631158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.1272714945403"
-              Start="0,0"
-              End="0,33.6272714945403">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.6272714945403" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.0089482472702,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="216,41.6"
+          Id="Package\03 - Transform Casualties\CNT - Casualties Clean Rows"
+          TopLeft="344.545449519699,385.090905324979" />
         <NodeLayout
           Size="207.2,41.6"
           Id="Package\03 - Transform Casualties\LKP - Age Band of Casualty"
           TopLeft="265.454541498964,264.54545060342" />
-        <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output1]"
-          TopLeft="225.45454477722,283.072723364559">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39.9999967217445,0"
-              Start="0,0"
-              End="32.4999967217445,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="32.4999967217445,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-31.9413883578778,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="188,41.6"
           Id="Package\03 - Transform Casualties\LKP - Casualty Severity"
           TopLeft="534.545446580107,257.272723439065" />
-        <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output2]"
-          TopLeft="472.654541498964,281.709087021243">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.8909050811423,0"
-              Start="0,0"
-              End="54.3909050811423,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54.3909050811423,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-20.9959341781788,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\03 - Transform Casualties\LKP - Sex of Casualty"
+          TopLeft="45.45454477722,259.999996125698" />
         <NodeLayout
           Size="173.6,41.6"
           Id="Package\03 - Transform Casualties\LKP - Casualty Type"
           TopLeft="749.090897928585,272.72726866332" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\03 - Transform Casualties\DST - Casualties Clean CSV"
+          TopLeft="92.7272714539009,375.090905473991" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\03 - Transform Casualties\DRV - Normalize Casualty Fields"
+          TopLeft="524.545446729118,184.545451795513" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\03 - Transform Casualties\CNV - Casualties Clean to UTF8"
+          TopLeft="646.363626732067,394.90908749537" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\03 - Transform Casualties\LKP - Casualty Class"
+          TopLeft="46.3636356727643,177.272724631158" />
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\03 - Transform Casualties\CNV - Casualties Raw to Unicode"
+          TopLeft="511.999992370606,111.99999833107" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\03 - Transform Casualties\SRC - Casualties Raw"
+          TopLeft="243.999996364117,116.999998256564" />
         <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output3]"
-          TopLeft="722.545446580107,278.072723439065">
+          Id="Package\03 - Transform Casualties.Paths[Row Count Output 1]"
+          TopLeft="344.545449519699,405.890905324979">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.5454513484782,15.4545452242548"
+              EndConnector="-40.6181780657985,-9.99999985098822"
               Start="0,0"
-              End="19.0454513484782,15.4545452242548">
+              End="-33.1181780657985,-9.99999985098822">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="9.2727256742391,0" />
+                    End="-16.3090890328992,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.2727256742391,0"
-                    Point2="13.2727256742391,0"
-                    Point3="13.2727256742391,4" />
+                    Point1="-16.3090890328992,0"
+                    Point2="-20.3090890328992,0"
+                    Point3="-20.3090890328992,-4" />
                   <mssgle:LineSegment
-                    End="13.2727256742391,11.4545452242548" />
+                    End="-20.3090890328992,-5.99999985098822" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.2727256742391,11.4545452242548"
-                    Point2="13.2727256742391,15.4545452242548"
-                    Point3="17.2727256742391,15.4545452242548" />
+                    Point1="-20.3090890328992,-5.99999985098822"
+                    Point2="-20.3090890328992,-9.99999985098822"
+                    Point3="-24.3090890328992,-9.99999985098822" />
                   <mssgle:LineSegment
-                    End="19.0454513484782,15.4545452242548" />
+                    End="-33.1181780657985,-9.99999985098822" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.9186610445109,-17.609375,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="228,41.6"
-          Id="Package\03 - Transform Casualties\CNV - Casualties Clean to UTF8"
-          TopLeft="646.363626732067,394.90908749537" />
         <EdgeLayout
           Id="Package\03 - Transform Casualties.Paths[Lookup Match Output4]"
           TopLeft="835.890897928585,314.32726866332">
@@ -11817,10 +11695,162 @@ where [refTable].[RawCode] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="216,41.6"
-          Id="Package\03 - Transform Casualties\CNT - Casualties Clean Rows"
-          TopLeft="344.545449519699,385.090905324979" />
+        <EdgeLayout
+          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output3]"
+          TopLeft="722.545446580107,278.072723439065">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5454513484782,15.4545452242548"
+              Start="0,0"
+              End="19.0454513484782,15.4545452242548">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="9.2727256742391,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.2727256742391,0"
+                    Point2="13.2727256742391,0"
+                    Point3="13.2727256742391,4" />
+                  <mssgle:LineSegment
+                    End="13.2727256742391,11.4545452242548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.2727256742391,11.4545452242548"
+                    Point2="13.2727256742391,15.4545452242548"
+                    Point3="17.2727256742391,15.4545452242548" />
+                  <mssgle:LineSegment
+                    End="19.0454513484782,15.4545452242548" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.9186610445109,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output2]"
+          TopLeft="472.654541498964,281.709087021243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.8909050811423,0"
+              Start="0,0"
+              End="54.3909050811423,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.3909050811423,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.9959341781788,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output1]"
+          TopLeft="225.45454477722,283.072723364559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.9999967217445,0"
+              Start="0,0"
+              End="32.4999967217445,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.4999967217445,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.9413883578778,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\03 - Transform Casualties.Paths[Lookup Match Output]"
+          TopLeft="134.909090224992,218.872724631158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.1272714945403"
+              Start="0,0"
+              End="0,33.6272714945403">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6272714945403" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.0089482472702,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\03 - Transform Casualties.Paths[Flat File Source Output]"
+          TopLeft="425.599996364117,135.299998293817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.3999960064888,0"
+              Start="0,0"
+              End="78.8999960064888,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.8999960064888,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\03 - Transform Casualties.Paths[Derived Column Output]"
+          TopLeft="524.545446729118,201.709088213335">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-302.181811056354,0"
+              Start="0,0"
+              End="-294.681811056354,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-294.681811056354,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\03 - Transform Casualties.Paths[Data Conversion Output1]"
           TopLeft="646.363626732067,415.70908749537">
@@ -11852,103 +11882,57 @@ where [refTable].[RawCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="211.2,41.6"
-          Id="Package\03 - Transform Casualties\DST - Casualties Clean CSV"
-          TopLeft="92.7272714539009,375.090905473991" />
         <EdgeLayout
-          Id="Package\03 - Transform Casualties.Paths[Row Count Output 1]"
-          TopLeft="344.545449519699,405.890905324979">
+          Id="Package\03 - Transform Casualties.Paths[Data Conversion Output]"
+          TopLeft="629.199992370606,153.59999833107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-40.6181780657985,-9.99999985098822"
+              EndConnector="10.5454543585128,30.945453464443"
               Start="0,0"
-              End="-33.1181780657985,-9.99999985098822">
+              End="10.5454543585128,23.445453464443">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-16.3090890328992,0" />
+                    End="0,11.4727267322215" />
                   <mssgle:CubicBezierSegment
-                    Point1="-16.3090890328992,0"
-                    Point2="-20.3090890328992,0"
-                    Point3="-20.3090890328992,-4" />
+                    Point1="0,11.4727267322215"
+                    Point2="0,15.4727267322215"
+                    Point3="4,15.4727267322215" />
                   <mssgle:LineSegment
-                    End="-20.3090890328992,-5.99999985098822" />
+                    End="6.54545435851276,15.4727267322215" />
                   <mssgle:CubicBezierSegment
-                    Point1="-20.3090890328992,-5.99999985098822"
-                    Point2="-20.3090890328992,-9.99999985098822"
-                    Point3="-24.3090890328992,-9.99999985098822" />
+                    Point1="6.54545435851276,15.4727267322215"
+                    Point2="10.5454543585128,15.4727267322215"
+                    Point3="10.5454543585128,19.4727267322215" />
                   <mssgle:LineSegment
-                    End="-33.1181780657985,-9.99999985098822" />
+                    End="10.5454543585128,23.445453464443" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\03 - Transform Casualties\LKP - Casualty Class">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\03 - Transform Casualties\LKP - Sex of Casualty">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\03 - Transform Casualties\LKP - Age Band of Casualty">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11958,7 +11942,7 @@ where [refTable].[RawCode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11971,7 +11955,7 @@ where [refTable].[RawCode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11981,7 +11965,30 @@ where [refTable].[RawCode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\03 - Transform Casualties\LKP - Sex of Casualty">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11994,7 +12001,7 @@ where [refTable].[RawCode] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -12004,7 +12011,30 @@ where [refTable].[RawCode] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\03 - Transform Casualties\LKP - Casualty Class">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

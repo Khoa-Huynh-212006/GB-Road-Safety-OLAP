@@ -8,11 +8,11 @@
   DTS:DTSID="{84229882-E10C-49EE-B8D7-31C665298500}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="3072"
+  DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{733C77BF-FB48-4118-9154-C00CAEA96325}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{61CC20C2-1A46-4BED-8907-B7C30839A626}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -120,7 +120,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -227,7 +227,7 @@
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CollisionIndex]"
-                      cachedCodepage="1258"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CollisionIndex"
@@ -247,7 +247,7 @@
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyReference]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[VehicleInvolvementID]"
-                      cachedCodepage="1258"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="VehicleInvolvementID"
@@ -334,7 +334,7 @@
                       name="CasualtySeverityKey" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="CollisionIndex" />
@@ -348,7 +348,7 @@
                       name="CasualtyReference" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="VehicleInvolvementID" />
@@ -738,7 +738,7 @@ INNER JOIN dwh.DimCasualtySeverity
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -767,7 +767,7 @@ INNER JOIN dwh.DimCasualtySeverity
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -865,7 +865,7 @@ INNER JOIN dwh.DimCasualtySeverity
                       name="CasualtySeverityKey" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="CollisionIndex" />
@@ -879,7 +879,7 @@ INNER JOIN dwh.DimCasualtySeverity
                       name="CasualtyReference" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="VehicleInvolvementID" />
@@ -967,7 +967,7 @@ INNER JOIN dwh.DimCasualtySeverity
                       name="CasualtySeverityKey" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
@@ -984,7 +984,7 @@ INNER JOIN dwh.DimCasualtySeverity
                       name="CasualtyReference" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
@@ -1190,6 +1190,10 @@ INNER JOIN dwh.DimCasualtySeverity
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="168,41.6"
+          Id="Package\02 - Load FactCasualty\DST - FactCasualty"
+          TopLeft="224.999987706543,234.866665033433" />
+        <NodeLayout
           Size="199.2,41.6"
           Id="Package\02 - Load FactCasualty\SRC - FactCasualty Rows"
           TopLeft="180.833323453036,100.533332634237" />
@@ -1197,6 +1201,40 @@ INNER JOIN dwh.DimCasualtySeverity
           Size="157.6,41.6"
           Id="Package\02 - Load FactCasualty\CNT - Fact Rows"
           TopLeft="489.166639939779,106.599999258717" />
+        <EdgeLayout
+          Id="Package\02 - Load FactCasualty.Paths[Row Count Output 1]"
+          TopLeft="567.966639939779,148.199999258717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-258.966652233236,86.666665774716"
+              Start="0,0"
+              End="-258.966652233236,79.166665774716">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.333332887358" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.333332887358"
+                    Point2="0,43.333332887358"
+                    Point3="-4,43.333332887358" />
+                  <mssgle:LineSegment
+                    End="-254.966652233236,43.333332887358" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-254.966652233236,43.333332887358"
+                    Point2="-258.966652233236,43.333332887358"
+                    Point3="-258.966652233236,47.333332887358" />
+                  <mssgle:LineSegment
+                    End="-258.966652233236,79.166665774716" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load FactCasualty.Paths[OLE DB Source Output]"
           TopLeft="380.033323453036,124.366665946477">
@@ -1219,55 +1257,9 @@ INNER JOIN dwh.DimCasualtySeverity
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\02 - Load FactCasualty\DST - FactCasualty"
-          TopLeft="224.999987706543,234.866665033433" />
-        <EdgeLayout
-          Id="Package\02 - Load FactCasualty.Paths[Row Count Output 1]"
-          TopLeft="567.966639939779,148.199999258717">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-258.566652233237,86.6666657747163"
-              Start="0,0"
-              End="-258.566652233237,79.1666657747163">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.3333328873581" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.3333328873581"
-                    Point2="0,43.3333328873581"
-                    Point3="-4,43.3333328873581" />
-                  <mssgle:LineSegment
-                    End="-254.566652233237,43.3333328873581" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-254.566652233237,43.3333328873581"
-                    Point2="-258.566652233237,43.3333328873581"
-                    Point3="-258.566652233237,47.3333328873581" />
-                  <mssgle:LineSegment
-                    End="-258.566652233237,79.1666657747163" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\02 - Load FactCasualty\SRC - FactCasualty Rows">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\02 - Load FactCasualty\DST - FactCasualty">
     <Properties>
@@ -1278,6 +1270,14 @@ INNER JOIN dwh.DimCasualtySeverity
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\02 - Load FactCasualty\SRC - FactCasualty Rows">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

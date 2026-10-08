@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=LAPTOP-2A47H9L3\OLAP2025;Initial Catalog=RoadSafetyDWH;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Trust Server Certificate=True;Application Name=SSIS-RoadSafetyETL-{F05086EA-55A1-4B00-BD44-1090AAD7929D}LAPTOP-2A47H9L3\OLAP2025.RoadSafetyDWH;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=LAPTOP-U8PM7US2;Initial Catalog=RoadSafetyDWH;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-RoadSafetyETL-{F05086EA-55A1-4B00-BD44-1090AAD7929D}LAPTOP-2A47H9L3\OLAP2025.RoadSafetyDWH;Trust Server Certificate=True;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
