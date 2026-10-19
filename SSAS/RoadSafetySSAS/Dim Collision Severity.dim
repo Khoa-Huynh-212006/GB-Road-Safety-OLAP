@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="14b91aeb-854d-4d57-a637-43040b060985" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ff7ebc54-a4e2-4b38-bd8f-3bbea5b5af59" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Collision Severity</ID>
   <Name>Dim Collision Severity</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1589" scrolltop="-6710" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7324" y="15367" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1589" scrolltop="-6710" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8170" y="9356" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -19,7 +19,7 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCollisionSeverity" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4106" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCollisionSeverity" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4106" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e00000a1000009b070000" />
             </control>
@@ -68,76 +68,84 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f91914d0-9d2c-4819-bd5a-21c887371f36">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9c4f5e1e-5c24-4b00-8560-46b70e108199">
     <DataSourceViewID>Road Safety DWH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="5f949873-b51f-4c6a-9228-e2c4eba4e500">
+  <ErrorConfiguration dwd:design-time-name="aa528263-8851-4a71-b627-0f338cb70240">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="f8066070-a2fc-41ca-8d8a-b7bce267eace">
+    <Attribute dwd:design-time-name="a00b3932-f45d-4b09-8cc7-2d842afedb55">
       <ID>Collision Severity Key</ID>
       <Name>Collision Severity Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="4b95c46f-c6d1-48e7-b04f-88558e0a3ed9">
+        <KeyColumn dwd:design-time-name="0d742dd4-706a-4293-90ec-bb2cb994fffa">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7423983e-76c7-4023-ad2a-4574c7efef32">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d313856b-da70-4d5e-8ead-48162bee6bc0">
             <TableID>dwh_DimCollisionSeverity</TableID>
             <ColumnID>CollisionSeverityKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="0553866d-9309-4a25-b16e-371da494323d">
+      <NameColumn dwd:design-time-name="43679c45-2b91-4995-bd50-1dba9fbee628">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="26f19b80-a650-442e-8de7-595add8fbc3f">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4d5347da-613b-4cc0-a10d-1b66dce29e7a">
           <TableID>dwh_DimCollisionSeverity</TableID>
           <ColumnID>CollisionSeverity</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="bcfac23a-f9ac-47bf-b847-12fce0d3f113">
+        <AttributeRelationship dwd:design-time-name="e2b8c765-fd6e-4c5d-a711-7d26dd11833d">
           <AttributeID>Collision Severity</AttributeID>
           <Name>Collision Severity</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="40e8862f-1e17-4907-b682-5e1f9cebdcc9">
+        <AttributeRelationship dwd:design-time-name="96a96862-77e0-47db-98f5-800082698bb3">
           <AttributeID>Collision Severity Group</AttributeID>
           <Name>Collision Severity Group</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="2e9612c0-b5c6-4f80-95a5-536c9980d6d0">
+    <Attribute dwd:design-time-name="b5b76340-9f3c-4a62-9a18-f37df6afbed9">
       <ID>Collision Severity</ID>
       <Name>Collision Severity</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a9a384bb-3f85-4e68-8938-58939c4d4f1d">
-          <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d2a2cecc-abf7-4c87-b43c-135afc357ef4">
+        <KeyColumn dwd:design-time-name="86bc6ab7-af12-4dd1-bae0-cabbb7c17e87">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a152083-159d-459c-8521-faca57988de3">
             <TableID>dwh_DimCollisionSeverity</TableID>
-            <ColumnID>CollisionSeverity</ColumnID>
+            <ColumnID>CollisionSeverityOrder</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn dwd:design-time-name="9b1dc279-86fa-4fd5-8299-163f09f1f70c">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d9bf7d9a-c248-48ae-bf30-64294e2945cb">
+          <TableID>dwh_DimCollisionSeverity</TableID>
+          <ColumnID>CollisionSeverity</ColumnID>
+        </Source>
+      </NameColumn>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="0a9ff1c3-fa98-46a4-832d-c485ff808ca4">
+    <Attribute dwd:design-time-name="e9d5af8f-b5e2-4cc2-9499-13620ea25016">
       <ID>Collision Severity Group</ID>
       <Name>Collision Severity Group</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8a961c12-618a-4330-8521-2e8201bb7836">
+        <KeyColumn dwd:design-time-name="e633acaa-5aac-49fd-a5d2-895da05eb065">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="790e6c2a-6171-4f13-a22d-f49d7badbd0b">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c2617bb-1eb2-44f0-a6c7-36bce515c172">
             <TableID>dwh_DimCollisionSeverity</TableID>
             <ColumnID>CollisionSeverityGroup</ColumnID>
           </Source>

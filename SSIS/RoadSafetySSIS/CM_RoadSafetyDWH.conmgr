@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CM_RoadSafetyDWH"
+  DTS:DTSID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=RoadSafetyLocal;Initial Catalog=RoadSafetyDWH;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-RoadSafetySSIS-{860D2A57-9866-4977-8AC8-B7A012D2E50F}LAPTOP-2A47H9L3\OLAP2025.RoadSafetyDWH;Trust Server Certificate=True;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

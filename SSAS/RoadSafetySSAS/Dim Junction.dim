@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6483d7fb-4e4a-4b55-85ea-f339846883d1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c32e8fc3-c946-498b-aae9-fc5415c0f92b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Junction</ID>
   <Name>Dim Junction</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -6,6 +6,32 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2224" scrolltop="-4382" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8170" y="9356" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimJunction" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3683" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000630e000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dwh_DimJunction" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +47,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-2224</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-4382</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -42,95 +68,117 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2eb177a2-b59e-4ee5-bbc2-e13470898e2e">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="77bb5a45-12ce-4234-ba8a-dd2100e0bc6b">
     <DataSourceViewID>Road Safety DWH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="bf85e408-5ae9-496a-9d54-e02869c6ada6">
+  <ErrorConfiguration dwd:design-time-name="0079c6e2-706b-4f9e-bcc1-bd3bcb49efdc">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="ce68fbb7-8788-46cc-b069-07725f4b2f35">
+    <Attribute dwd:design-time-name="f0186f41-8596-4f91-814b-9d21a35b0b66">
       <ID>Junction Key</ID>
       <Name>Junction Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="76120669-7c11-4fb6-afa1-abb4419dc155">
+        <KeyColumn dwd:design-time-name="70e2c3f3-e3eb-4534-918c-832103fe5e52">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="8638aff8-01d5-4251-a00e-3815c4e7c7e3">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c90773ad-6cf5-4634-a866-2768e231303d">
             <TableID>dwh_DimJunction</TableID>
             <ColumnID>JunctionKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="3a326c5d-c855-4441-bfc9-9738514a235b">
+        <AttributeRelationship dwd:design-time-name="ec2d6bf0-275c-4873-a377-e5625608547e">
           <AttributeID>Junction Detail</AttributeID>
           <Name>Junction Detail</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="12c50c76-0b16-4d6f-a13b-23f31c862f83">
+        <AttributeRelationship dwd:design-time-name="40c816e5-e91a-411a-bce7-685e70f692d8">
           <AttributeID>Junction Control</AttributeID>
           <Name>Junction Control</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="d813a301-f901-4d5f-9fc5-19f9611b46fb">
+        <AttributeRelationship dwd:design-time-name="e84dcc27-7f25-4cad-a2be-f8ea7c7996f8">
           <AttributeID>Pedestrian Crossing</AttributeID>
           <Name>Pedestrian Crossing</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="349853f9-d682-4cef-b2a1-8da3402ccbc2">
+    <Attribute dwd:design-time-name="a7b1546c-48fb-49b2-8fe9-fe2c7b90fa7c">
       <ID>Junction Detail</ID>
       <Name>Junction Detail</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c26c3d19-c5a3-4fe0-a8a5-698dd311dc56">
+        <KeyColumn dwd:design-time-name="e16247f2-43f9-4b38-aafa-b615a1d1a3e2">
           <DataType>WChar</DataType>
           <DataSize>200</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c921ea7b-71a4-46f5-8bea-8103abd6420e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0f144212-4345-48b0-9a94-b76166c82606">
             <TableID>dwh_DimJunction</TableID>
             <ColumnID>JunctionDetail</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="6fd61e89-481c-4a84-89ad-c4540b098bf7">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="62af82b4-92f4-4a93-8bb0-6f4aced2ae57">
+          <TableID>dwh_DimJunction</TableID>
+          <ColumnID>JunctionDetail</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="ac45edf2-f2ac-4650-8eee-7c77fc73195f">
+    <Attribute dwd:design-time-name="f7b10285-b0bf-4502-bb19-b47bd841eb15">
       <ID>Junction Control</ID>
       <Name>Junction Control</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2d3d5fd2-3751-4542-b62a-d58497167365">
+        <KeyColumn dwd:design-time-name="5bc0e985-c848-44ae-8ec3-08575bd9ef42">
           <DataType>WChar</DataType>
           <DataSize>200</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="314fd704-9b47-4f7d-bddb-0d58c2919f92">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b10915b8-3249-481f-bf66-df464d2780f0">
             <TableID>dwh_DimJunction</TableID>
             <ColumnID>JunctionControl</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="391ddc80-7ad0-411b-9610-976ad71bc174">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="788250e0-1e79-4d4f-a726-229b4ae017b2">
+          <TableID>dwh_DimJunction</TableID>
+          <ColumnID>JunctionControl</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="8248d14d-5e9d-412e-89ac-2624bae5009b">
+    <Attribute dwd:design-time-name="cc538c5c-1059-4fb9-a167-6b7ec75c6397">
       <ID>Pedestrian Crossing</ID>
       <Name>Pedestrian Crossing</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="201ce270-2de8-4812-a242-46cfacf7cac4">
+        <KeyColumn dwd:design-time-name="1aefa4f0-6318-4896-8988-fc47e258b6ad">
           <DataType>WChar</DataType>
           <DataSize>250</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a7eb0096-3eff-47c3-960b-121bd0462282">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b2cc4a31-9477-4938-88c7-3f07d1fc9928">
             <TableID>dwh_DimJunction</TableID>
             <ColumnID>PedestrianCrossing</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="4ffa8c38-182c-4671-af7c-c39b2f675251">
+        <DataType>WChar</DataType>
+        <DataSize>250</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="edf717ef-6c9f-4730-ba8e-cab0f90a2627">
+          <TableID>dwh_DimJunction</TableID>
+          <ColumnID>PedestrianCrossing</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>

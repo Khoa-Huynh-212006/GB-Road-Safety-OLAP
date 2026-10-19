@@ -6,6 +6,18 @@
     <Name>RoadSafetySSAS.database</Name>
     <FullPath>RoadSafetySSAS.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Road Safety.cube</Name>
+      <FullPath>Road Safety.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Road Safety.partitions</Name>
+          <FullPath>Road Safety.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Dim Vehicle.dim</Name>
@@ -72,7 +84,7 @@
           <ConfigurationSetting>
             <Id>Road Safety DWH</Id>
             <Name>Road Safety DWH</Name>
-            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=LAPTOP-U8PM7US2;Integrated Security=SSPI;Initial Catalog=RoadSafetyDWH</Value>
+            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=tcp:LAPTOP-2A47H9L3,62855;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=RoadSafetyDWH</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

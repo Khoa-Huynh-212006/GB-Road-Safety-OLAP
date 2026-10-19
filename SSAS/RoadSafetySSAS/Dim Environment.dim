@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f972102b-7792-4ef6-9884-d7b51b91d0f2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="338f0f45-a586-4b6c-8f5f-ed22f4a20602" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Environment</ID>
   <Name>Dim Environment</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -6,6 +6,32 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1949" scrolltop="-4382" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8170" y="9356" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimEnvironment" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4233" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00008910000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dwh_DimEnvironment" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +47,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-1949</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-4382</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -42,95 +68,117 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="49871d0c-8bf3-4d4c-b958-c461b8a21ea9">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="17debb69-2db6-4df9-9987-a54cb47b42fa">
     <DataSourceViewID>Road Safety DWH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="4c9783f8-4e4e-4d8a-863f-1a6284a369e2">
+  <ErrorConfiguration dwd:design-time-name="d6d823fa-c3e4-40a4-9d35-bfea6a114729">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="81722646-b9fb-4d66-b5f5-0ef6489fc281">
+    <Attribute dwd:design-time-name="d3429ff4-0530-4084-87f5-b94edf35871f">
       <ID>Environment Key</ID>
       <Name>Environment Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ca39aea4-76e1-44b9-8a09-67dfb5cc0030">
+        <KeyColumn dwd:design-time-name="18209198-9e3a-4594-b176-d4b8a14686bd">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="ee33ed04-1e09-4ff1-b125-ee8e32112f7e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e9acb694-5a8a-4698-9115-f3fe5f155a0d">
             <TableID>dwh_DimEnvironment</TableID>
             <ColumnID>EnvironmentKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="c6e71c89-63b7-4dc5-bcfa-d3a12a36806f">
+        <AttributeRelationship dwd:design-time-name="20f9a18d-7b1f-4c51-801e-bbb153979a37">
           <AttributeID>Light Conditions</AttributeID>
           <Name>Light Conditions</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="b25b743b-6379-458a-a3fc-f8ddcd73d682">
+        <AttributeRelationship dwd:design-time-name="333beb9a-9f2e-40eb-bd59-42ba7fc60591">
           <AttributeID>Weather Conditions</AttributeID>
           <Name>Weather Conditions</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="cc0903d7-0276-45f0-9178-46a9c233ed37">
+        <AttributeRelationship dwd:design-time-name="24b19f01-41b9-4582-a455-4f54f6f7ac84">
           <AttributeID>Road Surface Conditions</AttributeID>
           <Name>Road Surface Conditions</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="b68ab5ef-b761-4bde-b5e2-8de43cf9812b">
+    <Attribute dwd:design-time-name="ebcc027a-d4ec-4c18-a4cf-46089de9ad8d">
       <ID>Light Conditions</ID>
       <Name>Light Conditions</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f9562524-b369-41f3-8d94-95b65ffebc50">
+        <KeyColumn dwd:design-time-name="38966751-188d-43d3-89c8-89b519512238">
           <DataType>WChar</DataType>
           <DataSize>200</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="cf1cc513-9c0a-4d4c-a78b-2dbbbcd4dc58">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9951ed6a-2976-457d-b2eb-189c7e66bc0d">
             <TableID>dwh_DimEnvironment</TableID>
             <ColumnID>LightConditions</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="480acb7d-2cff-436f-9330-fadf744019d7">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="25762f6d-2b8c-4ef2-8f08-cc1d56437f7e">
+          <TableID>dwh_DimEnvironment</TableID>
+          <ColumnID>LightConditions</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="71b1d249-04ca-4366-9902-c942409552d2">
+    <Attribute dwd:design-time-name="2554d91d-c588-43bb-9c7d-1f2642bc80c2">
       <ID>Weather Conditions</ID>
       <Name>Weather Conditions</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="08404264-38c6-4261-969e-a828fe4f613b">
+        <KeyColumn dwd:design-time-name="5a0fbf8a-ea32-4188-bd99-34b27b0c1ad0">
           <DataType>WChar</DataType>
           <DataSize>200</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="69d752ab-eff6-4c78-a799-adac704a93ef">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="99255af4-fe96-41fb-862f-9b287d7c8618">
             <TableID>dwh_DimEnvironment</TableID>
             <ColumnID>WeatherConditions</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="e3a37c35-69de-4bf0-8fb0-60d7e2a0d62b">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8634cab3-0a12-41db-9285-f9b952ca3c88">
+          <TableID>dwh_DimEnvironment</TableID>
+          <ColumnID>WeatherConditions</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="cc05a9d0-719f-4779-a6ec-1a0198f4d6c4">
+    <Attribute dwd:design-time-name="d94e5974-7ec1-4450-aecf-37798277fcd4">
       <ID>Road Surface Conditions</ID>
       <Name>Road Surface Conditions</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ed291b10-bf41-4719-aebf-602032b9a7a5">
+        <KeyColumn dwd:design-time-name="3724227a-433a-4634-938d-5d21306894a9">
           <DataType>WChar</DataType>
           <DataSize>200</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="dc52c111-ab52-4ac1-8d82-4997883bed1f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0cb5b8cb-574e-40a5-be72-d2a0b7536ccf">
             <TableID>dwh_DimEnvironment</TableID>
             <ColumnID>RoadSurfaceConditions</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="e7e74371-919e-4ef6-bdfb-6bc31edd0075">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c38c68e0-6387-4401-b04a-e594b0eb4e2e">
+          <TableID>dwh_DimEnvironment</TableID>
+          <ColumnID>RoadSurfaceConditions</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>

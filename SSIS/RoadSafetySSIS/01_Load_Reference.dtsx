@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="10/1/2026 11:58:35 AM"
+  DTS:CreationDate="10/13/2026 3:34:48 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-2A47H9L3"
   DTS:CreatorName="LAPTOP-2A47H9L3\ADMIN"
-  DTS:DTSID="{F817DDA0-EE9C-4B2F-8EA6-80295DCDDAA9}"
+  DTS:DTSID="{F641EB0C-E022-491A-A279-BF50C554CBE9}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="9"
-  DTS:ObjectName="Package1"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="01_Load_Reference"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{DFEAFFB3-0CF8-410F-8C66-4A769D5B25D8}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{5288923C-7E74-44C0-951B-8C90ED02563A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FFCM_DataGuide]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{73126AC1-0FA8-4870-BC42-2C05E064B99A}"
+      DTS:DTSID="{29AF49B3-B89E-4818-B714-1D57B3388C2A}"
       DTS:ObjectName="FFCM_DataGuide">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
-          DTS:LocaleID="2057"
+          DTS:LocaleID="3072"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
@@ -34,39 +34,39 @@
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="200"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="table"
-              DTS:DTSID="{36CC1D2C-8ECB-48F6-8ED2-6A735F13002E}"
+              DTS:DTSID="{50AA7325-3D51-4EB1-80BE-F77A2CDC978F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="200"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="field name"
-              DTS:DTSID="{1C96FAF1-F054-48E6-8531-4D31477FC4FD}"
+              DTS:DTSID="{EF2D3F6F-5434-4C20-A390-AE4CFFA47932}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="200"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="code format"
-              DTS:DTSID="{34CC7D8C-8EF7-4AF0-9857-5E900A3F8344}"
+              DTS:DTSID="{2862426F-6CDE-4A4B-A887-F56EDA439DBD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
+              DTS:ColumnDelimiter="_x003B_"
               DTS:MaximumWidth="500"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="label"
-              DTS:DTSID="{54FA89C9-FD63-4B88-BEB6-327F29FCD33A}"
+              DTS:DTSID="{E55E045E-B744-4A36-94A4-2893E493EEA6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="note"
-              DTS:DTSID="{CF83CB6B-B7B1-475A-ADEF-49584714B226}"
+              DTS:DTSID="{7E2B0ABD-B8ED-4B46-90E0-96A2EEB047CA}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -85,7 +85,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F6B3CE36-9AE1-4252-9260-703FC208DE07}"
+      DTS:DTSID="{A735F185-EC94-4DF2-8859-A04929EC0966}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="v_DataGuideRowCount">
@@ -98,7 +98,7 @@
       DTS:refId="Package\01 - Prepare Reference Tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{B01238A4-2F67-4806-BB3B-F3E54CBA9244}"
+      DTS:DTSID="{796C5C7C-7FA1-4545-ADA8-D10E4F38FF74}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="01 - Prepare Reference Tables"
@@ -107,17 +107,17 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="IF OBJECT_ID(N'stg.DataGuideRaw', N'U') IS NULL&#xA;BEGIN&#xA;    CREATE TABLE stg.DataGuideRaw&#xA;    (&#xA;        DataGuideRawKey INT IDENTITY(1,1) NOT NULL&#xA;            CONSTRAINT PK_DataGuideRaw PRIMARY KEY,&#xA;&#xA;        SourceTable NVARCHAR(100) NULL,&#xA;        FieldName NVARCHAR(200) NULL,&#xA;        RawCode NVARCHAR(200) NULL,&#xA;        Label NVARCHAR(500) NULL,&#xA;        Note NVARCHAR(2000) NULL&#xA;    );&#xA;END;&#xA;&#xA;TRUNCATE TABLE stg.DataGuideRaw;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;IF OBJECT_ID(N'stg.DataGuideRaw', N'U') IS NULL&#xA;BEGIN&#xA;    CREATE TABLE stg.DataGuideRaw&#xA;    (&#xA;        DataGuideRawKey INT IDENTITY(1,1) NOT NULL&#xA;            CONSTRAINT PK_DataGuideRaw PRIMARY KEY,&#xA;&#xA;        SourceTable NVARCHAR(100) NULL,&#xA;        FieldName NVARCHAR(200) NULL,&#xA;        RawCode NVARCHAR(200) NULL,&#xA;        Label NVARCHAR(500) NULL,&#xA;        Note NVARCHAR(2000) NULL&#xA;    );&#xA;END;&#xA;&#xA;TRUNCATE TABLE stg.DataGuideRaw;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\02 - Load Data Guide Raw"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{3F2E22CC-5961-4B91-9DEE-7A36EA69A659}"
+      DTS:DTSID="{42677B5E-AA55-4C6B-91F5-3F941CF024E1}"
       DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="2057"
+      DTS:LocaleID="-1"
       DTS:ObjectName="02 - Load Data Guide Raw"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
@@ -167,17 +167,24 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Inputs[Data Conversion Input].Columns[table]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="table"
+                      lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[table]" />
+                    <inputColumn
                       refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Inputs[Data Conversion Input].Columns[field name]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="field name"
                       lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[field name]" />
                     <inputColumn
                       refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Inputs[Data Conversion Input].Columns[code format]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="code format"
                       lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[code format]" />
                     <inputColumn
@@ -194,13 +201,6 @@
                       cachedLength="2000"
                       cachedName="note"
                       lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[note]" />
-                    <inputColumn
-                      refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Inputs[Data Conversion Input].Columns[table]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="table"
-                      lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[table]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -212,6 +212,27 @@
                   name="Data Conversion Output"
                   synchronousInputId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Inputs[Data Conversion Input]">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Outputs[Data Conversion Output].Columns[SourceTable_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Outputs[Data Conversion Output].Columns[SourceTable_U]"
+                      name="SourceTable_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[table]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
                       refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Outputs[Data Conversion Output].Columns[FieldName_U]"
                       dataType="wstr"
@@ -290,27 +311,6 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[note]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Outputs[Data Conversion Output].Columns[SourceTable_U]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode.Outputs[Data Conversion Output].Columns[SourceTable_U]"
-                      name="SourceTable_U"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[table]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -403,8 +403,8 @@
               <connections>
                 <connection
                   refId="Package\02 - Load Data Guide Raw\DST - DataGuideRaw.Connections[OleDbConnection]"
-                  connectionManagerID="{F05086EA-55A1-4B00-BD44-1090AAD7929D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-2A47H9L3_OLAP2025.RoadSafetyDWH]"
+                  connectionManagerID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_RoadSafetyDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -516,7 +516,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="2057"
+              localeId="3072"
               name="SRC - Data Guide CSV"
               usesDispositions="true"
               version="1">
@@ -549,7 +549,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[table]"
-                      length="50"
+                      length="200"
                       lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[table]"
                       name="table"
                       truncationRowDisposition="FailComponent">
@@ -571,7 +571,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[field name]"
-                      length="50"
+                      length="200"
                       lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[field name]"
                       name="field name"
                       truncationRowDisposition="FailComponent">
@@ -593,7 +593,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[code format]"
-                      length="50"
+                      length="200"
                       lineageId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].Columns[code format]"
                       name="code format"
                       truncationRowDisposition="FailComponent">
@@ -659,19 +659,19 @@
                       refId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[table]"
                       codePage="65001"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="table" />
                     <externalMetadataColumn
                       refId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[field name]"
                       codePage="65001"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="field name" />
                     <externalMetadataColumn
                       refId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[code format]"
                       codePage="65001"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="code format" />
                     <externalMetadataColumn
                       refId="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV.Outputs[Flat File Source Output].ExternalColumns[label]"
@@ -741,7 +741,7 @@
       DTS:refId="Package\03 - Validate Data Guide Load"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{283C0E9F-D852-4969-85A0-41E83BA52696}"
+      DTS:DTSID="{1FDC53E8-D117-4F27-B218-F1669BEF824C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="03 - Validate Data Guide Load"
@@ -750,8 +750,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="DECLARE @RowsRead BIGINT = ?;&#xA;&#xA;DECLARE @RowsLoaded BIGINT =&#xA;(&#xA;    SELECT COUNT_BIG(*)&#xA;    FROM stg.DataGuideRaw&#xA;);&#xA;&#xA;IF @RowsRead = 0&#xA;BEGIN&#xA;    THROW 51001,&#xA;          N'SSIS không đọc được dòng nào từ Data Guide.',&#xA;          1;&#xA;END;&#xA;&#xA;IF @RowsRead &lt;&gt; @RowsLoaded&#xA;BEGIN&#xA;    THROW 51002,&#xA;          N'Số dòng SSIS đọc không khớp với số dòng được nạp vào stg.DataGuideRaw.',&#xA;          1;&#xA;END;&#xA;&#xA;IF @RowsLoaded &lt;&gt; 1821&#xA;BEGIN&#xA;    THROW 51003,&#xA;          N'Số dòng Data Guide không đúng với kết quả profiling mong đợi là 1821.',&#xA;          1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;DECLARE @RowsRead BIGINT = ?;&#xA;&#xA;DECLARE @RowsLoaded BIGINT =&#xA;(&#xA;    SELECT COUNT_BIG(*)&#xA;    FROM stg.DataGuideRaw&#xA;);&#xA;&#xA;IF @RowsRead = 0&#xA;    THROW 51001, N'SSIS không đọc được Data Guide.', 1;&#xA;&#xA;IF @RowsRead &lt;&gt; @RowsLoaded&#xA;    THROW 51002, N'Số dòng đọc khác số dòng đã nạp.', 1;&#xA;&#xA;IF @RowsLoaded &lt;&gt; 1821&#xA;    THROW 51003, N'Data Guide không có đúng 1821 dòng.', 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::v_DataGuideRowCount"
@@ -765,7 +765,7 @@
       DTS:refId="Package\04 - Build Code Lookup"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3569F820-6C9C-4B9D-BBFB-6FC8F59440C6}"
+      DTS:DTSID="{E4726FD9-2E95-4C0E-B3E9-45C2CBFE484B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="04 - Build Code Lookup"
@@ -774,15 +774,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="/*==============================================================&#xA;  Tạo bảng tra cứu mã - nhãn dùng cho quá trình transform&#xA;==============================================================*/&#xA;&#xA;IF OBJECT_ID(N'stg.CodeLookup', N'U') IS NULL&#xA;BEGIN&#xA;    CREATE TABLE stg.CodeLookup&#xA;    (&#xA;        CodeLookupKey INT IDENTITY(1,1) NOT NULL&#xA;            CONSTRAINT PK_CodeLookup PRIMARY KEY,&#xA;&#xA;        SourceTable NVARCHAR(100) NOT NULL,&#xA;        FieldName   NVARCHAR(200) NOT NULL,&#xA;        RawCode     NVARCHAR(200) NOT NULL,&#xA;        Label       NVARCHAR(500) NOT NULL,&#xA;        Note        NVARCHAR(2000) NULL,&#xA;&#xA;        CONSTRAINT UQ_CodeLookup&#xA;            UNIQUE (SourceTable, FieldName, RawCode)&#xA;    );&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;    TRUNCATE TABLE stg.CodeLookup;&#xA;END;&#xA;&#xA;&#xA;/*==============================================================&#xA;  Chỉ lấy những dòng thực sự là mapping mã - nhãn&#xA;==============================================================*/&#xA;&#xA;INSERT INTO stg.CodeLookup&#xA;(&#xA;    SourceTable,&#xA;    FieldName,&#xA;    RawCode,&#xA;    Label,&#xA;    Note&#xA;)&#xA;SELECT DISTINCT&#xA;    LTRIM(RTRIM(SourceTable)),&#xA;    LTRIM(RTRIM(FieldName)),&#xA;    LTRIM(RTRIM(RawCode)),&#xA;    LTRIM(RTRIM(Label)),&#xA;    NULLIF(LTRIM(RTRIM(Note)), N'')&#xA;FROM stg.DataGuideRaw&#xA;WHERE NULLIF(LTRIM(RTRIM(SourceTable)), N'') IS NOT NULL&#xA;  AND NULLIF(LTRIM(RTRIM(FieldName)), N'') IS NOT NULL&#xA;  AND NULLIF(LTRIM(RTRIM(RawCode)), N'') IS NOT NULL&#xA;  AND NULLIF(LTRIM(RTRIM(Label)), N'') IS NOT NULL;&#xA;&#xA;&#xA;/*==============================================================&#xA;  Kiểm tra kết quả theo profiling&#xA;==============================================================*/&#xA;&#xA;DECLARE @MappingCount BIGINT =&#xA;(&#xA;    SELECT COUNT_BIG(*)&#xA;    FROM stg.CodeLookup&#xA;);&#xA;&#xA;IF @MappingCount &lt;&gt; 1774&#xA;BEGIN&#xA;    THROW 51004,&#xA;          N'Số mapping hợp lệ trong CodeLookup không bằng 1774.',&#xA;          1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;IF OBJECT_ID(N'stg.CodeLookup', N'U') IS NULL&#xA;BEGIN&#xA;    CREATE TABLE stg.CodeLookup&#xA;    (&#xA;        CodeLookupKey INT IDENTITY(1,1) NOT NULL&#xA;            CONSTRAINT PK_CodeLookup PRIMARY KEY,&#xA;&#xA;        SourceTable NVARCHAR(100) NOT NULL,&#xA;        FieldName NVARCHAR(200) NOT NULL,&#xA;        RawCode NVARCHAR(200) NOT NULL,&#xA;        Label NVARCHAR(500) NOT NULL,&#xA;        Note NVARCHAR(2000) NULL,&#xA;&#xA;        CONSTRAINT UQ_CodeLookup&#xA;            UNIQUE (SourceTable, FieldName, RawCode)&#xA;    );&#xA;END;&#xA;&#xA;TRUNCATE TABLE stg.CodeLookup;&#xA;&#xA;INSERT INTO stg.CodeLookup&#xA;(&#xA;    SourceTable, FieldName, RawCode, Label, Note&#xA;)&#xA;SELECT DISTINCT&#xA;    LTRIM(RTRIM(SourceTable)),&#xA;    LTRIM(RTRIM(FieldName)),&#xA;    LTRIM(RTRIM(RawCode)),&#xA;    LTRIM(RTRIM(Label)),&#xA;    NULLIF(LTRIM(RTRIM(Note)), N'')&#xA;FROM stg.DataGuideRaw&#xA;WHERE NULLIF(LTRIM(RTRIM(SourceTable)), N'') IS NOT NULL&#xA;  AND NULLIF(LTRIM(RTRIM(FieldName)), N'') IS NOT NULL&#xA;  AND NULLIF(LTRIM(RTRIM(RawCode)), N'') IS NOT NULL&#xA;  AND NULLIF(LTRIM(RTRIM(Label)), N'') IS NOT NULL;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.CodeLookup) &lt;&gt; 1774&#xA;    THROW 51004, N'Số mapping hợp lệ không bằng 1774.', 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\05 - Supplement ONS and Validate Lookup"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E1929989-4A42-4060-A8BE-38E5DECD1355}"
+      DTS:DTSID="{C00AF234-726C-4B0D-8948-51DB7E3DD8A4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="05 - Supplement ONS and Validate Lookup"
@@ -791,8 +791,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;------------------------------------------------------------&#xA;-- 1. Bổ sung ba mã ONS thiếu trong Data Guide&#xA;------------------------------------------------------------&#xA;INSERT INTO stg.CodeLookup&#xA;(&#xA;    SourceTable,&#xA;    FieldName,&#xA;    RawCode,&#xA;    Label,&#xA;    Note&#xA;)&#xA;SELECT&#xA;    supplement.SourceTable,&#xA;    supplement.FieldName,&#xA;    supplement.RawCode,&#xA;    supplement.Label,&#xA;    supplement.Note&#xA;FROM&#xA;(&#xA;    VALUES&#xA;    (&#xA;        N'collision',&#xA;        N'local_authority_ons_district',&#xA;        N'E07000246',&#xA;        N'Somerset West and Taunton',&#xA;        N'Bổ sung từ nguồn ONS chính thức; đơn vị lịch sử được thay thế bởi Somerset từ năm 2023.'&#xA;    ),&#xA;    (&#xA;        N'collision',&#xA;        N'local_authority_ons_district',&#xA;        N'E08000038',&#xA;        N'Barnsley',&#xA;        N'Bổ sung từ nguồn ONS chính thức; mã mới thay thế E08000016 từ năm 2025 do thay đổi địa giới.'&#xA;    ),&#xA;    (&#xA;        N'collision',&#xA;        N'local_authority_ons_district',&#xA;        N'E08000039',&#xA;        N'Sheffield',&#xA;        N'Bổ sung từ nguồn ONS chính thức; mã mới thay thế E08000019 từ năm 2025 do thay đổi địa giới.'&#xA;    )&#xA;) AS supplement&#xA;(&#xA;    SourceTable,&#xA;    FieldName,&#xA;    RawCode,&#xA;    Label,&#xA;    Note&#xA;)&#xA;WHERE NOT EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM stg.CodeLookup AS existing&#xA;    WHERE existing.SourceTable = supplement.SourceTable&#xA;      AND existing.FieldName = supplement.FieldName&#xA;      AND existing.RawCode = supplement.RawCode&#xA;);&#xA;&#xA;------------------------------------------------------------&#xA;-- 2. Kiểm tra không trùng khóa mapping&#xA;------------------------------------------------------------&#xA;IF EXISTS&#xA;(&#xA;    SELECT&#xA;        SourceTable,&#xA;        FieldName,&#xA;        RawCode&#xA;    FROM stg.CodeLookup&#xA;    GROUP BY&#xA;        SourceTable,&#xA;        FieldName,&#xA;        RawCode&#xA;    HAVING COUNT(*) &gt; 1&#xA;)&#xA;BEGIN&#xA;    THROW 51001,&#xA;          N'CodeLookup có mapping bị trùng khóa.',&#xA;          1;&#xA;END;&#xA;&#xA;------------------------------------------------------------&#xA;-- 3. Kiểm tra đúng ba mapping ONS bổ sung&#xA;------------------------------------------------------------&#xA;IF&#xA;(&#xA;    SELECT COUNT(*)&#xA;    FROM stg.CodeLookup&#xA;    WHERE SourceTable = N'collision'&#xA;      AND FieldName = N'local_authority_ons_district'&#xA;      AND&#xA;      (&#xA;          (RawCode = N'E07000246'&#xA;           AND Label = N'Somerset West and Taunton')&#xA;&#xA;          OR&#xA;&#xA;          (RawCode = N'E08000038'&#xA;           AND Label = N'Barnsley')&#xA;&#xA;          OR&#xA;&#xA;          (RawCode = N'E08000039'&#xA;           AND Label = N'Sheffield')&#xA;      )&#xA;) &lt;&gt; 3&#xA;BEGIN&#xA;    THROW 51002,&#xA;          N'Ba mapping ONS bổ sung không đầy đủ hoặc sai label.',&#xA;          1;&#xA;END;&#xA;&#xA;------------------------------------------------------------&#xA;-- 4. Kiểm tra tổng số mapping&#xA;------------------------------------------------------------&#xA;IF&#xA;(&#xA;    SELECT COUNT(*)&#xA;    FROM stg.CodeLookup&#xA;) &lt;&gt; 1777&#xA;BEGIN&#xA;    THROW 51003,&#xA;          N'Tổng số mapping trong CodeLookup không bằng 1777.',&#xA;          1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO stg.CodeLookup&#xA;(&#xA;    SourceTable, FieldName, RawCode, Label, Note&#xA;)&#xA;SELECT&#xA;    N'collision',&#xA;    N'local_authority_ons_district',&#xA;    S.RawCode,&#xA;    S.Label,&#xA;    N'Mapping bổ sung của phiên bản hiện tại.'&#xA;FROM&#xA;(&#xA;    VALUES&#xA;        (N'E07000246', N'Somerset West and Taunton'),&#xA;        (N'E08000038', N'Barnsley'),&#xA;        (N'E08000039', N'Sheffield')&#xA;) AS S(RawCode, Label)&#xA;WHERE NOT EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM stg.CodeLookup AS L&#xA;    WHERE L.SourceTable = N'collision'&#xA;      AND L.FieldName = N'local_authority_ons_district'&#xA;      AND L.RawCode = S.RawCode&#xA;);&#xA;&#xA;IF&#xA;(&#xA;    SELECT COUNT_BIG(*)&#xA;    FROM stg.CodeLookup AS L&#xA;    INNER JOIN&#xA;    (&#xA;        VALUES&#xA;            (N'E07000246', N'Somerset West and Taunton'),&#xA;            (N'E08000038', N'Barnsley'),&#xA;            (N'E08000039', N'Sheffield')&#xA;    ) AS S(RawCode, Label)&#xA;        ON S.RawCode = L.RawCode&#xA;       AND S.Label = L.Label&#xA;    WHERE L.SourceTable = N'collision'&#xA;      AND L.FieldName = N'local_authority_ons_district'&#xA;) &lt;&gt; 3&#xA;    THROW 51005, N'Mapping ONS bổ sung chưa đầy đủ.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.CodeLookup) &lt;&gt; 1777&#xA;    THROW 51006, N'Tổng số mapping không bằng 1777.', 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -800,7 +800,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0D235939-D595-4559-BE53-BADA851F8403}"
+      DTS:DTSID="{B445BF7B-E6A1-4397-8964-78763AF7D0A0}"
       DTS:From="Package\01 - Prepare Reference Tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -808,7 +808,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{97121F50-98FC-441F-94C4-50C0BE577231}"
+      DTS:DTSID="{0F77104A-D3CA-47A6-A2E4-0403540111A9}"
       DTS:From="Package\02 - Load Data Guide Raw"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -816,7 +816,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{3B6B4464-0030-4531-BC16-975FE2C8537B}"
+      DTS:DTSID="{47FD8D42-ECF1-4A33-9336-5A2685E0BC88}"
       DTS:From="Package\03 - Validate Data Guide Load"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -824,7 +824,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{868849AE-8F7D-4BAA-98D8-9015D85ED792}"
+      DTS:DTSID="{5E2BD919-FE38-4BA0-899F-29B590AF886A}"
       DTS:From="Package\04 - Build Code Lookup"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -845,49 +845,49 @@
         <NodeLayout
           Size="220.8,41.6"
           Id="Package\01 - Prepare Reference Tables"
-          TopLeft="192.499989482264,131.733332417276" />
+          TopLeft="365.833313345082,108.333332579997" />
         <NodeLayout
-          Size="202.4,41.6"
+          Size="200.8,41.6"
           Id="Package\02 - Load Data Guide Raw"
-          TopLeft="294.999983881911,263.466664834552" />
+          TopLeft="699.166628465886,120.466665828956" />
         <NodeLayout
           Size="217.6,41.6"
           Id="Package\03 - Validate Data Guide Load"
-          TopLeft="549.999969949326,232.266665051513" />
+          TopLeft="790.833290124107,236.599998354713" />
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\04 - Build Code Lookup"
-          TopLeft="532.499970905484,92.7333326884774" />
+          TopLeft="525.833304603068,267.799998137752" />
         <NodeLayout
           Size="277.6,41.6"
           Id="Package\05 - Supplement ONS and Validate Lookup"
-          TopLeft="372.499979647498,20.7999998553594" />
+          TopLeft="129.999992897114,233.133331712153" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="302.899989482264,173.333332417276">
+          TopLeft="586.633313345082,129.133332579997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="93.299994399647,90.133332417276"
+              EndConnector="112.533315120804,12.133333248959"
               Start="0,0"
-              End="93.299994399647,82.633332417276">
+              End="105.033315120804,12.133333248959">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.066666208638" />
+                    End="52.2666575604019,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.066666208638"
-                    Point2="0,45.066666208638"
-                    Point3="4,45.066666208638" />
+                    Point1="52.2666575604019,0"
+                    Point2="56.2666575604019,0"
+                    Point3="56.2666575604019,4" />
                   <mssgle:LineSegment
-                    End="89.299994399647,45.066666208638" />
+                    End="56.2666575604019,8.13333324895899" />
                   <mssgle:CubicBezierSegment
-                    Point1="89.299994399647,45.066666208638"
-                    Point2="93.299994399647,45.066666208638"
-                    Point3="93.299994399647,49.066666208638" />
+                    Point1="56.2666575604019,8.13333324895899"
+                    Point2="56.2666575604019,12.133333248959"
+                    Point3="60.2666575604019,12.133333248959" />
                   <mssgle:LineSegment
-                    End="93.299994399647,82.633332417276" />
+                    End="105.033315120804,12.133333248959" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -898,30 +898,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="497.399983881911,284.266664834552">
+          TopLeft="799.566628465886,162.066665828956">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.599986067415,-31.199999783039"
+              EndConnector="100.066661658221,74.5333325257569"
               Start="0,0"
-              End="45.099986067415,-31.199999783039">
+              End="100.066661658221,67.0333325257569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="22.2999930337075,0" />
+                    End="0,33.2666662628785" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.2999930337075,0"
-                    Point2="26.2999930337075,0"
-                    Point3="26.2999930337075,-4" />
+                    Point1="0,33.2666662628785"
+                    Point2="0,37.2666662628785"
+                    Point3="4,37.2666662628785" />
                   <mssgle:LineSegment
-                    End="26.2999930337075,-27.199999783039" />
+                    End="96.0666616582211,37.2666662628785" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.2999930337075,-27.199999783039"
-                    Point2="26.2999930337075,-31.199999783039"
-                    Point3="30.2999930337075,-31.199999783039" />
+                    Point1="96.0666616582211,37.2666662628785"
+                    Point2="100.066661658221,37.2666662628785"
+                    Point3="100.066661658221,41.2666662628785" />
                   <mssgle:LineSegment
-                    End="45.099986067415,-31.199999783039" />
+                    End="100.066661658221,67.0333325257569" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -932,30 +932,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="658.799969949326,232.266665051513">
+          TopLeft="790.833290124107,257.399998354713">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33.099999043842,-97.933332363036"
+              EndConnector="-78.599985521039,31.1999997830391"
               Start="0,0"
-              End="-33.099999043842,-90.433332363036">
+              End="-71.099985521039,31.1999997830391">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-44.966666181518" />
+                    End="-35.2999927605195,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-44.966666181518"
-                    Point2="0,-48.966666181518"
-                    Point3="-4,-48.966666181518" />
+                    Point1="-35.2999927605195,0"
+                    Point2="-39.2999927605195,0"
+                    Point3="-39.2999927605195,4" />
                   <mssgle:LineSegment
-                    End="-29.099999043842,-48.966666181518" />
+                    End="-39.2999927605195,27.1999997830391" />
                   <mssgle:CubicBezierSegment
-                    Point1="-29.099999043842,-48.966666181518"
-                    Point2="-33.099999043842,-48.966666181518"
-                    Point3="-33.099999043842,-52.966666181518" />
+                    Point1="-39.2999927605195,27.1999997830391"
+                    Point2="-39.2999927605195,31.1999997830391"
+                    Point3="-43.2999927605195,31.1999997830391" />
                   <mssgle:LineSegment
-                    End="-33.099999043842,-90.433332363036" />
+                    End="-71.099985521039,31.1999997830391" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -966,30 +966,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="625.699970905484,92.7333326884774">
+          TopLeft="525.833304603068,288.599998137752">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-114.399991257986,-30.333332833118"
+              EndConnector="-118.233311705954,-34.666666425599"
               Start="0,0"
-              End="-114.399991257986,-22.833332833118">
+              End="-110.733311705954,-34.666666425599">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-11.166666416559" />
+                    End="-55.1166558529771,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-11.166666416559"
-                    Point2="0,-15.166666416559"
-                    Point3="-4,-15.166666416559" />
+                    Point1="-55.1166558529771,0"
+                    Point2="-59.1166558529771,0"
+                    Point3="-59.1166558529771,-4" />
                   <mssgle:LineSegment
-                    End="-110.399991257986,-15.166666416559" />
+                    End="-59.1166558529771,-30.666666425599" />
                   <mssgle:CubicBezierSegment
-                    Point1="-110.399991257986,-15.166666416559"
-                    Point2="-114.399991257986,-15.166666416559"
-                    Point3="-114.399991257986,-19.166666416559" />
+                    Point1="-59.1166558529771,-30.666666425599"
+                    Point2="-59.1166558529771,-34.666666425599"
+                    Point3="-63.1166558529771,-34.666666425599" />
                   <mssgle:LineSegment
-                    End="-114.399991257986,-22.833332833118" />
+                    End="-110.733311705954,-34.666666425599" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1009,33 +1009,45 @@
         <NodeLayout
           Size="214.4,41.6"
           Id="Package\02 - Load Data Guide Raw\CNV - Data Guide to Unicode"
-          TopLeft="448.333308837481,77.9999994575977" />
+          TopLeft="740.833292855986,94.4666660097573" />
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\02 - Load Data Guide Raw\SRC - Data Guide CSV"
-          TopLeft="135.833325911728,78.8666661182382" />
+          TopLeft="428.333309930233,78.8666661182377" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178.4,41.6"
           Id="Package\02 - Load Data Guide Raw\DST - DataGuideRaw"
-          TopLeft="213.333321677314,207.999998553594" />
+          TopLeft="522.49997145186,210.599998535513" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\02 - Load Data Guide Raw\CNT - Data Guide Rows"
-          TopLeft="539.1666372079,233.133331712153" />
+          TopLeft="788.333290260701,186.333332037595" />
         <EdgeLayout
           Id="Package\02 - Load Data Guide Raw.Paths[Flat File Source Output]"
-          TopLeft="322.233325911728,99.2333327879179">
+          TopLeft="614.733309930233,99.6666661182377">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126.099982925753,0"
+              EndConnector="126.099982925753,15.5999998915196"
               Start="0,0"
-              End="118.599982925753,0">
+              End="118.599982925753,15.5999998915196">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="118.599982925753,0" />
+                    End="59.0499914628767,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.0499914628767,0"
+                    Point2="63.0499914628767,0"
+                    Point3="63.0499914628767,4" />
+                  <mssgle:LineSegment
+                    End="63.0499914628767,11.5999998915196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.0499914628767,11.5999998915196"
+                    Point2="63.0499914628767,15.5999998915196"
+                    Point3="67.0499914628767,15.5999998915196" />
+                  <mssgle:LineSegment
+                    End="118.599982925753,15.5999998915196" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1046,30 +1058,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load Data Guide Raw.Paths[Data Conversion Output]"
-          TopLeft="555.533308837481,119.599999457598">
+          TopLeft="848.033292855986,136.066666009757">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.8333283704188,113.533332254556"
+              EndConnector="35.4999974047146,50.2666660278373"
               Start="0,0"
-              End="78.8333283704188,106.033332254556">
+              End="35.4999974047146,42.7666660278373">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.7666661272778" />
+                    End="0,21.1333330139187" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.7666661272778"
-                    Point2="0,56.7666661272778"
-                    Point3="4,56.7666661272778" />
+                    Point1="0,21.1333330139187"
+                    Point2="0,25.1333330139187"
+                    Point3="4,25.1333330139187" />
                   <mssgle:LineSegment
-                    End="74.8333283704188,56.7666661272778" />
+                    End="31.4999974047146,25.1333330139187" />
                   <mssgle:CubicBezierSegment
-                    Point1="74.8333283704188,56.7666661272778"
-                    Point2="78.8333283704188,56.7666661272778"
-                    Point3="78.8333283704188,60.7666661272778" />
+                    Point1="31.4999974047146,25.1333330139187"
+                    Point2="35.4999974047146,25.1333330139187"
+                    Point3="35.4999974047146,29.1333330139187" />
                   <mssgle:LineSegment
-                    End="78.8333283704188,106.033332254556" />
+                    End="35.4999974047146,42.7666660278373" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1080,30 +1092,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load Data Guide Raw.Paths[Row Count Output 1]"
-          TopLeft="539.1666372079,253.933331712153">
+          TopLeft="788.333290260701,207.133332037595">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-148.233315530586,-25.133333158559"
+              EndConnector="-87.4333188088406,24.2666664979185"
               Start="0,0"
-              End="-140.733315530586,-25.133333158559">
+              End="-79.9333188088406,24.2666664979185">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-70.116657765293,0" />
+                    End="-39.7166594044203,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-70.116657765293,0"
-                    Point2="-74.116657765293,0"
-                    Point3="-74.116657765293,-4" />
+                    Point1="-39.7166594044203,0"
+                    Point2="-43.7166594044203,0"
+                    Point3="-43.7166594044203,4" />
                   <mssgle:LineSegment
-                    End="-74.116657765293,-21.133333158559" />
+                    End="-43.7166594044203,20.2666664979185" />
                   <mssgle:CubicBezierSegment
-                    Point1="-74.116657765293,-21.133333158559"
-                    Point2="-74.116657765293,-25.133333158559"
-                    Point3="-78.116657765293,-25.133333158559" />
+                    Point1="-43.7166594044203,20.2666664979185"
+                    Point2="-43.7166594044203,24.2666664979185"
+                    Point3="-47.7166594044203,24.2666664979185" />
                   <mssgle:LineSegment
-                    End="-140.733315530586,-25.133333158559" />
+                    End="-79.9333188088406,24.2666664979185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

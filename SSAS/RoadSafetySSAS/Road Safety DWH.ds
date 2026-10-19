@@ -3,7 +3,7 @@
   <Name>Road Safety DWH</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-  <ConnectionString>Provider=MSOLEDBSQL.1;Data Source=LAPTOP-U8PM7US2;Integrated Security=SSPI;Initial Catalog=RoadSafetyDWH</ConnectionString>
+  <ConnectionString>Provider=MSOLEDBSQL.1;Data Source=tcp:LAPTOP-2A47H9L3,62855;Integrated Security=SSPI;Initial Catalog=RoadSafetyDWH</ConnectionString>
   <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
   <ImpersonationInfo>
     <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>

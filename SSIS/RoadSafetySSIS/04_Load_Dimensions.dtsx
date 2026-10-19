@@ -1,0 +1,744 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/13/2026 3:34:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-2A47H9L3"
+  DTS:CreatorName="LAPTOP-2A47H9L3\ADMIN"
+  DTS:DTSID="{26C2145B-F328-457A-9DD3-3B95DF48973E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="04_Load_Dimensions"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9E256F03-CB29-42EA-83FB-EB1FCFF1A78A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\01 - Clear Fact and Dimensions"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9D4BDEC7-7B32-4A29-A54F-77C31B4ECAB1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="01 - Clear Fact and Dimensions"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;SET XACT_ABORT ON;&#xA;&#xA;BEGIN TRY&#xA;    BEGIN TRANSACTION;&#xA;&#xA;    TRUNCATE TABLE dwh.FactCasualty;&#xA;&#xA;    DELETE FROM dwh.DimCasualtySeverity;&#xA;    DELETE FROM dwh.DimCollisionSeverity;&#xA;    DELETE FROM dwh.DimCasualty;&#xA;    DELETE FROM dwh.DimDriver;&#xA;    DELETE FROM dwh.DimVehicle;&#xA;    DELETE FROM dwh.DimEnvironment;&#xA;    DELETE FROM dwh.DimJunction;&#xA;    DELETE FROM dwh.DimRoad;&#xA;    DELETE FROM dwh.DimLocation;&#xA;    DELETE FROM dwh.DimTime;&#xA;    DELETE FROM dwh.DimDate;&#xA;&#xA;    DBCC CHECKIDENT ('dwh.DimLocation', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimRoad', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimJunction', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimEnvironment', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimVehicle', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimDriver', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimCasualty', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimCollisionSeverity', RESEED, 0);&#xA;    DBCC CHECKIDENT ('dwh.DimCasualtySeverity', RESEED, 0);&#xA;&#xA;    COMMIT TRANSACTION;&#xA;END TRY&#xA;BEGIN CATCH&#xA;    IF @@TRANCOUNT &gt; 0&#xA;        ROLLBACK TRANSACTION;&#xA;&#xA;    THROW;&#xA;END CATCH;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\02 - Load DimDate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0ecf858a-9a02-466e-b8ff-0b14a502489d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="02 - Load DimDate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;SET LANGUAGE us_english;&#xA;SET DATEFIRST 1;&#xA;&#xA;DECLARE @StartDate DATE = DATEFROMPARTS(2021, 1, 1);&#xA;DECLARE @EndDate DATE = DATEFROMPARTS(2025, 12, 31);&#xA;&#xA;;WITH DateSeries AS&#xA;(&#xA;    SELECT @StartDate AS FullDate&#xA;&#xA;    UNION ALL&#xA;&#xA;    SELECT DATEADD(DAY, 1, FullDate)&#xA;    FROM DateSeries&#xA;    WHERE FullDate &lt; @EndDate&#xA;)&#xA;INSERT INTO dwh.DimDate&#xA;(&#xA;    DateKey,&#xA;    FullDate,&#xA;    [Day],&#xA;    MonthNumber,&#xA;    MonthName,&#xA;    [Quarter],&#xA;    [Year],&#xA;    DayOfWeekNumber,&#xA;    DayOfWeekName,&#xA;    IsWeekend&#xA;)&#xA;SELECT&#xA;    CONVERT(INT, CONVERT(CHAR(8), FullDate, 112)),&#xA;    FullDate,&#xA;    DATEPART(DAY, FullDate),&#xA;    DATEPART(MONTH, FullDate),&#xA;    DATENAME(MONTH, FullDate),&#xA;    DATEPART(QUARTER, FullDate),&#xA;    DATEPART(YEAR, FullDate),&#xA;    DATEPART(WEEKDAY, FullDate),&#xA;    DATENAME(WEEKDAY, FullDate),&#xA;    CAST(&#xA;        CASE&#xA;            WHEN DATEPART(WEEKDAY, FullDate) IN (6, 7)&#xA;                THEN 1&#xA;            ELSE 0&#xA;        END AS BIT&#xA;    )&#xA;FROM DateSeries&#xA;OPTION (MAXRECURSION 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\03 - Load DimTime"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{76dd1f5f-e672-4bd7-9ad6-4ad818b1c3fa}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="03 - Load DimTime"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;;WITH MinuteSeries AS&#xA;(&#xA;    SELECT 0 AS MinuteOfDay&#xA;&#xA;    UNION ALL&#xA;&#xA;    SELECT MinuteOfDay + 1&#xA;    FROM MinuteSeries&#xA;    WHERE MinuteOfDay &lt; 1439&#xA;)&#xA;INSERT INTO dwh.DimTime&#xA;(&#xA;    TimeKey,&#xA;    FullTime,&#xA;    [Hour],&#xA;    [Minute],&#xA;    TimeBand&#xA;)&#xA;SELECT&#xA;    (MinuteOfDay / 60) * 100 + MinuteOfDay % 60,&#xA;    TIMEFROMPARTS(&#xA;        MinuteOfDay / 60,&#xA;        MinuteOfDay % 60,&#xA;        0, 0, 0&#xA;    ),&#xA;    MinuteOfDay / 60,&#xA;    MinuteOfDay % 60,&#xA;    CASE&#xA;        WHEN MinuteOfDay / 60 BETWEEN 0 AND 5&#xA;            THEN N'Night'&#xA;        WHEN MinuteOfDay / 60 BETWEEN 6 AND 11&#xA;            THEN N'Morning'&#xA;        WHEN MinuteOfDay / 60 BETWEEN 12 AND 17&#xA;            THEN N'Afternoon'&#xA;        ELSE N'Evening'&#xA;    END&#xA;FROM MinuteSeries&#xA;OPTION (MAXRECURSION 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\04 - Load DimLocation"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4334981e-c938-431c-9965-de57a80c2331}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="04 - Load DimLocation"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimLocation&#xA;(&#xA;    LocalAuthorityCode,&#xA;    LocalAuthorityName&#xA;)&#xA;SELECT DISTINCT&#xA;    local_authority_ons_district,&#xA;    local_authority_ons_district_name&#xA;FROM stg.Collisions;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\05 - Load DimRoad"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{95d2baf8-61c7-4053-8f49-b7c74c19331e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="05 - Load DimRoad"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimRoad&#xA;(&#xA;    FirstRoadClass,&#xA;    RoadType,&#xA;    SpeedLimit,&#xA;    UrbanOrRuralArea&#xA;)&#xA;SELECT DISTINCT&#xA;    first_road_class,&#xA;    road_type,&#xA;    TRY_CONVERT(&#xA;        SMALLINT,&#xA;        NULLIF(LTRIM(RTRIM(speed_limit)), '')&#xA;    ),&#xA;    urban_or_rural_area&#xA;FROM stg.Collisions;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\06 - Load DimJunction"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5146f67a-46ad-4399-b08d-fdb8a5f49a5a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="06 - Load DimJunction"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimJunction&#xA;(&#xA;    JunctionDetail,&#xA;    JunctionControl,&#xA;    PedestrianCrossing&#xA;)&#xA;SELECT DISTINCT&#xA;    junction_detail,&#xA;    junction_control,&#xA;    pedestrian_crossing&#xA;FROM stg.Collisions;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\07 - Load DimEnvironment"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b2bf6163-a697-42a7-9b5f-40e38ac69729}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="07 - Load DimEnvironment"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimEnvironment&#xA;(&#xA;    LightConditions,&#xA;    WeatherConditions,&#xA;    RoadSurfaceConditions&#xA;)&#xA;SELECT DISTINCT&#xA;    light_conditions,&#xA;    weather_conditions,&#xA;    road_surface_conditions&#xA;FROM stg.Collisions;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\08 - Load DimVehicle"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{69e2e74e-f79e-46e2-bdbf-328fc764693b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="08 - Load DimVehicle"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimVehicle&#xA;(&#xA;    VehicleType,&#xA;    VehicleManoeuvre,&#xA;    SkiddingAndOverturning,&#xA;    VehicleLeavingCarriageway&#xA;)&#xA;SELECT DISTINCT&#xA;    V.vehicle_type,&#xA;    V.vehicle_manoeuvre,&#xA;    V.skidding_and_overturning,&#xA;    V.vehicle_leaving_carriageway&#xA;FROM stg.Vehicles AS V&#xA;INNER JOIN stg.Casualties AS C&#xA;    ON C.collision_index = V.collision_index&#xA;   AND C.vehicle_reference = V.vehicle_reference;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\09 - Load DimDriver"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{540e0752-84b9-495e-b0dc-a7943fcd4262}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="09 - Load DimDriver"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimDriver&#xA;(&#xA;    SexOfDriver,&#xA;    AgeBandOfDriver&#xA;)&#xA;SELECT DISTINCT&#xA;    V.sex_of_driver,&#xA;    V.age_band_of_driver&#xA;FROM stg.Vehicles AS V&#xA;INNER JOIN stg.Casualties AS C&#xA;    ON C.collision_index = V.collision_index&#xA;   AND C.vehicle_reference = V.vehicle_reference;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\10 - Load DimCasualty"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ba09e6d7-3eb3-4b4d-b0a4-e200acfddf85}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="10 - Load DimCasualty"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimCasualty&#xA;(&#xA;    CasualtyClass,&#xA;    SexOfCasualty,&#xA;    AgeBandOfCasualty,&#xA;    CasualtyType&#xA;)&#xA;SELECT DISTINCT&#xA;    casualty_class,&#xA;    sex_of_casualty,&#xA;    age_band_of_casualty,&#xA;    casualty_type&#xA;FROM stg.Casualties;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\11 - Load DimCollisionSeverity"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8a7d6fb4-8f13-4efb-b16c-12d81aaffa66}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="11 - Load DimCollisionSeverity"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimCollisionSeverity&#xA;(&#xA;    CollisionSeverity,&#xA;    CollisionSeverityGroup&#xA;)&#xA;SELECT DISTINCT&#xA;    collision_severity,&#xA;    CASE&#xA;        WHEN collision_severity IN (N'Fatal', N'Serious')&#xA;            THEN N'KSI'&#xA;        WHEN collision_severity = N'Slight'&#xA;            THEN N'Non-KSI'&#xA;        ELSE N'Unknown'&#xA;    END&#xA;FROM stg.Collisions;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\12 - Load DimCasualtySeverity"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e70ba643-0b1b-4eaf-836d-b5df7c04cd9a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="12 - Load DimCasualtySeverity"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;INSERT INTO dwh.DimCasualtySeverity&#xA;(&#xA;    CasualtySeverity,&#xA;    CasualtySeverityGroup&#xA;)&#xA;SELECT DISTINCT&#xA;    casualty_severity,&#xA;    CASE&#xA;        WHEN casualty_severity IN (N'Fatal', N'Serious')&#xA;            THEN N'KSI'&#xA;        WHEN casualty_severity = N'Slight'&#xA;            THEN N'Non-KSI'&#xA;        ELSE N'Unknown'&#xA;    END&#xA;FROM stg.Casualties;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\13 - Validate Dimensions"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e622a10f-c78f-4a63-b8c0-f472922f23ea}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="13 - Validate Dimensions"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM dwh.DimDate) &lt;&gt; 1826&#xA;    THROW 52001, N'DimDate không có đúng 1826 dòng.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM dwh.DimTime) &lt;&gt; 1440&#xA;    THROW 52002, N'DimTime không có đúng 1440 dòng.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM dwh.DimLocation) &lt;&gt; 370&#xA;    THROW 52003, N'DimLocation không có đúng 370 dòng.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM dwh.DimCollisionSeverity) &lt;&gt; 3&#xA;    THROW 52004, N'DimCollisionSeverity không có đúng 3 dòng.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM dwh.DimCasualtySeverity) &lt;&gt; 3&#xA;    THROW 52005, N'DimCasualtySeverity không có đúng 3 dòng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimRoad)&#xA;    THROW 52006, N'DimRoad rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimJunction)&#xA;    THROW 52007, N'DimJunction rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimEnvironment)&#xA;    THROW 52008, N'DimEnvironment rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimVehicle)&#xA;    THROW 52009, N'DimVehicle rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimDriver)&#xA;    THROW 52010, N'DimDriver rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCasualty)&#xA;    THROW 52011, N'DimCasualty rỗng.', 1;&#xA;&#xA;IF&#xA;(&#xA;    (SELECT MIN(FullDate) FROM dwh.DimDate)&#xA;        &lt;&gt; DATEFROMPARTS(2021, 1, 1)&#xA;    OR&#xA;    (SELECT MAX(FullDate) FROM dwh.DimDate)&#xA;        &lt;&gt; DATEFROMPARTS(2025, 12, 31)&#xA;)&#xA;    THROW 52012, N'Phạm vi ngày không đúng.', 1;&#xA;&#xA;IF NOT EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.DimTime&#xA;    WHERE TimeKey = 0&#xA;      AND FullTime = CAST('00:00:00' AS TIME(0))&#xA;)&#xA;OR NOT EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.DimTime&#xA;    WHERE TimeKey = 2359&#xA;      AND FullTime = CAST('23:59:00' AS TIME(0))&#xA;)&#xA;    THROW 52013, N'Phạm vi giờ không đúng.', 1;&#xA;&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.DimCollisionSeverity&#xA;    WHERE CollisionSeverityGroup &lt;&gt;&#xA;        CASE&#xA;            WHEN CollisionSeverity IN (N'Fatal', N'Serious')&#xA;                THEN N'KSI'&#xA;            WHEN CollisionSeverity = N'Slight'&#xA;                THEN N'Non-KSI'&#xA;            ELSE N'Unknown'&#xA;        END&#xA;)&#xA;    THROW 52014, N'Nhóm Collision Severity sai.', 1;&#xA;&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.DimCasualtySeverity&#xA;    WHERE CasualtySeverityGroup &lt;&gt;&#xA;        CASE&#xA;            WHEN CasualtySeverity IN (N'Fatal', N'Serious')&#xA;                THEN N'KSI'&#xA;            WHEN CasualtySeverity = N'Slight'&#xA;                THEN N'Non-KSI'&#xA;            ELSE N'Unknown'&#xA;        END&#xA;)&#xA;    THROW 52015, N'Nhóm Casualty Severity sai.', 1;&#xA;&#xA;IF EXISTS (SELECT 1 FROM dwh.FactCasualty)&#xA;    THROW 52016, N'Fact phải rỗng trước khi nạp.', 1;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{52C3993A-9FFD-445E-ACCC-DFE903452A0C}"
+      DTS:From="Package\01 - Clear Fact and Dimensions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\02 - Load DimDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{019056AF-16E7-4785-8E71-438E5B56F20A}"
+      DTS:From="Package\02 - Load DimDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\03 - Load DimTime" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{2AE6C2D5-7FA4-4AFE-A94B-6320782BC74B}"
+      DTS:From="Package\11 - Load DimCollisionSeverity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\12 - Load DimCasualtySeverity" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{89B17E2A-1DD5-4EDF-AC08-1C70A3391DBD}"
+      DTS:From="Package\12 - Load DimCasualtySeverity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\13 - Validate Dimensions" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{29EA0CFE-6F33-4BE8-87A4-C69A4332F127}"
+      DTS:From="Package\03 - Load DimTime"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\04 - Load DimLocation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE5B257D-1097-47F0-A124-BE7F452DC778}"
+      DTS:From="Package\04 - Load DimLocation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\05 - Load DimRoad" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{929BD2A1-4AB2-467E-A8A8-F6F7AC3AD4AF}"
+      DTS:From="Package\05 - Load DimRoad"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\06 - Load DimJunction" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{FD8AE8EC-215A-4A8D-9881-1931BD2EBF26}"
+      DTS:From="Package\06 - Load DimJunction"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\07 - Load DimEnvironment" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{9A372538-A219-4E7F-B36C-7C34188C258E}"
+      DTS:From="Package\07 - Load DimEnvironment"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\08 - Load DimVehicle" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{A075151A-1715-49A0-A2CE-8723FAA04B2B}"
+      DTS:From="Package\08 - Load DimVehicle"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\09 - Load DimDriver" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F7FD7E3-F562-4F3B-8BE0-A277827D6693}"
+      DTS:From="Package\09 - Load DimDriver"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\10 - Load DimCasualty" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{2CD093B8-B9AE-4629-A066-238DA180F69A}"
+      DTS:From="Package\10 - Load DimCasualty"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\11 - Load DimCollisionSeverity" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\01 - Clear Fact and Dimensions"
+          TopLeft="57.4999968583388,23.3999998372793" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\07 - Load DimEnvironment"
+          TopLeft="318.333315940368,126.733333158559" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\02 - Load DimDate"
+          TopLeft="339.166648135418,26.4000012294451" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\06 - Load DimJunction"
+          TopLeft="602.499967080853,136.466667130722" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\04 - Load DimLocation"
+          TopLeft="851.666620133654,40.4666685048077" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\03 - Load DimTime"
+          TopLeft="599.166633929645,32.6666685590479" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\05 - Load DimRoad"
+          TopLeft="857.499953148268,126.466668613288" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\09 - Load DimDriver"
+          TopLeft="120.833326731292,219.000000596642" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\08 - Load DimVehicle"
+          TopLeft="69.9999961753691,124.733335292008" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\13 - Validate Dimensions"
+          TopLeft="469.999974320333,329.266667203042" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\10 - Load DimCasualty"
+          TopLeft="369.16664649629,229.600001229445" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\12 - Load DimCasualtySeverity"
+          TopLeft="869.999952465298,228.066668613288" />
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\11 - Load DimCollisionSeverity"
+          TopLeft="629.166632290517,226.533335997131" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="281.499996858339,45.7000005333622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.666651277079,0"
+              Start="0,0"
+              End="50.166651277079,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.166651277079,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="504.766648135418,50.3333348942465">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.3999857942272,0"
+              Start="0,0"
+              End="86.8999857942272,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.8999857942272,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="765.566633929645,57.3666685319278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.0999862040085,0"
+              Start="0,0"
+              End="78.5999862040085,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.5999862040085,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="942.183286640961,82.0666685048077">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.4000001084804"
+              Start="0,0"
+              End="0,36.9000001084804">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.9000001084804" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="857.499953148268,147.266668613288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.5999860674149,9.99999851743382"
+              Start="0,0"
+              End="-65.0999860674149,9.99999851743382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-32.2999930337074,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.2999930337074,0"
+                    Point2="-36.2999930337074,0"
+                    Point3="-36.2999930337074,4" />
+                  <mssgle:LineSegment
+                    End="-36.2999930337074,5.99999851743382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.2999930337074,5.99999851743382"
+                    Point2="-36.2999930337074,9.99999851743382"
+                    Point3="-40.2999930337074,9.99999851743382" />
+                  <mssgle:LineSegment
+                    End="-65.0999860674149,9.99999851743382" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="602.499967080853,157.266667130722">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.5666511404851,-9.73333397216271"
+              Start="0,0"
+              End="-75.0666511404851,-9.73333397216271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-37.2833255702425,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.2833255702425,0"
+                    Point2="-41.2833255702425,0"
+                    Point3="-41.2833255702425,-4" />
+                  <mssgle:LineSegment
+                    End="-41.2833255702425,-5.73333397216271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.2833255702425,-5.73333397216271"
+                    Point2="-41.2833255702425,-9.73333397216271"
+                    Point3="-45.2833255702425,-9.73333397216271" />
+                  <mssgle:LineSegment
+                    End="-75.0666511404851,-9.73333397216271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="318.333315940368,146.533334225284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70.7333197649988,0"
+              Start="0,0"
+              End="-63.2333197649988,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-63.2333197649988,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="158.799996175369,166.333335292008">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.6333305559226,52.6666653046343"
+              Start="0,0"
+              End="47.6333305559226,45.1666653046343">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.3333326523172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.3333326523172"
+                    Point2="0,26.3333326523172"
+                    Point3="4,26.3333326523172" />
+                  <mssgle:LineSegment
+                    End="43.6333305559226,26.3333326523172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.6333305559226,26.3333326523172"
+                    Point2="47.6333305559226,26.3333326523172"
+                    Point3="47.6333305559226,30.3333326523172" />
+                  <mssgle:LineSegment
+                    End="47.6333305559226,45.1666653046343" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="292.033326731292,239.800000596642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.1333197649989,10.6000006328026"
+              Start="0,0"
+              End="69.6333197649989,10.6000006328026">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.5666598824994,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5666598824994,0"
+                    Point2="38.5666598824994,0"
+                    Point3="38.5666598824994,4" />
+                  <mssgle:LineSegment
+                    End="38.5666598824994,6.60000063280265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.5666598824994,6.60000063280265"
+                    Point2="38.5666598824994,10.6000006328026"
+                    Point3="42.5666598824994,10.6000006328026" />
+                  <mssgle:LineSegment
+                    End="69.6333197649989,10.6000006328026" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="553.16664649629,248.866668613288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.9999857942266,0"
+              Start="0,0"
+              End="68.4999857942266,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="68.4999857942266,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="739.566632290517,226.533335997131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241.233320174781,1.53333261615714"
+              Start="0,0"
+              End="241.233320174781,-5.96666738384286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
+                  <mssgle:LineSegment
+                    End="237.233320174781,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="237.233320174781,-22.5"
+                    Point2="241.233320174781,-22.5"
+                    Point3="241.233320174781,-18.5" />
+                  <mssgle:LineSegment
+                    End="241.233320174781,-5.96666738384286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="980.799952465298,269.666668613288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-413.999978144965,59.5999985897541"
+              Start="0,0"
+              End="-413.999978144965,52.0999985897541">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.799999294877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.799999294877"
+                    Point2="0,29.799999294877"
+                    Point3="-4,29.799999294877" />
+                  <mssgle:LineSegment
+                    End="-409.999978144965,29.799999294877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-409.999978144965,29.799999294877"
+                    Point2="-413.999978144965,29.799999294877"
+                    Point3="-413.999978144965,33.799999294877" />
+                  <mssgle:LineSegment
+                    End="-413.999978144965,52.0999985897541" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

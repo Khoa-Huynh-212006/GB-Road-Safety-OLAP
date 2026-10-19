@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="10/1/2026 12:02:21 PM"
+  DTS:CreationDate="10/13/2026 3:34:52 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-2A47H9L3"
   DTS:CreatorName="LAPTOP-2A47H9L3\ADMIN"
-  DTS:DTSID="{84229882-E10C-49EE-B8D7-31C665298500}"
+  DTS:DTSID="{D69C9F9E-B81F-4F64-BFD6-75CB16FCB583}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="2057"
-  DTS:ObjectName="Package1"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="05_Load_FactCasualty"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{61CC20C2-1A46-4BED-8907-B7C30839A626}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{5DB7AB82-C34C-46B9-9C17-E7A01DB74CF9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B98F1C95-2BC0-496B-B4B3-C15F72754A77}"
+      DTS:DTSID="{CA799DE7-B608-476A-B374-D7791902A7B2}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="v_FactCasualtyRowCount">
@@ -31,7 +31,7 @@
       DTS:refId="Package\01 - Validate Fact Sources"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{DEC936D4-CA0F-48EB-B356-1DAED6E4D844}"
+      DTS:DTSID="{88340592-528A-47C6-9D86-466D98ED695D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="01 - Validate Fact Sources"
@@ -40,15 +40,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;/* 1. Kiểm tra số dòng của ba bảng staging */&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Collisions) &lt;&gt; 513801&#xA;BEGIN&#xA;    THROW 53001, N'stg.Collisions không có đúng 513.801 dòng.', 1;&#xA;END;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Vehicles) &lt;&gt; 937265&#xA;BEGIN&#xA;    THROW 53002, N'stg.Vehicles không có đúng 937.265 dòng.', 1;&#xA;END;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Casualties) &lt;&gt; 652821&#xA;BEGIN&#xA;    THROW 53003, N'stg.Casualties không có đúng 652.821 dòng.', 1;&#xA;END;&#xA;&#xA;&#xA;/* 2. Kiểm tra các Dimension đã được nạp */&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimDate)&#xA;    THROW 53004, N'DimDate chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimTime)&#xA;    THROW 53005, N'DimTime chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimLocation)&#xA;    THROW 53006, N'DimLocation chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimRoad)&#xA;    THROW 53007, N'DimRoad chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimJunction)&#xA;    THROW 53008, N'DimJunction chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimEnvironment)&#xA;    THROW 53009, N'DimEnvironment chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimVehicle)&#xA;    THROW 53010, N'DimVehicle chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimDriver)&#xA;    THROW 53011, N'DimDriver chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCasualty)&#xA;    THROW 53012, N'DimCasualty chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCollisionSeverity)&#xA;    THROW 53013, N'DimCollisionSeverity chưa có dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCasualtySeverity)&#xA;    THROW 53014, N'DimCasualtySeverity chưa có dữ liệu.', 1;&#xA;&#xA;&#xA;/* 3. Fact phải đang rỗng trước khi nạp mới */&#xA;IF EXISTS (SELECT 1 FROM dwh.FactCasualty)&#xA;BEGIN&#xA;    THROW 53015, N'FactCasualty không rỗng trước khi nạp dữ liệu.', 1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Collisions) &lt;&gt; 513801&#xA;    THROW 53001, N'Stg Collisions chưa đủ dữ liệu.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Vehicles) &lt;&gt; 937265&#xA;    THROW 53002, N'Stg Vehicles chưa đủ dữ liệu.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Casualties) &lt;&gt; 652821&#xA;    THROW 53003, N'Stg Casualties chưa đủ dữ liệu.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimDate)&#xA;    THROW 53004, N'DimDate rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimTime)&#xA;    THROW 53005, N'DimTime rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimLocation)&#xA;    THROW 53006, N'DimLocation rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimRoad)&#xA;    THROW 53007, N'DimRoad rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimJunction)&#xA;    THROW 53008, N'DimJunction rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimEnvironment)&#xA;    THROW 53009, N'DimEnvironment rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimVehicle)&#xA;    THROW 53010, N'DimVehicle rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimDriver)&#xA;    THROW 53011, N'DimDriver rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCasualty)&#xA;    THROW 53012, N'DimCasualty rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCollisionSeverity)&#xA;    THROW 53013, N'DimCollisionSeverity rỗng.', 1;&#xA;&#xA;IF NOT EXISTS (SELECT 1 FROM dwh.DimCasualtySeverity)&#xA;    THROW 53014, N'DimCasualtySeverity rỗng.', 1;&#xA;&#xA;IF EXISTS (SELECT 1 FROM dwh.FactCasualty)&#xA;    THROW 53015, N'Fact chưa được dọn trước khi nạp.', 1;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\02 - Load FactCasualty"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{C89F19AF-50A0-40CE-B185-584EAA11A492}"
+      DTS:DTSID="{B30AD5F8-E00A-46D0-98D9-1F725AE14DA7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="02 - Load FactCasualty"
@@ -59,11 +59,11 @@
           version="1">
           <components>
             <component
-              refId="Package\02 - Load FactCasualty\CNT - Fact Rows"
+              refId="Package\02 - Load FactCasualty\CNT - FactCasualty Rows"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="CNT - Fact Rows">
+              name="CNT - FactCasualty Rows">
               <properties>
                 <property
                   dataType="System.String"
@@ -72,7 +72,7 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\02 - Load FactCasualty\CNT - Fact Rows.Inputs[Row Count Input 1]"
+                  refId="Package\02 - Load FactCasualty\CNT - FactCasualty Rows.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -80,9 +80,9 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\02 - Load FactCasualty\CNT - Fact Rows.Outputs[Row Count Output 1]"
+                  refId="Package\02 - Load FactCasualty\CNT - FactCasualty Rows.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\02 - Load FactCasualty\CNT - Fact Rows.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\02 - Load FactCasualty\CNT - FactCasualty Rows.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -120,7 +120,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">true</property>
+                  name="AlwaysUseDefaultCodePage">false</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -133,7 +133,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">true</property>
+                  name="FastLoadKeepNulls">false</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -146,8 +146,8 @@
               <connections>
                 <connection
                   refId="Package\02 - Load FactCasualty\DST - FactCasualty.Connections[OleDbConnection]"
-                  connectionManagerID="{F05086EA-55A1-4B00-BD44-1090AAD7929D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-2A47H9L3_OLAP2025.RoadSafetyDWH]"
+                  connectionManagerID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_RoadSafetyDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -164,95 +164,95 @@
                       cachedDataType="i4"
                       cachedName="DateKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[DateKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[TimeKey]"
                       cachedDataType="i4"
                       cachedName="TimeKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[TimeKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[TimeKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[LocationKey]"
                       cachedDataType="i4"
                       cachedName="LocationKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[LocationKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[LocationKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[LocationKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[RoadKey]"
                       cachedDataType="i4"
                       cachedName="RoadKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[RoadKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[RoadKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[RoadKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[JunctionKey]"
                       cachedDataType="i4"
                       cachedName="JunctionKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[JunctionKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[JunctionKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[JunctionKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[EnvironmentKey]"
                       cachedDataType="i4"
                       cachedName="EnvironmentKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[EnvironmentKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[EnvironmentKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[EnvironmentKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CollisionSeverityKey]"
                       cachedDataType="i4"
                       cachedName="CollisionSeverityKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CollisionSeverityKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionSeverityKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionSeverityKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[VehicleKey]"
                       cachedDataType="i4"
                       cachedName="VehicleKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[VehicleKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[DriverKey]"
                       cachedDataType="i4"
                       cachedName="DriverKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[DriverKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[DriverKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[DriverKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CasualtyKey]"
                       cachedDataType="i4"
                       cachedName="CasualtyKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CasualtyKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CasualtySeverityKey]"
                       cachedDataType="i4"
                       cachedName="CasualtySeverityKey"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CasualtySeverityKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CollisionIndex]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1258"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CollisionIndex"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CollisionIndex]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionIndex]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionIndex]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[VehicleReference]"
                       cachedDataType="i4"
                       cachedName="VehicleReference"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[VehicleReference]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleReference]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleReference]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CasualtyReference]"
                       cachedDataType="i4"
                       cachedName="CasualtyReference"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CasualtyReference]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyReference]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyReference]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[VehicleInvolvementID]"
-                      cachedCodepage="1252"
+                      cachedCodepage="1258"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="VehicleInvolvementID"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[VehicleInvolvementID]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[Longitude]"
                       cachedDataType="numeric"
@@ -260,7 +260,7 @@
                       cachedPrecision="9"
                       cachedScale="6"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[Longitude]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[Longitude]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[Latitude]"
                       cachedDataType="numeric"
@@ -268,19 +268,19 @@
                       cachedPrecision="9"
                       cachedScale="6"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[Latitude]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[Latitude]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CasualtyCount]"
                       cachedDataType="ui1"
                       cachedName="CasualtyCount"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CasualtyCount]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyCount]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyCount]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[KSICasualtyCount]"
                       cachedDataType="ui1"
                       cachedName="KSICasualtyCount"
                       externalMetadataColumnId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[KSICasualtyCount]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[KSICasualtyCount]" />
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[KSICasualtyCount]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -334,7 +334,7 @@
                       name="CasualtySeverityKey" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CollisionIndex]"
-                      codePage="1252"
+                      codePage="1258"
                       dataType="str"
                       length="50"
                       name="CollisionIndex" />
@@ -348,7 +348,7 @@
                       name="CasualtyReference" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[VehicleInvolvementID]"
-                      codePage="1252"
+                      codePage="1258"
                       dataType="str"
                       length="100"
                       name="VehicleInvolvementID" />
@@ -401,11 +401,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows"
+              refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="SRC - FactCasualty Rows"
+              name="SRC - FactCasualty Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -432,176 +432,103 @@
     R.RoadKey,
     J.JunctionKey,
     E.EnvironmentKey,
-    CollisionSeverityDim.CollisionSeverityKey,
-    VehicleDim.VehicleKey,
-    DriverDim.DriverKey,
-    CasualtyDim.CasualtyKey,
-    CasualtySeverityDim.CasualtySeverityKey,
+    CS.CollisionSeverityKey,
+    VD.VehicleKey,
+    DD.DriverKey,
+    CD.CasualtyKey,
+    CAS.CasualtySeverityKey,
 
     C.collision_index AS CollisionIndex,
     CA.vehicle_reference AS VehicleReference,
     CA.casualty_reference AS CasualtyReference,
 
     CAST(
-        CONCAT(
-            CA.collision_index,
-            '-',
-            CA.vehicle_reference
-        )
+        CONCAT(CA.collision_index, '-', CA.vehicle_reference)
         AS VARCHAR(100)
     ) AS VehicleInvolvementID,
 
     TRY_CONVERT(
         DECIMAL(9,6),
-        C.longitude
+        NULLIF(LTRIM(RTRIM(C.longitude)), '')
     ) AS Longitude,
 
     TRY_CONVERT(
         DECIMAL(9,6),
-        C.latitude
+        NULLIF(LTRIM(RTRIM(C.latitude)), '')
     ) AS Latitude,
 
     CAST(1 AS TINYINT) AS CasualtyCount,
 
     CAST(
         CASE
-            WHEN CA.casualty_severity IN
-                 (N'Fatal', N'Serious')
-            THEN 1
+            WHEN CA.casualty_severity IN (N'Fatal', N'Serious')
+                THEN 1
             ELSE 0
-        END
-        AS TINYINT
+        END AS TINYINT
     ) AS KSICasualtyCount
 
 FROM stg.Casualties AS CA
 
-/* Mỗi casualty thuộc một collision */
 INNER JOIN stg.Collisions AS C
     ON C.collision_index = CA.collision_index
 
-/* Tìm vehicle mà casualty tham chiếu */
 INNER JOIN stg.Vehicles AS V
-    ON  V.collision_index = CA.collision_index
-    AND V.vehicle_reference = CA.vehicle_reference
+    ON V.collision_index = CA.collision_index
+   AND V.vehicle_reference = CA.vehicle_reference
 
-/* Tra khóa ngày */
 INNER JOIN dwh.DimDate AS D
-    ON D.FullDate = TRY_CONVERT(
-        DATE,
-        C.[date]
-    )
+    ON D.FullDate = C.[date]
 
-/* Tra khóa thời gian */
 INNER JOIN dwh.DimTime AS T
-    ON T.FullTime = TRY_CONVERT(
-        TIME(0),
-        C.[time]
-    )
+    ON T.FullTime = C.[time]
 
-/* Tra khóa địa phương */
 INNER JOIN dwh.DimLocation AS L
-    ON L.LocalAuthorityCode =
-       C.local_authority_ons_district
+    ON L.LocalAuthorityCode = C.local_authority_ons_district
 
-/* Tra khóa đặc điểm đường */
 INNER JOIN dwh.DimRoad AS R
-    ON  R.FirstRoadClass =
-        C.first_road_class
+    ON R.FirstRoadClass = C.first_road_class
+   AND R.RoadType = C.road_type
+   AND ISNULL(R.SpeedLimit, -32768) =
+       ISNULL(
+           TRY_CONVERT(
+               SMALLINT,
+               NULLIF(LTRIM(RTRIM(C.speed_limit)), '')
+           ),
+           -32768
+       )
+   AND R.UrbanOrRuralArea = C.urban_or_rural_area
 
-    AND R.RoadType =
-        C.road_type
-
-    AND ISNULL(R.SpeedLimit, -32768) =
-        ISNULL(
-            TRY_CONVERT(
-                SMALLINT,
-                NULLIF(
-                    LTRIM(
-                        RTRIM(
-                            CONVERT(
-                                VARCHAR(20),
-                                C.speed_limit
-                            )
-                        )
-                    ),
-                    ''
-                )
-            ),
-            -32768
-        )
-
-    AND R.UrbanOrRuralArea =
-        C.urban_or_rural_area
-
-/* Tra khóa đặc điểm nút giao */
 INNER JOIN dwh.DimJunction AS J
-    ON  J.JunctionDetail =
-        C.junction_detail
+    ON J.JunctionDetail = C.junction_detail
+   AND J.JunctionControl = C.junction_control
+   AND J.PedestrianCrossing = C.pedestrian_crossing
 
-    AND J.JunctionControl =
-        C.junction_control
-
-    AND J.PedestrianCrossing =
-        C.pedestrian_crossing
-
-/* Tra khóa điều kiện môi trường */
 INNER JOIN dwh.DimEnvironment AS E
-    ON  E.LightConditions =
-        C.light_conditions
+    ON E.LightConditions = C.light_conditions
+   AND E.WeatherConditions = C.weather_conditions
+   AND E.RoadSurfaceConditions = C.road_surface_conditions
 
-    AND E.WeatherConditions =
-        C.weather_conditions
+INNER JOIN dwh.DimCollisionSeverity AS CS
+    ON CS.CollisionSeverity = C.collision_severity
 
-    AND E.RoadSurfaceConditions =
-        C.road_surface_conditions
+INNER JOIN dwh.DimVehicle AS VD
+    ON VD.VehicleType = V.vehicle_type
+   AND VD.VehicleManoeuvre = V.vehicle_manoeuvre
+   AND VD.SkiddingAndOverturning = V.skidding_and_overturning
+   AND VD.VehicleLeavingCarriageway = V.vehicle_leaving_carriageway
 
-/* Tra mức độ nghiêm trọng của collision */
-INNER JOIN dwh.DimCollisionSeverity
-    AS CollisionSeverityDim
-    ON CollisionSeverityDim.CollisionSeverity =
-       C.collision_severity
+INNER JOIN dwh.DimDriver AS DD
+    ON DD.SexOfDriver = V.sex_of_driver
+   AND DD.AgeBandOfDriver = V.age_band_of_driver
 
-/* Tra đặc điểm phương tiện */
-INNER JOIN dwh.DimVehicle AS VehicleDim
-    ON  VehicleDim.VehicleType =
-        V.vehicle_type
+INNER JOIN dwh.DimCasualty AS CD
+    ON CD.CasualtyClass = CA.casualty_class
+   AND CD.SexOfCasualty = CA.sex_of_casualty
+   AND CD.AgeBandOfCasualty = CA.age_band_of_casualty
+   AND CD.CasualtyType = CA.casualty_type
 
-    AND VehicleDim.VehicleManoeuvre =
-        V.vehicle_manoeuvre
-
-    AND VehicleDim.SkiddingAndOverturning =
-        V.skidding_and_overturning
-
-    AND VehicleDim.VehicleLeavingCarriageway =
-        V.vehicle_leaving_carriageway
-
-/* Tra đặc điểm người điều khiển */
-INNER JOIN dwh.DimDriver AS DriverDim
-    ON  DriverDim.SexOfDriver =
-        V.sex_of_driver
-
-    AND DriverDim.AgeBandOfDriver =
-        V.age_band_of_driver
-
-/* Tra đặc điểm casualty */
-INNER JOIN dwh.DimCasualty AS CasualtyDim
-    ON  CasualtyDim.CasualtyClass =
-        CA.casualty_class
-
-    AND CasualtyDim.SexOfCasualty =
-        CA.sex_of_casualty
-
-    AND CasualtyDim.AgeBandOfCasualty =
-        CA.age_band_of_casualty
-
-    AND CasualtyDim.CasualtyType =
-        CA.casualty_type
-
-/* Tra mức độ thương tích của casualty */
-INNER JOIN dwh.DimCasualtySeverity
-    AS CasualtySeverityDim
-    ON CasualtySeverityDim.CasualtySeverity =
-       CA.casualty_severity;</property>
+INNER JOIN dwh.DimCasualtySeverity AS CAS
+    ON CAS.CasualtySeverity = CA.casualty_severity;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -626,403 +553,403 @@ INNER JOIN dwh.DimCasualtySeverity
               </properties>
               <connections>
                 <connection
-                  refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Connections[OleDbConnection]"
-                  connectionManagerID="{F05086EA-55A1-4B00-BD44-1090AAD7929D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-2A47H9L3_OLAP2025.RoadSafetyDWH]"
+                  refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Connections[OleDbConnection]"
+                  connectionManagerID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_RoadSafetyDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output]"
+                  refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[DateKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[DateKey]"
                       name="DateKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[TimeKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[TimeKey]"
                       name="TimeKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[LocationKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[LocationKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[LocationKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[LocationKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[LocationKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[LocationKey]"
                       name="LocationKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[RoadKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[RoadKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[RoadKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[RoadKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[RoadKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[RoadKey]"
                       name="RoadKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[JunctionKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[JunctionKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[JunctionKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[JunctionKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[JunctionKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[JunctionKey]"
                       name="JunctionKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[EnvironmentKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[EnvironmentKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[EnvironmentKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[EnvironmentKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[EnvironmentKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[EnvironmentKey]"
                       name="EnvironmentKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionSeverityKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionSeverityKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CollisionSeverityKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionSeverityKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CollisionSeverityKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionSeverityKey]"
                       name="CollisionSeverityKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleKey]"
                       name="VehicleKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[DriverKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[DriverKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[DriverKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[DriverKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[DriverKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[DriverKey]"
                       name="DriverKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtyKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtyKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyKey]"
                       name="CasualtyKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtySeverityKey]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtySeverityKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]"
                       name="CasualtySeverityKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionIndex]"
-                      codePage="1252"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionIndex]"
+                      codePage="1258"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CollisionIndex]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CollisionIndex]"
                       length="50"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CollisionIndex]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionIndex]"
                       name="CollisionIndex"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleReference]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleReference]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleReference]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleReference]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleReference]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleReference]"
                       name="VehicleReference"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyReference]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyReference]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtyReference]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyReference]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtyReference]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyReference]"
                       name="CasualtyReference"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]"
-                      codePage="1252"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]"
+                      codePage="1258"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleInvolvementID]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleInvolvementID]"
                       length="100"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]"
                       name="VehicleInvolvementID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[Longitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[Longitude]"
                       name="Longitude"
                       precision="9"
                       scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[Latitude]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[Latitude]"
                       name="Latitude"
                       precision="9"
                       scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyCount]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyCount]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtyCount]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[CasualtyCount]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtyCount]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyCount]"
                       name="CasualtyCount"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[KSICasualtyCount]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[KSICasualtyCount]"
                       dataType="ui1"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[KSICasualtyCount]"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].Columns[KSICasualtyCount]"
+                      externalMetadataColumnId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[KSICasualtyCount]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[KSICasualtyCount]"
                       name="KSICasualtyCount"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
                       dataType="i4"
                       name="DateKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
                       dataType="i4"
                       name="TimeKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[LocationKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[LocationKey]"
                       dataType="i4"
                       name="LocationKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[RoadKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[RoadKey]"
                       dataType="i4"
                       name="RoadKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[JunctionKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[JunctionKey]"
                       dataType="i4"
                       name="JunctionKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[EnvironmentKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[EnvironmentKey]"
                       dataType="i4"
                       name="EnvironmentKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CollisionSeverityKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CollisionSeverityKey]"
                       dataType="i4"
                       name="CollisionSeverityKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleKey]"
                       dataType="i4"
                       name="VehicleKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[DriverKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[DriverKey]"
                       dataType="i4"
                       name="DriverKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtyKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtyKey]"
                       dataType="i4"
                       name="CasualtyKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtySeverityKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtySeverityKey]"
                       dataType="i4"
                       name="CasualtySeverityKey" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CollisionIndex]"
-                      codePage="1252"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CollisionIndex]"
+                      codePage="1258"
                       dataType="str"
                       length="50"
                       name="CollisionIndex" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleReference]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleReference]"
                       dataType="i4"
                       name="VehicleReference" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtyReference]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtyReference]"
                       dataType="i4"
                       name="CasualtyReference" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[VehicleInvolvementID]"
-                      codePage="1252"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleInvolvementID]"
+                      codePage="1258"
                       dataType="str"
                       length="100"
                       name="VehicleInvolvementID" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
                       dataType="numeric"
                       name="Longitude"
                       precision="9"
                       scale="6" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
                       dataType="numeric"
                       name="Latitude"
                       precision="9"
                       scale="6" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[CasualtyCount]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CasualtyCount]"
                       dataType="ui1"
                       name="CasualtyCount" />
                     <externalMetadataColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output].ExternalColumns[KSICasualtyCount]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[KSICasualtyCount]"
                       dataType="ui1"
                       name="KSICasualtyCount" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output]"
+                  refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
                       name="DateKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
                       name="TimeKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[LocationKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[LocationKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[LocationKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[LocationKey]"
                       name="LocationKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[RoadKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[RoadKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[RoadKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[RoadKey]"
                       name="RoadKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[JunctionKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[JunctionKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[JunctionKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[JunctionKey]"
                       name="JunctionKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[EnvironmentKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[EnvironmentKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[EnvironmentKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[EnvironmentKey]"
                       name="EnvironmentKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CollisionSeverityKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CollisionSeverityKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CollisionSeverityKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CollisionSeverityKey]"
                       name="CollisionSeverityKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleKey]"
                       name="VehicleKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[DriverKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[DriverKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[DriverKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[DriverKey]"
                       name="DriverKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtyKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtyKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtyKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtyKey]"
                       name="CasualtyKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtySeverityKey]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtySeverityKey]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtySeverityKey]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtySeverityKey]"
                       name="CasualtySeverityKey" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
-                      codePage="1252"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
+                      codePage="1258"
                       dataType="str"
                       length="50"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
                       name="CollisionIndex" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleReference]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleReference]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleReference]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleReference]"
                       name="VehicleReference" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtyReference]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtyReference]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtyReference]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtyReference]"
                       name="CasualtyReference" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
-                      codePage="1252"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
+                      codePage="1258"
                       dataType="str"
                       length="100"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
                       name="VehicleInvolvementID" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[Longitude]"
                       dataType="numeric"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[Longitude]"
                       name="Longitude"
                       precision="9"
                       scale="6" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[Latitude]"
                       dataType="numeric"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[Latitude]"
                       name="Latitude"
                       precision="9"
                       scale="6" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtyCount]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtyCount]"
                       dataType="ui1"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[CasualtyCount]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CasualtyCount]"
                       name="CasualtyCount" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[KSICasualtyCount]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[KSICasualtyCount]"
                       dataType="ui1"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[KSICasualtyCount]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[KSICasualtyCount]"
                       name="KSICasualtyCount" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1034,14 +961,14 @@ INNER JOIN dwh.DimCasualtySeverity
           <paths>
             <path
               refId="Package\02 - Load FactCasualty.Paths[OLE DB Source Output]"
-              endId="Package\02 - Load FactCasualty\CNT - Fact Rows.Inputs[Row Count Input 1]"
+              endId="Package\02 - Load FactCasualty\CNT - FactCasualty Rows.Inputs[Row Count Input 1]"
               name="OLE DB Source Output"
-              startId="Package\02 - Load FactCasualty\SRC - FactCasualty Rows.Outputs[OLE DB Source Output]" />
+              startId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\02 - Load FactCasualty.Paths[Row Count Output 1]"
               endId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
-              startId="Package\02 - Load FactCasualty\CNT - Fact Rows.Outputs[Row Count Output 1]" />
+              startId="Package\02 - Load FactCasualty\CNT - FactCasualty Rows.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1050,7 +977,7 @@ INNER JOIN dwh.DimCasualtySeverity
       DTS:refId="Package\03 - Validate FactCasualty"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0E40CBD6-9B36-4A82-875D-F2E4472E6DD2}"
+      DTS:DTSID="{A0DEC7EF-0D82-48B0-8FBD-AA788876887D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="03 - Validate FactCasualty"
@@ -1059,8 +986,8 @@ INNER JOIN dwh.DimCasualtySeverity
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;DECLARE @SSISRowCount BIGINT = ?;&#xA;DECLARE @FactRowCount BIGINT;&#xA;DECLARE @CollisionCount BIGINT;&#xA;DECLARE @VehicleCount BIGINT;&#xA;DECLARE @ExpectedKSICount BIGINT;&#xA;DECLARE @ActualKSICount BIGINT;&#xA;&#xA;&#xA;/* 1. Lấy các chỉ số thực tế từ Fact */&#xA;SELECT&#xA;    @FactRowCount = COUNT_BIG(*)&#xA;FROM dwh.FactCasualty;&#xA;&#xA;SELECT&#xA;    @CollisionCount = COUNT_BIG(*)&#xA;FROM&#xA;(&#xA;    SELECT CollisionIndex&#xA;    FROM dwh.FactCasualty&#xA;    GROUP BY CollisionIndex&#xA;) AS DistinctCollisions;&#xA;&#xA;SELECT&#xA;    @VehicleCount = COUNT_BIG(*)&#xA;FROM&#xA;(&#xA;    SELECT VehicleInvolvementID&#xA;    FROM dwh.FactCasualty&#xA;    GROUP BY VehicleInvolvementID&#xA;) AS DistinctVehicles;&#xA;&#xA;&#xA;/* 2. Kiểm tra số dòng đi qua SSIS */&#xA;IF @SSISRowCount &lt;&gt; 652821&#xA;BEGIN&#xA;    THROW 54001,&#xA;          N'Row Count của SSIS không bằng 652.821.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 3. Kiểm tra số dòng thực tế đã ghi vào Fact */&#xA;IF @FactRowCount &lt;&gt; 652821&#xA;BEGIN&#xA;    THROW 54002,&#xA;          N'FactCasualty không có đúng 652.821 dòng.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 4. Row Count của SSIS phải bằng số dòng trong Fact */&#xA;IF @SSISRowCount &lt;&gt; @FactRowCount&#xA;BEGIN&#xA;    THROW 54003,&#xA;          N'Số dòng đi qua SSIS khác số dòng được ghi vào Fact.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 5. Kiểm tra số collision phân biệt */&#xA;IF @CollisionCount &lt;&gt; 513801&#xA;BEGIN&#xA;    THROW 54004,&#xA;          N'FactCasualty không có đúng 513.801 collision phân biệt.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 6. Kiểm tra số vehicle gắn với casualty */&#xA;IF @VehicleCount &lt;&gt; 566945&#xA;BEGIN&#xA;    THROW 54005,&#xA;          N'FactCasualty không có đúng 566.945 vehicle phân biệt.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 7. Kiểm tra grain của Fact */&#xA;IF EXISTS&#xA;(&#xA;    SELECT&#xA;        CollisionIndex,&#xA;        CasualtyReference&#xA;    FROM dwh.FactCasualty&#xA;    GROUP BY&#xA;        CollisionIndex,&#xA;        CasualtyReference&#xA;    HAVING COUNT_BIG(*) &gt; 1&#xA;)&#xA;BEGIN&#xA;    THROW 54006,&#xA;          N'FactCasualty bị trùng natural key.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 8. Kiểm tra các Dimension Key */&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE&#xA;           DateKey IS NULL&#xA;        OR TimeKey IS NULL&#xA;        OR LocationKey IS NULL&#xA;        OR RoadKey IS NULL&#xA;        OR JunctionKey IS NULL&#xA;        OR EnvironmentKey IS NULL&#xA;        OR CollisionSeverityKey IS NULL&#xA;        OR VehicleKey IS NULL&#xA;        OR DriverKey IS NULL&#xA;        OR CasualtyKey IS NULL&#xA;        OR CasualtySeverityKey IS NULL&#xA;)&#xA;BEGIN&#xA;    THROW 54007,&#xA;          N'FactCasualty có Dimension Key bị NULL.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 9. CasualtyCount phải luôn bằng 1 */&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE CasualtyCount &lt;&gt; 1&#xA;       OR CasualtyCount IS NULL&#xA;)&#xA;BEGIN&#xA;    THROW 54008,&#xA;          N'CasualtyCount có giá trị không hợp lệ.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 10. KSICasualtyCount chỉ được bằng 0 hoặc 1 */&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE KSICasualtyCount NOT IN (0, 1)&#xA;       OR KSICasualtyCount IS NULL&#xA;)&#xA;BEGIN&#xA;    THROW 54009,&#xA;          N'KSICasualtyCount có giá trị không hợp lệ.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 11. Đối soát số casualty KSI với staging */&#xA;SELECT&#xA;    @ExpectedKSICount =&#xA;        SUM(&#xA;            CASE&#xA;                WHEN casualty_severity&#xA;                     IN (N'Fatal', N'Serious')&#xA;                THEN 1&#xA;                ELSE 0&#xA;            END&#xA;        )&#xA;FROM stg.Casualties;&#xA;&#xA;SELECT&#xA;    @ActualKSICount =&#xA;        SUM(CONVERT(BIGINT, KSICasualtyCount))&#xA;FROM dwh.FactCasualty;&#xA;&#xA;IF @ExpectedKSICount &lt;&gt; @ActualKSICount&#xA;BEGIN&#xA;    THROW 54010,&#xA;          N'Số casualty KSI trong Fact không khớp staging.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 12. Longitude và Latitude phải thiếu theo cặp */&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE&#xA;           (Longitude IS NULL AND Latitude IS NOT NULL)&#xA;        OR (Longitude IS NOT NULL AND Latitude IS NULL)&#xA;)&#xA;BEGIN&#xA;    THROW 54011,&#xA;          N'Longitude và Latitude không thiếu theo cặp.',&#xA;          1;&#xA;END;&#xA;&#xA;&#xA;/* 13. Phải có đúng 53 collision thiếu tọa độ */&#xA;IF&#xA;(&#xA;    SELECT COUNT_BIG(*)&#xA;    FROM&#xA;    (&#xA;        SELECT CollisionIndex&#xA;        FROM dwh.FactCasualty&#xA;        WHERE Longitude IS NULL&#xA;          AND Latitude IS NULL&#xA;        GROUP BY CollisionIndex&#xA;    ) AS MissingCoordinateCollisions&#xA;) &lt;&gt; 53&#xA;BEGIN&#xA;    THROW 54012,&#xA;          N'Số collision thiếu tọa độ không bằng 53.',&#xA;          1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;DECLARE @SSISRows BIGINT = ?;&#xA;&#xA;DECLARE @FactRows BIGINT;&#xA;DECLARE @Collisions BIGINT;&#xA;DECLARE @Vehicles BIGINT;&#xA;DECLARE @ActualKSI BIGINT;&#xA;DECLARE @ExpectedKSI BIGINT;&#xA;DECLARE @MismatchRows BIGINT;&#xA;&#xA;/* 1. Tổng hợp các chỉ số từ Fact */&#xA;&#xA;SELECT&#xA;    @FactRows = COUNT_BIG(*),&#xA;    @Collisions = COUNT_BIG(DISTINCT CollisionIndex),&#xA;    @Vehicles = COUNT_BIG(DISTINCT VehicleInvolvementID),&#xA;    @ActualKSI = SUM(CONVERT(BIGINT, KSICasualtyCount))&#xA;FROM dwh.FactCasualty;&#xA;&#xA;/* 2. Kiểm tra số dòng đi qua Row Count */&#xA;&#xA;IF @SSISRows IS NULL OR @SSISRows &lt;&gt; 652821&#xA;    THROW 54001, N'Row Count SSIS không bằng 652821.', 1;&#xA;&#xA;/* 3. Đối chiếu số dòng Fact với Row Count */&#xA;&#xA;IF @FactRows &lt;&gt; 652821 OR @FactRows &lt;&gt; @SSISRows&#xA;    THROW 54002, N'Số dòng Fact không khớp.', 1;&#xA;&#xA;/* 4. Kiểm tra số vụ va chạm phân biệt */&#xA;&#xA;IF @Collisions &lt;&gt; 513801&#xA;    THROW 54003, N'Số collision phân biệt không đúng.', 1;&#xA;&#xA;/* 5. Kiểm tra số phương tiện gắn với người thương vong */&#xA;&#xA;IF @Vehicles &lt;&gt; 566945&#xA;    THROW 54004, N'Số vehicle gắn casualty không đúng.', 1;&#xA;&#xA;/* 6. Kiểm tra trùng mức chi tiết */&#xA;&#xA;IF EXISTS&#xA;(&#xA;    SELECT&#xA;        CollisionIndex,&#xA;        CasualtyReference&#xA;    FROM dwh.FactCasualty&#xA;    GROUP BY&#xA;        CollisionIndex,&#xA;        CasualtyReference&#xA;    HAVING COUNT_BIG(*) &gt; 1&#xA;)&#xA;    THROW 54005, N'Fact bị trùng grain.', 1;&#xA;&#xA;/* 7. Kiểm tra khóa Dimension bị NULL */&#xA;&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE DateKey IS NULL&#xA;       OR TimeKey IS NULL&#xA;       OR LocationKey IS NULL&#xA;       OR RoadKey IS NULL&#xA;       OR JunctionKey IS NULL&#xA;       OR EnvironmentKey IS NULL&#xA;       OR CollisionSeverityKey IS NULL&#xA;       OR VehicleKey IS NULL&#xA;       OR DriverKey IS NULL&#xA;       OR CasualtyKey IS NULL&#xA;       OR CasualtySeverityKey IS NULL&#xA;)&#xA;    THROW 54006, N'Fact có Dimension Key NULL.', 1;&#xA;&#xA;/* 8. Kiểm tra giá trị các chỉ số */&#xA;&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE CasualtyCount IS NULL&#xA;       OR CasualtyCount &lt;&gt; 1&#xA;       OR KSICasualtyCount IS NULL&#xA;       OR KSICasualtyCount NOT IN (0, 1)&#xA;)&#xA;    THROW 54007, N'Measure không hợp lệ.', 1;&#xA;&#xA;/* 9. Tính tổng KSI kỳ vọng từ Staging */&#xA;&#xA;SELECT&#xA;    @ExpectedKSI =&#xA;        SUM(&#xA;            CASE&#xA;                WHEN casualty_severity IN (N'Fatal', N'Serious')&#xA;                    THEN CONVERT(BIGINT, 1)&#xA;                ELSE CONVERT(BIGINT, 0)&#xA;            END&#xA;        )&#xA;FROM stg.Casualties;&#xA;&#xA;IF @ActualKSI IS NULL&#xA;   OR @ExpectedKSI IS NULL&#xA;   OR @ActualKSI &lt;&gt; @ExpectedKSI&#xA;    THROW 54008, N'Tổng KSI không khớp staging.', 1;&#xA;&#xA;/* 10. Đối chiếu phương tiện và KSI trên từng dòng&#xA;       Đây là đoạn đã tối ưu so với phiên bản trước. */&#xA;&#xA;SELECT&#xA;    @MismatchRows = COUNT_BIG(*)&#xA;FROM dwh.FactCasualty AS F&#xA;INNER JOIN stg.Casualties AS C&#xA;    ON C.collision_index = F.CollisionIndex&#xA;   AND C.casualty_reference = F.CasualtyReference&#xA;WHERE F.VehicleReference &lt;&gt; C.vehicle_reference&#xA;   OR F.KSICasualtyCount &lt;&gt;&#xA;      CASE&#xA;          WHEN C.casualty_severity IN (N'Fatal', N'Serious')&#xA;              THEN 1&#xA;          ELSE 0&#xA;      END&#xA;OPTION (HASH JOIN, RECOMPILE);&#xA;&#xA;IF @MismatchRows &gt; 0&#xA;    THROW 54009, N'Fact sai vehicle hoặc KSI so với nguồn.', 1;&#xA;&#xA;/* 11. Kiểm tra tọa độ thiếu theo cặp */&#xA;&#xA;IF EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dwh.FactCasualty&#xA;    WHERE (Longitude IS NULL AND Latitude IS NOT NULL)&#xA;       OR (Longitude IS NOT NULL AND Latitude IS NULL)&#xA;)&#xA;    THROW 54010, N'Tọa độ không thiếu theo cặp.', 1;&#xA;&#xA;/* 12. Kiểm tra số vụ va chạm thiếu tọa độ */&#xA;&#xA;IF&#xA;(&#xA;    SELECT COUNT_BIG(DISTINCT CollisionIndex)&#xA;    FROM dwh.FactCasualty&#xA;    WHERE Longitude IS NULL&#xA;      AND Latitude IS NULL&#xA;) &lt;&gt; 53&#xA;    THROW 54011, N'Số collision thiếu tọa độ không bằng 53.', 1;&#xA;&#xA;PRINT N'PASS — Kiểm tra FactCasualty hoàn tất.';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::v_FactCasualtyRowCount"
@@ -1075,7 +1002,7 @@ INNER JOIN dwh.DimCasualtySeverity
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{55913D70-A98A-408C-8262-4D91F866B048}"
+      DTS:DTSID="{A1BA9EC1-B4F2-4DBC-BBAD-0AC522A8FA6F}"
       DTS:From="Package\01 - Validate Fact Sources"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1083,7 +1010,7 @@ INNER JOIN dwh.DimCasualtySeverity
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{2AF26463-D708-446D-9013-B3C3FE536711}"
+      DTS:DTSID="{AB7D27A4-6752-454B-BB33-13DE16724128}"
       DTS:From="Package\02 - Load FactCasualty"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1104,41 +1031,41 @@ INNER JOIN dwh.DimCasualtySeverity
         <NodeLayout
           Size="200.8,41.6"
           Id="Package\01 - Validate Fact Sources"
-          TopLeft="82.4999954923989,67.599999529918" />
+          TopLeft="120.833326731291,31.1999997830391" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\02 - Load FactCasualty"
-          TopLeft="396.666644993757,79.7333327788777" />
+          TopLeft="357.499980467062,110.066665901277" />
         <NodeLayout
           Size="200,41.6"
           Id="Package\03 - Validate FactCasualty"
-          TopLeft="218.333321404127,197.599998625914" />
+          TopLeft="654.999964212379,130.866665756636" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="283.299995492399,88.399999529918">
+          TopLeft="221.233326731291,72.7999997830391">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113.366649501358,12.1333332489597"
+              EndConnector="229.066653735771,37.2666661182377"
               Start="0,0"
-              End="105.866649501358,12.1333332489597">
+              End="229.066653735771,29.7666661182377">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.6833247506788,0" />
+                    End="0,14.6333330591189" />
                   <mssgle:CubicBezierSegment
-                    Point1="52.6833247506788,0"
-                    Point2="56.6833247506788,0"
-                    Point3="56.6833247506788,4" />
+                    Point1="0,14.6333330591189"
+                    Point2="0,18.6333330591189"
+                    Point3="4,18.6333330591189" />
                   <mssgle:LineSegment
-                    End="56.6833247506788,8.13333324895967" />
+                    End="225.066653735771,18.6333330591189" />
                   <mssgle:CubicBezierSegment
-                    Point1="56.6833247506788,8.13333324895967"
-                    Point2="56.6833247506788,12.1333332489597"
-                    Point3="60.6833247506788,12.1333332489597" />
+                    Point1="225.066653735771,18.6333330591189"
+                    Point2="229.066653735771,18.6333330591189"
+                    Point3="229.066653735771,22.6333330591189" />
                   <mssgle:LineSegment
-                    End="105.866649501358,12.1333332489597" />
+                    End="229.066653735771,29.7666661182377" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1149,30 +1076,30 @@ INNER JOIN dwh.DimCasualtySeverity
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="489.466644993757,121.333332778878">
+          TopLeft="543.099980467062,130.866665901277">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-171.13332358963,76.2666658470365"
+              EndConnector="111.899983745317,20.7999998553594"
               Start="0,0"
-              End="-171.13332358963,68.7666658470365">
+              End="104.399983745317,20.7999998553594">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.1333329235183" />
+                    End="51.9499918726586,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.1333329235183"
-                    Point2="0,38.1333329235183"
-                    Point3="-4,38.1333329235183" />
+                    Point1="51.9499918726586,0"
+                    Point2="55.9499918726586,0"
+                    Point3="55.9499918726586,4" />
                   <mssgle:LineSegment
-                    End="-167.13332358963,38.1333329235183" />
+                    End="55.9499918726586,16.7999998553594" />
                   <mssgle:CubicBezierSegment
-                    Point1="-167.13332358963,38.1333329235183"
-                    Point2="-171.13332358963,38.1333329235183"
-                    Point3="-171.13332358963,42.1333329235183" />
+                    Point1="55.9499918726586,16.7999998553594"
+                    Point2="55.9499918726586,20.7999998553594"
+                    Point3="59.9499918726586,20.7999998553594" />
                   <mssgle:LineSegment
-                    End="-171.13332358963,68.7666658470365" />
+                    End="104.399983745317,20.7999998553594" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1190,43 +1117,43 @@ INNER JOIN dwh.DimCasualtySeverity
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168,41.6"
+          Size="168.8,41.6"
           Id="Package\02 - Load FactCasualty\DST - FactCasualty"
-          TopLeft="224.999987706543,234.866665033433" />
+          TopLeft="843.333287255634,95.3333326703972" />
         <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\02 - Load FactCasualty\SRC - FactCasualty Rows"
-          TopLeft="180.833323453036,100.533332634237" />
+          Size="205.6,41.6"
+          Id="Package\02 - Load FactCasualty\SRC - FactCasualty Source"
+          TopLeft="266.666652096643,75.3999994756778" />
         <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\02 - Load FactCasualty\CNT - Fact Rows"
-          TopLeft="489.166639939779,106.599999258717" />
+          Size="198.4,41.6"
+          Id="Package\02 - Load FactCasualty\CNT - FactCasualty Rows"
+          TopLeft="559.166636115148,173.333332127995" />
         <EdgeLayout
           Id="Package\02 - Load FactCasualty.Paths[Row Count Output 1]"
-          TopLeft="567.966639939779,148.199999258717">
+          TopLeft="690.099969448482,173.333332127995">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-258.966652233236,86.666665774716"
+              EndConnector="237.633317807152,-36.3999994575977"
               Start="0,0"
-              End="-258.966652233236,79.166665774716">
+              End="237.633317807152,-28.8999994575977">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.333332887358" />
+                    End="0,-10.7347197804355" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.333332887358"
-                    Point2="0,43.333332887358"
-                    Point3="-4,43.333332887358" />
+                    Point1="0,-10.7347197804355"
+                    Point2="0,-14.7347197804355"
+                    Point3="4,-14.7347197804355" />
                   <mssgle:LineSegment
-                    End="-254.966652233236,43.333332887358" />
+                    End="233.633317807152,-14.7347197804355" />
                   <mssgle:CubicBezierSegment
-                    Point1="-254.966652233236,43.333332887358"
-                    Point2="-258.966652233236,43.333332887358"
-                    Point3="-258.966652233236,47.333332887358" />
+                    Point1="233.633317807152,-14.7347197804355"
+                    Point2="237.633317807152,-14.7347197804355"
+                    Point3="237.633317807152,-18.7347197804355" />
                   <mssgle:LineSegment
-                    End="-258.966652233236,79.166665774716" />
+                    End="237.633317807152,-28.8999994575977" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1237,18 +1164,30 @@ INNER JOIN dwh.DimCasualtySeverity
         </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load FactCasualty.Paths[OLE DB Source Output]"
-          TopLeft="380.033323453036,124.366665946477">
+          TopLeft="369.466652096643,116.999999475678">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.133316486743,0"
+              EndConnector="257.166650685172,56.3333326523171"
               Start="0,0"
-              End="101.633316486743,0">
+              End="257.166650685172,48.8333326523171">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="101.633316486743,0" />
+                    End="0,29.5295995946591" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5295995946591"
+                    Point2="0,33.5295995946591"
+                    Point3="4,33.5295995946591" />
+                  <mssgle:LineSegment
+                    End="253.166650685172,33.5295995946591" />
+                  <mssgle:CubicBezierSegment
+                    Point1="253.166650685172,33.5295995946591"
+                    Point2="257.166650685172,33.5295995946591"
+                    Point3="257.166650685172,37.5295995946591" />
+                  <mssgle:LineSegment
+                    End="257.166650685172,48.8333326523171" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1274,7 +1213,7 @@ INNER JOIN dwh.DimCasualtySeverity
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\02 - Load FactCasualty\SRC - FactCasualty Rows">
+    design-time-name="Package\02 - Load FactCasualty\SRC - FactCasualty Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

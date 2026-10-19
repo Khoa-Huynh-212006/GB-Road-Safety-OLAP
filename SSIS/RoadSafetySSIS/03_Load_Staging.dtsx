@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="10/1/2026 12:02:00 PM"
+  DTS:CreationDate="10/13/2026 3:34:50 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-2A47H9L3"
   DTS:CreatorName="LAPTOP-2A47H9L3\ADMIN"
-  DTS:DTSID="{1E894346-FB80-4A2A-8D15-03BAE2426AD4}"
+  DTS:DTSID="{F7637987-0EEC-4537-B3DD-5FA415B21F4B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="2057"
-  DTS:ObjectName="Package1"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="03_Load_Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{F6CB01D0-94B6-46D2-A1D0-34A8066CB0DB}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{8E6ACA47-682E-41FE-BA59-393EB09FE4A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FFCM_Stg_Casualties_Clean]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{9FC45D94-889C-4536-9C1C-3EF59CC76E9C}"
+      DTS:DTSID="{2620A17B-A8A4-42C7-8060-AF43AD56967A}"
       DTS:ObjectName="FFCM_Stg_Casualties_Clean">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="collision_index"
-              DTS:DTSID="{9CE13017-FF43-4A8A-A256-3C8D2334FE56}"
+              DTS:DTSID="{4ABF05A2-19A5-4909-85F8-048651715097}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="vehicle_reference"
-              DTS:DTSID="{2D92F5BA-4104-4FDC-B5AC-9FBF9D4E03BE}"
+              DTS:DTSID="{134D29F9-16FE-4E15-B88F-3A23296853D9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="casualty_reference"
-              DTS:DTSID="{31E0E974-23BC-4E34-AAFA-79EB00961DB1}"
+              DTS:DTSID="{91E37345-46E5-4C12-BE4B-EED890391A86}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="casualty_class"
-              DTS:DTSID="{23BE4C17-5560-4C06-9464-453032A58804}"
+              DTS:DTSID="{E4AD0EFB-C351-4EC7-9FA7-2A8307C16782}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sex_of_casualty"
-              DTS:DTSID="{F41F11B4-8A3A-49AD-822B-DD938E5FF0E0}"
+              DTS:DTSID="{DB513540-E97D-4360-96FC-F52EB9142653}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_band_of_casualty"
-              DTS:DTSID="{C4F7172F-BAB4-4BBB-9C41-D9CC16E0579C}"
+              DTS:DTSID="{65022E4F-AF00-4411-8941-6742236E46E0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="casualty_severity"
-              DTS:DTSID="{48E7DEF9-CEAA-4D32-B786-BF0913455036}"
+              DTS:DTSID="{FB1B0063-3538-441F-9530-B7EB9D084E42}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="casualty_type"
-              DTS:DTSID="{69D6CC26-7A05-47AB-B0B0-D07740B2C38D}"
+              DTS:DTSID="{86770E0C-034C-45E0-A44D-F4058A299550}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -111,7 +111,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FFCM_Stg_Collisions_Clean]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{88A65B18-B1C9-4BF0-ACC7-8B4D2087DDA0}"
+      DTS:DTSID="{62DDBD67-39F1-4F1F-B94F-B4466E58E456}"
       DTS:ObjectName="FFCM_Stg_Collisions_Clean">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -131,7 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="collision_index"
-              DTS:DTSID="{A6F52845-92FB-4429-B851-ED8690FD181D}"
+              DTS:DTSID="{59CACDDD-87A8-4384-824D-BBFBA75445AE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{BF903752-7F71-4A1A-8970-67AE1C20EEE7}"
+              DTS:DTSID="{11B752FF-F893-42D1-9A6A-F0DC49F2EC84}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{5E9A4F28-A503-4935-B563-7B079AD7A04B}"
+              DTS:DTSID="{C8AB0A91-AF22-476E-ABAF-0D5A1B94876F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="collision_severity"
-              DTS:DTSID="{04A046EA-7279-40CE-96F9-48EE69ABCDA7}"
+              DTS:DTSID="{CD48C8EA-EAB8-4A54-9B2C-A50006C34538}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{5F1506B2-D6C0-44C1-826D-1CC538C8057C}"
+              DTS:DTSID="{760E59E7-41B1-42F5-BED8-A8F5695A39D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -176,7 +176,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="time"
-              DTS:DTSID="{893D0BDE-5E04-4CB1-BEED-BF3D3A9FD8C4}"
+              DTS:DTSID="{FD6376B4-47B9-4085-AC81-165167206EA3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +185,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="local_authority_ons_district"
-              DTS:DTSID="{417DECD0-7903-4AA2-AB60-82863DD707D3}"
+              DTS:DTSID="{BAF1320F-FC1E-4FB6-9972-15422FED56D9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -194,7 +194,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="first_road_class"
-              DTS:DTSID="{A7001809-C372-4FF6-A742-090FAC609338}"
+              DTS:DTSID="{A7D5DA10-2205-4480-9534-023D87D1655D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -203,7 +203,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="road_type"
-              DTS:DTSID="{5D65AC01-B252-4E5B-A6E4-D834E74C6B62}"
+              DTS:DTSID="{358D644D-82AF-4E52-9CD8-E8F597842FB3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -212,7 +212,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="speed_limit"
-              DTS:DTSID="{0297005E-40B8-4A32-9B8F-C583D6FF3774}"
+              DTS:DTSID="{CFF5006A-F524-4D46-8F40-81F29DF85814}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="junction_detail"
-              DTS:DTSID="{5DABBE63-BF3B-4727-9E15-18B5C6E20601}"
+              DTS:DTSID="{58EDC685-50A5-4AA7-BCDA-5D75C890BA9C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -230,7 +230,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="junction_control"
-              DTS:DTSID="{572CAB92-C78F-4470-B61C-2F2AFD0C4028}"
+              DTS:DTSID="{93990269-36D4-4A80-BC04-FB801A6563EA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -239,7 +239,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pedestrian_crossing"
-              DTS:DTSID="{A7F35DA4-29AE-4575-B5EE-9757A9DCDA46}"
+              DTS:DTSID="{2D2CE758-9056-4105-B0A1-D6D3308A4CAD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,7 +248,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="light_conditions"
-              DTS:DTSID="{E7DE4C2E-A271-4FEC-9521-9EEB4841D138}"
+              DTS:DTSID="{CE76CB13-0080-4A5D-817A-A5403823E149}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -257,7 +257,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weather_conditions"
-              DTS:DTSID="{714A14E1-ABDA-4553-90A7-F15932106F89}"
+              DTS:DTSID="{0460EE0D-3A34-4BCA-BDC7-D756A3B2872A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -266,7 +266,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="road_surface_conditions"
-              DTS:DTSID="{9BCE0E31-B2CF-4010-A565-1AAA307CA9E6}"
+              DTS:DTSID="{28392AA7-F32B-4B57-9424-EF41E98C9E21}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -275,7 +275,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="urban_or_rural_area"
-              DTS:DTSID="{701C769E-03CB-4E68-B89F-556FD8BBBCB6}"
+              DTS:DTSID="{ED80D0AB-1EDA-4D35-8EF7-BB2153629396}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -284,7 +284,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="local_authority_ons_district_name"
-              DTS:DTSID="{B55B103E-77A3-4921-8DEE-03FBB515740B}"
+              DTS:DTSID="{3DDE19EF-D508-4156-A4A4-2374DB63EF4A}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -293,7 +293,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FFCM_Stg_Vehicles_Clean]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{DB92AFC0-4FE1-47AA-8945-AE30034CA156}"
+      DTS:DTSID="{3F1D81F5-708C-413E-963E-BC618A66AE38}"
       DTS:ObjectName="FFCM_Stg_Vehicles_Clean">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -313,7 +313,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="collision_index"
-              DTS:DTSID="{7C5B3659-D5C7-4027-8C1B-D0A70DE867DE}"
+              DTS:DTSID="{6AF253B8-DAB9-4CFA-B596-9D78BC84D69B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -322,7 +322,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="vehicle_reference"
-              DTS:DTSID="{7A38BAFE-F5C8-4DCB-B248-84B79F8227EF}"
+              DTS:DTSID="{28968D26-5C41-4738-89E2-93224713EEA1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -331,7 +331,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="vehicle_type"
-              DTS:DTSID="{5C8721C8-31D2-450F-B7E7-D6801323CE79}"
+              DTS:DTSID="{1D3E6404-627B-43AF-A8DB-5FCAEBA80BD6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -340,7 +340,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="vehicle_manoeuvre"
-              DTS:DTSID="{54446856-CB1C-42F0-94EA-8CB39049C5AF}"
+              DTS:DTSID="{57937374-DEE2-4CE4-A5C7-38E2D59F1FE3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -349,7 +349,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="skidding_and_overturning"
-              DTS:DTSID="{4D2AB486-019E-431C-81A8-70530113CB1C}"
+              DTS:DTSID="{9743F913-DB3E-4ED0-95B4-C7E559A4356B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -358,7 +358,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="vehicle_leaving_carriageway"
-              DTS:DTSID="{532FEAA6-D067-4122-8340-7B1CD5F63AA8}"
+              DTS:DTSID="{20113BF4-749E-4A0C-9E51-873D48D34F47}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -367,7 +367,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sex_of_driver"
-              DTS:DTSID="{BB6F067C-86AD-4F22-BA2E-D048622058BA}"
+              DTS:DTSID="{F83A5D05-2BD0-47AF-89A2-5BD24E59A056}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -376,7 +376,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_band_of_driver"
-              DTS:DTSID="{3DB9E628-E14E-47C6-A1ED-125865F398FB}"
+              DTS:DTSID="{D4342A94-9D36-417A-A920-F63B8958AE69}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -386,7 +386,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2FF10E11-3E0E-4800-A124-54B3F646886A}"
+      DTS:DTSID="{F29A85CB-E7A6-49AF-A07F-3B189FAF80D0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="v_StgCasualtiesRowCount">
@@ -395,7 +395,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{334A28CF-4A06-43B1-885E-357CDF787736}"
+      DTS:DTSID="{E366FB35-59D4-4224-A573-D79A65769700}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="v_StgCollisionsRowCount">
@@ -404,7 +404,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{20D4F346-ED44-4582-B420-6C6B38CB8D0E}"
+      DTS:DTSID="{A30F371F-B947-4EFA-8DE7-2456539AD3A6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="v_StgVehiclesRowCount">
@@ -417,7 +417,7 @@
       DTS:refId="Package\01 - Clear Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{62E60257-8E51-4045-92A9-7FCA47936A16}"
+      DTS:DTSID="{3EF86D56-D9E4-403F-BEC9-9642201B49E3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="01 - Clear Staging"
@@ -426,16 +426,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;TRUNCATE TABLE stg.Casualties;&#xA;TRUNCATE TABLE stg.Vehicles;&#xA;TRUNCATE TABLE stg.Collisions;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;TRUNCATE TABLE stg.Collisions;&#xA;TRUNCATE TABLE stg.Vehicles;&#xA;TRUNCATE TABLE stg.Casualties;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\02 - Load Collisions Staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{F497F951-E88E-49DA-9AAD-6D81353BFE2E}"
+      DTS:DTSID="{C209E5BD-61BC-41E4-897E-CF731D0EFD01}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="02 - Load Collisions Staging"
@@ -589,48 +588,6 @@
                   synchronousInputId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[urban_or_rural_area_SQL]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[urban_or_rural_area_SQL]"
-                      name="urban_or_rural_area_SQL"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[urban_or_rural_area]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[first_road_class_SQL]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[first_road_class_SQL]"
-                      name="first_road_class_SQL"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[first_road_class]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[collision_severity_SQL]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -665,6 +622,47 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[time_SQL]"
+                      dataType="dbTime"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[time_SQL]"
+                      name="time_SQL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[first_road_class_SQL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[first_road_class_SQL]"
+                      name="first_road_class_SQL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[first_road_class]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -819,19 +817,20 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[time_SQL]"
-                      dataType="dbTime"
+                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[urban_or_rural_area_SQL]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[time_SQL]"
-                      name="time_SQL"
+                      length="100"
+                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[urban_or_rural_area_SQL]"
+                      name="urban_or_rural_area_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[time]}</property>
+                          name="SourceInputColumnLineageID">#{Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[urban_or_rural_area]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -839,13 +838,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[local_authority_name_SQL]"
+                      refId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[local_authority_ons_district_name_SQL]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="150"
-                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[local_authority_name_SQL]"
-                      name="local_authority_name_SQL"
+                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[local_authority_ons_district_name_SQL]"
+                      name="local_authority_ons_district_name_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -887,48 +886,48 @@
               </outputs>
             </component>
             <component
-              refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page"
+              refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="DRV - Convert VARCHAR Code Page"
+              name="DRV - Collisions VARCHAR Code Page"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]"
+                  refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[collision_index]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input].Columns[collision_index]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="collision_index"
                       lineageId="Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[collision_index]" />
                     <inputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[longitude]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input].Columns[longitude]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="longitude"
                       lineageId="Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[longitude]" />
                     <inputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[latitude]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input].Columns[latitude]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="latitude"
                       lineageId="Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[latitude]" />
                     <inputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[local_authority_ons_district]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input].Columns[local_authority_ons_district]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="local_authority_ons_district"
                       lineageId="Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output].Columns[local_authority_ons_district]" />
                     <inputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[speed_limit]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input].Columns[speed_limit]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="10"
@@ -940,20 +939,20 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output]"
+                  refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
                       name="collision_index_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -971,13 +970,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[longitude_SQL]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[longitude_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="30"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[longitude_SQL]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[longitude_SQL]"
                       name="longitude_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -995,13 +994,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[latitude_SQL]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[latitude_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="30"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[latitude_SQL]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[latitude_SQL]"
                       name="latitude_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1019,13 +1018,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[local_authority_code_SQL]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[local_authority_code_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="20"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[local_authority_code_SQL]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[local_authority_code_SQL]"
                       name="local_authority_code_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1043,13 +1042,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[speed_limit_SQL]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[speed_limit_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="10"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[speed_limit_SQL]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[speed_limit_SQL]"
                       name="speed_limit_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1070,23 +1069,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output]"
+                  refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1153,8 +1152,8 @@
               <connections>
                 <connection
                   refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Connections[OleDbConnection]"
-                  connectionManagerID="{F05086EA-55A1-4B00-BD44-1090AAD7929D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-2A47H9L3_OLAP2025.RoadSafetyDWH]"
+                  connectionManagerID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_RoadSafetyDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1173,7 +1172,7 @@
                       cachedLength="50"
                       cachedName="collision_index_SQL"
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[collision_index]"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]" />
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]" />
                     <inputColumn
                       refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[longitude_SQL]"
                       cachedCodepage="1252"
@@ -1181,7 +1180,7 @@
                       cachedLength="30"
                       cachedName="longitude_SQL"
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[longitude_SQL]" />
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[longitude_SQL]" />
                     <inputColumn
                       refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[latitude_SQL]"
                       cachedCodepage="1252"
@@ -1189,7 +1188,7 @@
                       cachedLength="30"
                       cachedName="latitude_SQL"
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[latitude_SQL]" />
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[latitude_SQL]" />
                     <inputColumn
                       refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[collision_severity_SQL]"
                       cachedDataType="wstr"
@@ -1216,7 +1215,7 @@
                       cachedLength="20"
                       cachedName="local_authority_code_SQL"
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[local_authority_ons_district]"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[local_authority_code_SQL]" />
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[local_authority_code_SQL]" />
                     <inputColumn
                       refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[first_road_class_SQL]"
                       cachedDataType="wstr"
@@ -1238,7 +1237,7 @@
                       cachedLength="10"
                       cachedName="speed_limit_SQL"
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[speed_limit]"
-                      lineageId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[speed_limit_SQL]" />
+                      lineageId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output].Columns[speed_limit_SQL]" />
                     <inputColumn
                       refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[junction_detail_SQL]"
                       cachedDataType="wstr"
@@ -1289,12 +1288,12 @@
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[urban_or_rural_area]"
                       lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[urban_or_rural_area_SQL]" />
                     <inputColumn
-                      refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[local_authority_name_SQL]"
+                      refId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].Columns[local_authority_ons_district_name_SQL]"
                       cachedDataType="wstr"
                       cachedLength="150"
-                      cachedName="local_authority_name_SQL"
+                      cachedName="local_authority_ons_district_name_SQL"
                       externalMetadataColumnId="Package\02 - Load Collisions Staging\DST - Collisions Staging.Inputs[OLE DB Destination Input].ExternalColumns[local_authority_ons_district_name]"
-                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[local_authority_name_SQL]" />
+                      lineageId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Outputs[Data Conversion Output].Columns[local_authority_ons_district_name_SQL]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1999,10 +1998,10 @@
               refId="Package\02 - Load Collisions Staging.Paths[Derived Column Output]"
               endId="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output]" />
+              startId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Outputs[Derived Column Output]" />
             <path
               refId="Package\02 - Load Collisions Staging.Paths[Flat File Source Output]"
-              endId="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]"
+              endId="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV.Outputs[Flat File Source Output]" />
             <path
@@ -2018,7 +2017,7 @@
       DTS:refId="Package\03 - Load Vehicles Staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{53DAE93B-CE51-4BB4-9143-EEB29ACE5204}"
+      DTS:DTSID="{54d9b776-6b52-4cac-a1f9-0d4942406ee5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="03 - Load Vehicles Staging"
@@ -2303,20 +2302,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page"
+              refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="DRV - Convert VARCHAR Code Page"
+              name="DRV - Vehicles VARCHAR Code Page"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]"
+                  refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[collision_index]"
+                      refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Inputs[Derived Column Input].Columns[collision_index]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
@@ -2328,20 +2327,20 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output]"
+                  refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
+                      refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
+                      lineageId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
                       name="collision_index_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -2362,23 +2361,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output]"
+                  refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2445,8 +2444,8 @@
               <connections>
                 <connection
                   refId="Package\03 - Load Vehicles Staging\DST - Vehicles Staging.Connections[OleDbConnection]"
-                  connectionManagerID="{F05086EA-55A1-4B00-BD44-1090AAD7929D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-2A47H9L3_OLAP2025.RoadSafetyDWH]"
+                  connectionManagerID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_RoadSafetyDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2465,7 +2464,7 @@
                       cachedLength="50"
                       cachedName="collision_index_SQL"
                       externalMetadataColumnId="Package\03 - Load Vehicles Staging\DST - Vehicles Staging.Inputs[OLE DB Destination Input].ExternalColumns[collision_index]"
-                      lineageId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]" />
+                      lineageId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]" />
                     <inputColumn
                       refId="Package\03 - Load Vehicles Staging\DST - Vehicles Staging.Inputs[OLE DB Destination Input].Columns[vehicle_reference_SQL]"
                       cachedDataType="i4"
@@ -2885,10 +2884,10 @@
               refId="Package\03 - Load Vehicles Staging.Paths[Derived Column Output]"
               endId="Package\03 - Load Vehicles Staging\CNV - Vehicles Staging Types.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output]" />
+              startId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Outputs[Derived Column Output]" />
             <path
               refId="Package\03 - Load Vehicles Staging.Paths[Flat File Source Output]"
-              endId="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]"
+              endId="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\03 - Load Vehicles Staging\SRC - Vehicles Clean CSV.Outputs[Flat File Source Output]" />
             <path
@@ -2904,7 +2903,7 @@
       DTS:refId="Package\04 - Load Casualties Staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{324A1A16-751B-4FCD-B14F-675FF1EE50E9}"
+      DTS:DTSID="{32f1bd17-3d9a-416a-a87d-353b0419db61}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="04 - Load Casualties Staging"
@@ -2956,19 +2955,12 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[vehicle_reference]"
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[age_band_of_casualty]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="vehicle_reference"
-                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[vehicle_reference]" />
-                    <inputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[casualty_reference]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="casualty_reference"
-                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[casualty_reference]" />
+                      cachedLength="100"
+                      cachedName="age_band_of_casualty"
+                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[age_band_of_casualty]" />
                     <inputColumn
                       refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[casualty_class]"
                       cachedCodepage="65001"
@@ -2977,19 +2969,12 @@
                       cachedName="casualty_class"
                       lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[casualty_class]" />
                     <inputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[sex_of_casualty]"
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[casualty_reference]"
                       cachedCodepage="65001"
                       cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="sex_of_casualty"
-                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[sex_of_casualty]" />
-                    <inputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[age_band_of_casualty]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="age_band_of_casualty"
-                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[age_band_of_casualty]" />
+                      cachedLength="20"
+                      cachedName="casualty_reference"
+                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[casualty_reference]" />
                     <inputColumn
                       refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[casualty_severity]"
                       cachedCodepage="65001"
@@ -3004,6 +2989,20 @@
                       cachedLength="250"
                       cachedName="casualty_type"
                       lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[casualty_type]" />
+                    <inputColumn
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[sex_of_casualty]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="sex_of_casualty"
+                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[sex_of_casualty]" />
+                    <inputColumn
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input].Columns[vehicle_reference]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="vehicle_reference"
+                      lineageId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[vehicle_reference]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3016,39 +3015,20 @@
                   synchronousInputId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[vehicle_reference_SQL]"
-                      dataType="i4"
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[age_band_of_casualty_SQL]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[vehicle_reference_SQL]"
-                      name="vehicle_reference_SQL"
+                      length="100"
+                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[age_band_of_casualty_SQL]"
+                      name="age_band_of_casualty_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[vehicle_reference]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_reference_SQL]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_reference_SQL]"
-                      name="casualty_reference_SQL"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[casualty_reference]}</property>
+                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[age_band_of_casualty]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -3077,41 +3057,19 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[sex_of_casualty_SQL]"
-                      dataType="wstr"
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_reference_SQL]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[sex_of_casualty_SQL]"
-                      name="sex_of_casualty_SQL"
+                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_reference_SQL]"
+                      name="casualty_reference_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[sex_of_casualty]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[age_band_of_casualty_SQL]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[age_band_of_casualty_SQL]"
-                      name="age_band_of_casualty_SQL"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[age_band_of_casualty]}</property>
+                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[casualty_reference]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -3160,6 +3118,47 @@
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[sex_of_casualty_SQL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[sex_of_casualty_SQL]"
+                      name="sex_of_casualty_SQL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[sex_of_casualty]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[vehicle_reference_SQL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[vehicle_reference_SQL]"
+                      name="vehicle_reference_SQL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output].Columns[vehicle_reference]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3188,20 +3187,20 @@
               </outputs>
             </component>
             <component
-              refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page"
+              refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="DRV - Convert VARCHAR Code Page"
+              name="DRV - Casualties VARCHAR Code Page"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]"
+                  refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input].Columns[collision_index]"
+                      refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Inputs[Derived Column Input].Columns[collision_index]"
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="50"
@@ -3213,20 +3212,20 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output]"
+                  refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
+                      refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
+                      lineageId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]"
                       name="collision_index_SQL"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -3247,23 +3246,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output]"
+                  refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3330,8 +3329,8 @@
               <connections>
                 <connection
                   refId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Connections[OleDbConnection]"
-                  connectionManagerID="{F05086EA-55A1-4B00-BD44-1090AAD7929D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-2A47H9L3_OLAP2025.RoadSafetyDWH]"
+                  connectionManagerID="{860D2A57-9866-4977-8AC8-B7A012D2E50F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CM_RoadSafetyDWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3350,7 +3349,7 @@
                       cachedLength="50"
                       cachedName="collision_index_SQL"
                       externalMetadataColumnId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].ExternalColumns[collision_index]"
-                      lineageId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]" />
+                      lineageId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Output].Columns[collision_index_SQL]" />
                     <inputColumn
                       refId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].Columns[vehicle_reference_SQL]"
                       cachedDataType="i4"
@@ -3385,19 +3384,19 @@
                       externalMetadataColumnId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].ExternalColumns[age_band_of_casualty]"
                       lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[age_band_of_casualty_SQL]" />
                     <inputColumn
-                      refId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].Columns[casualty_severity_SQL]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="casualty_severity_SQL"
-                      externalMetadataColumnId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].ExternalColumns[casualty_severity]"
-                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_severity_SQL]" />
-                    <inputColumn
                       refId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].Columns[casualty_type_SQL]"
                       cachedDataType="wstr"
                       cachedLength="250"
                       cachedName="casualty_type_SQL"
                       externalMetadataColumnId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].ExternalColumns[casualty_type]"
                       lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_type_SQL]" />
+                    <inputColumn
+                      refId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].Columns[casualty_severity_SQL]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="casualty_severity_SQL"
+                      externalMetadataColumnId="Package\04 - Load Casualties Staging\DST - Casualties Staging.Inputs[OLE DB Destination Input].ExternalColumns[casualty_severity]"
+                      lineageId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Outputs[Data Conversion Output].Columns[casualty_severity_SQL]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3768,10 +3767,10 @@
               refId="Package\04 - Load Casualties Staging.Paths[Derived Column Output]"
               endId="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types.Inputs[Data Conversion Input]"
               name="Derived Column Output"
-              startId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Outputs[Derived Column Output]" />
+              startId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Outputs[Derived Column Output]" />
             <path
               refId="Package\04 - Load Casualties Staging.Paths[Flat File Source Output]"
-              endId="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page.Inputs[Derived Column Input]"
+              endId="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV.Outputs[Flat File Source Output]" />
             <path
@@ -3787,7 +3786,7 @@
       DTS:refId="Package\05 - Validate Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0BD98CE8-B0BC-4E6A-95B7-EAC94745C91D}"
+      DTS:DTSID="{3B0B2266-1F0B-4A83-A4CB-E2F7AF1D1A4F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="05 - Validate Staging"
@@ -3796,8 +3795,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F05086EA-55A1-4B00-BD44-1090AAD7929D}"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;DECLARE @CollisionRows BIGINT;&#xA;DECLARE @VehicleRows BIGINT;&#xA;DECLARE @CasualtyRows BIGINT;&#xA;DECLARE @ErrorMessage NVARCHAR(2048);&#xA;&#xA;SELECT @CollisionRows = COUNT_BIG(*)&#xA;FROM stg.Collisions;&#xA;&#xA;SELECT @VehicleRows = COUNT_BIG(*)&#xA;FROM stg.Vehicles;&#xA;&#xA;SELECT @CasualtyRows = COUNT_BIG(*)&#xA;FROM stg.Casualties;&#xA;&#xA;IF&#xA;(&#xA;       @CollisionRows &lt;&gt; 513801&#xA;    OR @VehicleRows   &lt;&gt; 937265&#xA;    OR @CasualtyRows  &lt;&gt; 652821&#xA;)&#xA;BEGIN&#xA;    SET @ErrorMessage = CONCAT(&#xA;        N'Số dòng staging không đúng. ',&#xA;        N'Collisions = ', @CollisionRows,&#xA;        N'; Vehicles = ', @VehicleRows,&#xA;        N'; Casualties = ', @CasualtyRows&#xA;    );&#xA;&#xA;    THROW 51001, @ErrorMessage, 1;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{860D2A57-9866-4977-8AC8-B7A012D2E50F}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Collisions) &lt;&gt; 513801&#xA;    THROW 51101, N'Collisions không có đúng 513801 dòng.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Vehicles) &lt;&gt; 937265&#xA;    THROW 51102, N'Vehicles không có đúng 937265 dòng.', 1;&#xA;&#xA;IF (SELECT COUNT_BIG(*) FROM stg.Casualties) &lt;&gt; 652821&#xA;    THROW 51103, N'Casualties không có đúng 652821 dòng.', 1;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -3805,7 +3804,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{02C145EE-656D-4C6E-B251-527CEEE422EC}"
+      DTS:DTSID="{C3EBB757-E916-4006-9247-0BE138032139}"
       DTS:From="Package\01 - Clear Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3813,7 +3812,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{DBEADE61-1BAB-47E6-8027-414AD33724F0}"
+      DTS:DTSID="{943861CE-3B69-48D3-8C29-59F396F8F3E6}"
       DTS:From="Package\02 - Load Collisions Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3821,7 +3820,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{00C216CC-EF2D-43EA-A27A-6F280730DCD3}"
+      DTS:DTSID="{95F495B9-332C-4B5C-819E-C14588479145}"
       DTS:From="Package\03 - Load Vehicles Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3829,7 +3828,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{95E7AC21-D9F3-4402-9BFA-FD7F94140FBA}"
+      DTS:DTSID="{59D655C7-6C32-4913-8271-AA88A6D23575}"
       DTS:From="Package\04 - Load Casualties Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3850,49 +3849,49 @@
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\01 - Clear Staging"
-          TopLeft="139.166659062936,97.9333326523172" />
+          TopLeft="390.833311979142,82.3333327607976" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\02 - Load Collisions Staging"
-          TopLeft="229.166654145553,201.066665268474" />
+          TopLeft="613.333299822279,56.3333329415984" />
         <NodeLayout
           Size="202.4,41.6"
           Id="Package\03 - Load Vehicles Staging"
-          TopLeft="490.833306515384,181.133332073755" />
+          TopLeft="949.99994809429,57.1999996022383" />
         <NodeLayout
           Size="212,41.6"
           Id="Package\04 - Load Casualties Staging"
-          TopLeft="542.499970359108,276.466664744152" />
+          TopLeft="510.833305422632,258.466665575836" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="174.4,41.6"
           Id="Package\05 - Validate Staging"
-          TopLeft="258.333319218623,304.199997884631" />
+          TopLeft="809.166622455751,268.666664798392" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="219.966659062936,139.533332652317">
+          TopLeft="552.433311979142,103.133332760798">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113.199995082617,61.5333326161568"
+              EndConnector="60.8999878431366,-25.9999998191992"
               Start="0,0"
-              End="113.199995082617,54.0333326161568">
+              End="53.3999878431366,-25.9999998191992">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.7666663080784" />
+                    End="26.4499939215683,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.7666663080784"
-                    Point2="0,30.7666663080784"
-                    Point3="4,30.7666663080784" />
+                    Point1="26.4499939215683,0"
+                    Point2="30.4499939215683,0"
+                    Point3="30.4499939215683,-4" />
                   <mssgle:LineSegment
-                    End="109.199995082617,30.7666663080784" />
+                    End="30.4499939215683,-21.9999998191992" />
                   <mssgle:CubicBezierSegment
-                    Point1="109.199995082617,30.7666663080784"
-                    Point2="113.199995082617,30.7666663080784"
-                    Point3="113.199995082617,34.7666663080784" />
+                    Point1="30.4499939215683,-21.9999998191992"
+                    Point2="30.4499939215683,-25.9999998191992"
+                    Point3="34.4499939215683,-25.9999998191992" />
                   <mssgle:LineSegment
-                    End="113.199995082617,54.0333326161568" />
+                    End="53.3999878431366,-25.9999998191992" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3903,30 +3902,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="437.166654145553,221.866665268474">
+          TopLeft="821.333299822279,77.5666662719184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.666652369831,-19.933333194719"
+              EndConnector="128.666648272011,0"
               Start="0,0"
-              End="46.166652369831,-19.933333194719">
+              End="121.166648272011,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="22.8333261849155,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.8333261849155,0"
-                    Point2="26.8333261849155,0"
-                    Point3="26.8333261849155,-4" />
-                  <mssgle:LineSegment
-                    End="26.8333261849155,-15.933333194719" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.8333261849155,-15.933333194719"
-                    Point2="26.8333261849155,-19.933333194719"
-                    Point3="30.8333261849155,-19.933333194719" />
-                  <mssgle:LineSegment
-                    End="46.166652369831,-19.933333194719" />
+                    End="121.166648272011,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3937,30 +3924,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="592.033306515384,222.733332073755">
+          TopLeft="1051.19994809429,98.7999996022383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.4666638437241,53.733332670397"
+              EndConnector="-434.366642671659,159.666665973597"
               Start="0,0"
-              End="56.4666638437241,46.233332670397">
+              End="-434.366642671659,152.166665973597">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8666663351985" />
+                    End="0,75.8333329867986" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.8666663351985"
-                    Point2="0,26.8666663351985"
-                    Point3="4,26.8666663351985" />
+                    Point1="0,75.8333329867986"
+                    Point2="0,79.8333329867986"
+                    Point3="-4,79.8333329867986" />
                   <mssgle:LineSegment
-                    End="52.4666638437241,26.8666663351985" />
+                    End="-430.366642671659,79.8333329867986" />
                   <mssgle:CubicBezierSegment
-                    Point1="52.4666638437241,26.8666663351985"
-                    Point2="56.4666638437241,26.8666663351985"
-                    Point3="56.4666638437241,30.8666663351985" />
+                    Point1="-430.366642671659,79.8333329867986"
+                    Point2="-434.366642671659,79.8333329867986"
+                    Point3="-434.366642671659,83.8333329867986" />
                   <mssgle:LineSegment
-                    End="56.4666638437241,46.233332670397" />
+                    End="-434.366642671659,152.166665973597" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3971,30 +3958,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="542.499970359108,297.266664744152">
+          TopLeft="722.833305422632,279.266665575836">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-107.366651140485,27.733333140479"
+              EndConnector="86.333317033119,10.199999222556"
               Start="0,0"
-              End="-99.866651140485,27.733333140479">
+              End="78.833317033119,10.199999222556">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-49.6833255702425,0" />
+                    End="39.1666585165595,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-49.6833255702425,0"
-                    Point2="-53.6833255702425,0"
-                    Point3="-53.6833255702425,4" />
+                    Point1="39.1666585165595,0"
+                    Point2="43.1666585165595,0"
+                    Point3="43.1666585165595,4" />
                   <mssgle:LineSegment
-                    End="-53.6833255702425,23.733333140479" />
+                    End="43.1666585165595,6.19999922255596" />
                   <mssgle:CubicBezierSegment
-                    Point1="-53.6833255702425,23.733333140479"
-                    Point2="-53.6833255702425,27.733333140479"
-                    Point3="-57.6833255702425,27.733333140479" />
+                    Point1="43.1666585165595,6.19999922255596"
+                    Point2="43.1666585165595,10.199999222556"
+                    Point3="47.1666585165595,10.199999222556" />
                   <mssgle:LineSegment
-                    End="-99.866651140485,27.733333140479" />
+                    End="78.833317033119,10.199999222556" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4012,51 +3999,51 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="254.4,41.6"
-          Id="Package\02 - Load Collisions Staging\DRV - Convert VARCHAR Code Page"
-          TopLeft="322.499982379378,46.7999998191992" />
+          Size="262.4,41.6"
+          Id="Package\02 - Load Collisions Staging\DRV - Collisions VARCHAR Code Page"
+          TopLeft="714.999960934124,149.066665630076" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\02 - Load Collisions Staging\SRC - Collisions Clean CSV"
-          TopLeft="36.6666646632885,51.1333329777585" />
+          TopLeft="401.666644720569,67.5999995299181" />
         <NodeLayout
-          Size="223.2,45.6"
+          Size="223.2,41.6"
           Id="Package\02 - Load Collisions Staging\CNV - Collisions Staging Types"
-          TopLeft="83.3333287802009,140.399999023676" />
+          TopLeft="446.666642261877,149.066665630076" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="191.2,41.6"
           Id="Package\02 - Load Collisions Staging\DST - Collisions Staging"
-          TopLeft="260.833319082029,282.533331368632" />
+          TopLeft="751.666625597413,241.799998318553" />
         <NodeLayout
           Size="220,41.6"
           Id="Package\02 - Load Collisions Staging\CNT - Collisions Staging Rows"
-          TopLeft="408.333311022985,180.266665413115" />
+          TopLeft="400.833311432767,233.133331712153" />
         <EdgeLayout
           Id="Package\02 - Load Collisions Staging.Paths[Row Count Output 1]"
-          TopLeft="518.333311022985,221.866665413115">
+          TopLeft="620.833311432767,253.933331712153">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-162.299991940956,60.666665955517"
+              EndConnector="130.833314164646,8.66666660639982"
               Start="0,0"
-              End="-162.299991940956,53.166665955517">
+              End="123.333314164646,8.66666660639982">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.3333329777585" />
+                    End="61.4166570823231,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.3333329777585"
-                    Point2="0,30.3333329777585"
-                    Point3="-4,30.3333329777585" />
+                    Point1="61.4166570823231,0"
+                    Point2="65.4166570823231,0"
+                    Point3="65.4166570823231,4" />
                   <mssgle:LineSegment
-                    End="-158.299991940956,30.3333329777585" />
+                    End="65.4166570823231,4.66666660639982" />
                   <mssgle:CubicBezierSegment
-                    Point1="-158.299991940956,30.3333329777585"
-                    Point2="-162.299991940956,30.3333329777585"
-                    Point3="-162.299991940956,34.3333329777585" />
+                    Point1="65.4166570823231,4.66666660639982"
+                    Point2="65.4166570823231,8.66666660639982"
+                    Point3="69.4166570823231,8.66666660639982" />
                   <mssgle:LineSegment
-                    End="-162.299991940956,53.166665955517" />
+                    End="123.333314164646,8.66666660639982" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4067,18 +4054,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load Collisions Staging.Paths[Flat File Source Output]"
-          TopLeft="244.666664663288,69.7666663984789">
+          TopLeft="505.666644720569,109.199999529918">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.8333177160892,0"
+              EndConnector="340.533316213556,39.8666661001576"
               Start="0,0"
-              End="70.3333177160892,0">
+              End="340.533316213556,32.3666661001576">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="70.3333177160892,0" />
+                    End="0,15.9333330500788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.9333330500788"
+                    Point2="0,19.9333330500788"
+                    Point3="4,19.9333330500788" />
+                  <mssgle:LineSegment
+                    End="336.533316213556,19.9333330500788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="336.533316213556,19.9333330500788"
+                    Point2="340.533316213556,19.9333330500788"
+                    Point3="340.533316213556,23.9333330500788" />
+                  <mssgle:LineSegment
+                    End="340.533316213556,32.3666661001576" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4089,30 +4088,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load Collisions Staging.Paths[Derived Column Output]"
-          TopLeft="449.699982379378,88.3999998191993">
+          TopLeft="714.999960934124,169.866665630076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-254.766653599177,51.9999992044767"
+              EndConnector="-45.133318672247,0"
               Start="0,0"
-              End="-254.766653599177,44.4999992044767">
+              End="-37.633318672247,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.9999996022383" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.9999996022383"
-                    Point2="0,25.9999996022383"
-                    Point3="-4,25.9999996022383" />
-                  <mssgle:LineSegment
-                    End="-250.766653599177,25.9999996022383" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-250.766653599177,25.9999996022383"
-                    Point2="-254.766653599177,25.9999996022383"
-                    Point3="-254.766653599177,29.9999996022383" />
-                  <mssgle:LineSegment
-                    End="-254.766653599177,44.4999992044767" />
+                    End="-37.633318672247,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4123,30 +4110,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\02 - Load Collisions Staging.Paths[Data Conversion Output]"
-          TopLeft="306.533328780201,163.199999023676">
+          TopLeft="558.266642261877,190.666665630076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.799982242784,37.8666663894388"
+              EndConnector="-47.4333308291106,42.4666660820775"
               Start="0,0"
-              End="94.2999822427837,37.8666663894388">
+              End="-47.4333308291106,34.9666660820775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="46.8999911213918,0" />
+                    End="0,17.2333330410387" />
                   <mssgle:CubicBezierSegment
-                    Point1="46.8999911213918,0"
-                    Point2="50.8999911213918,0"
-                    Point3="50.8999911213918,4" />
+                    Point1="0,17.2333330410387"
+                    Point2="0,21.2333330410387"
+                    Point3="-4,21.2333330410387" />
                   <mssgle:LineSegment
-                    End="50.8999911213918,33.8666663894388" />
+                    End="-43.4333308291106,21.2333330410387" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.8999911213918,33.8666663894388"
-                    Point2="50.8999911213918,37.8666663894388"
-                    Point3="54.8999911213918,37.8666663894388" />
+                    Point1="-43.4333308291106,21.2333330410387"
+                    Point2="-47.4333308291106,21.2333330410387"
+                    Point3="-47.4333308291106,25.2333330410387" />
                   <mssgle:LineSegment
-                    End="94.2999822427837,37.8666663894388" />
+                    End="-47.4333308291106,34.9666660820775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4179,37 +4166,37 @@
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\03 - Load Vehicles Staging\DST - Vehicles Staging"
-          TopLeft="256.999996170402,207.999996900558" />
+          TopLeft="914.999986365438,266.99999602139" />
         <NodeLayout
           Size="203.2,41.6"
           Id="Package\03 - Load Vehicles Staging\SRC - Vehicles Clean CSV"
-          TopLeft="61.999999076128,65.9999990165233" />
+          TopLeft="447.99999332428,16.9999997466803" />
         <NodeLayout
-          Size="254.4,41.6"
-          Id="Package\03 - Load Vehicles Staging\DRV - Convert VARCHAR Code Page"
-          TopLeft="387.99999421835,83.9999987483025" />
+          Size="256.8,41.6"
+          Id="Package\03 - Load Vehicles Staging\DRV - Vehicles VARCHAR Code Page"
+          TopLeft="723.99998921156,65.9999990165234" />
         <NodeLayout
           Size="217.6,41.6"
           Id="Package\03 - Load Vehicles Staging\CNV - Vehicles Staging Types"
-          TopLeft="705.99998947978,82.9999987632036" />
+          TopLeft="1168.99998258054,63.9999990463257" />
         <NodeLayout
           Size="215.2,41.6"
           Id="Package\03 - Load Vehicles Staging\CNT - Vehicles Staging Rows"
-          TopLeft="654.99999023974,170.999997451901" />
+          TopLeft="646.999990358949,226.999996617436" />
         <EdgeLayout
           Id="Package\03 - Load Vehicles Staging.Paths[Derived Column Output]"
-          TopLeft="642.39999421835,104.299998755753">
+          TopLeft="980.799989211559,85.7999990314245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63.5999952614308,0"
+              EndConnector="188.199993368983,0"
               Start="0,0"
-              End="56.0999952614308,0">
+              End="180.699993368983,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.0999952614308,0" />
+                    End="180.699993368983,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4220,30 +4207,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\03 - Load Vehicles Staging.Paths[Data Conversion Output]"
-          TopLeft="814.79998947978,124.599998763204">
+          TopLeft="1277.79998258054,105.599999046326">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-52.1999992400407,46.3999986886978"
+              EndConnector="-523.199992221594,121.399997571111"
               Start="0,0"
-              End="-52.1999992400407,38.8999986886978">
+              End="-523.199992221594,113.899997571111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.1999993443489" />
+                    End="0,56.6999987855554" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.1999993443489"
-                    Point2="0,23.1999993443489"
-                    Point3="-4,23.1999993443489" />
+                    Point1="0,56.6999987855554"
+                    Point2="0,60.6999987855554"
+                    Point3="-4,60.6999987855554" />
                   <mssgle:LineSegment
-                    End="-48.1999992400407,23.1999993443489" />
+                    End="-519.199992221594,60.6999987855554" />
                   <mssgle:CubicBezierSegment
-                    Point1="-48.1999992400407,23.1999993443489"
-                    Point2="-52.1999992400407,23.1999993443489"
-                    Point3="-52.1999992400407,27.1999993443489" />
+                    Point1="-519.199992221594,60.6999987855554"
+                    Point2="-523.199992221594,60.6999987855554"
+                    Point3="-523.199992221594,64.6999987855554" />
                   <mssgle:LineSegment
-                    End="-52.1999992400407,38.8999986886978" />
+                    End="-523.199992221594,113.899997571111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4254,30 +4241,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\03 - Load Vehicles Staging.Paths[Row Count Output 1]"
-          TopLeft="654.99999023974,191.799997451901">
+          TopLeft="862.199990358949,247.799996617436">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-212.399994069338,36.999999448657"
+              EndConnector="52.7999960064888,39.9999994039535"
               Start="0,0"
-              End="-204.899994069338,36.999999448657">
+              End="45.2999960064888,39.9999994039535">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-102.199997034669,0" />
+                    End="22.3999980032444,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-102.199997034669,0"
-                    Point2="-106.199997034669,0"
-                    Point3="-106.199997034669,4" />
+                    Point1="22.3999980032444,0"
+                    Point2="26.3999980032444,0"
+                    Point3="26.3999980032444,4" />
                   <mssgle:LineSegment
-                    End="-106.199997034669,32.999999448657" />
+                    End="26.3999980032444,35.9999994039535" />
                   <mssgle:CubicBezierSegment
-                    Point1="-106.199997034669,32.999999448657"
-                    Point2="-106.199997034669,36.999999448657"
-                    Point3="-110.199997034669,36.999999448657" />
+                    Point1="26.3999980032444,35.9999994039535"
+                    Point2="26.3999980032444,39.9999994039535"
+                    Point3="30.3999980032444,39.9999994039535" />
                   <mssgle:LineSegment
-                    End="-204.899994069338,36.999999448657" />
+                    End="45.2999960064888,39.9999994039535" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4288,30 +4275,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\03 - Load Vehicles Staging.Paths[Flat File Source Output]"
-          TopLeft="265.199999076128,86.7999990165233">
+          TopLeft="651.19999332428,37.7999997466803">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="122.799995142222,17.9999997317791"
+              EndConnector="72.7999958872797,48.9999992698431"
               Start="0,0"
-              End="115.299995142222,17.9999997317791">
+              End="65.2999958872797,48.9999992698431">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="57.3999975711108,0" />
+                    End="32.3999979436398,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="57.3999975711108,0"
-                    Point2="61.3999975711108,0"
-                    Point3="61.3999975711108,4" />
+                    Point1="32.3999979436398,0"
+                    Point2="36.3999979436398,0"
+                    Point3="36.3999979436398,4" />
                   <mssgle:LineSegment
-                    End="61.3999975711108,13.9999997317791" />
+                    End="36.3999979436398,44.9999992698431" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.3999975711108,13.9999997317791"
-                    Point2="61.3999975711108,17.9999997317791"
-                    Point3="65.3999975711108,17.9999997317791" />
+                    Point1="36.3999979436398,44.9999992698431"
+                    Point2="36.3999979436398,48.9999992698431"
+                    Point3="40.3999979436398,48.9999992698431" />
                   <mssgle:LineSegment
-                    End="115.299995142222,17.9999997317791" />
+                    End="65.2999958872797,48.9999992698431" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4344,49 +4331,49 @@
         <NodeLayout
           Size="195.2,41.6"
           Id="Package\04 - Load Casualties Staging\DST - Casualties Staging"
-          TopLeft="265.999996036291,232.999996528029" />
+          TopLeft="581.999991327524,305.999995440245" />
         <NodeLayout
           Size="212,41.6"
           Id="Package\04 - Load Casualties Staging\SRC - Casualties Clean CSV"
-          TopLeft="13.9999997913837,29.9999995529652" />
+          TopLeft="362.999994590879,111.99999833107" />
         <NodeLayout
-          Size="254.4,41.6"
-          Id="Package\04 - Load Casualties Staging\DRV - Convert VARCHAR Code Page"
-          TopLeft="355.999994695187,68.9999989718199" />
+          Size="266.4,41.6"
+          Id="Package\04 - Load Casualties Staging\DRV - Casualties VARCHAR Code Page"
+          TopLeft="696.99998961389,154.99999769032" />
         <NodeLayout
           Size="227.2,41.6"
           Id="Package\04 - Load Casualties Staging\CNV - Casualties Staging Types"
-          TopLeft="650.999990299344,99.9999985098839" />
+          TopLeft="975.999985456467,62.9999990612269" />
         <NodeLayout
           Size="224,41.6"
           Id="Package\04 - Load Casualties Staging\CNT - Casualties Staging Rows"
-          TopLeft="641.999990433455,202.999996975064" />
+          TopLeft="1101.99998357892,217.999996751547" />
         <EdgeLayout
           Id="Package\04 - Load Casualties Staging.Paths[Derived Column Output]"
-          TopLeft="610.399994695187,89.7999989718199">
+          TopLeft="830.19998961389,154.99999769032">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.5999956041577,30.999999538064"
+              EndConnector="222.866662509243,-50.3999986290931"
               Start="0,0"
-              End="33.0999956041577,30.999999538064">
+              End="222.866662509243,-42.8999986290931">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="16.2999978020788,0" />
+                    End="0,-26.0285306517394" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.2999978020788,0"
-                    Point2="20.2999978020788,0"
-                    Point3="20.2999978020788,4" />
+                    Point1="0,-26.0285306517394"
+                    Point2="0,-30.0285306517394"
+                    Point3="4,-30.0285306517394" />
                   <mssgle:LineSegment
-                    End="20.2999978020788,26.999999538064" />
+                    End="218.866662509243,-30.0285306517394" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.2999978020788,26.999999538064"
-                    Point2="20.2999978020788,30.999999538064"
-                    Point3="24.2999978020788,30.999999538064" />
+                    Point1="218.866662509243,-30.0285306517394"
+                    Point2="222.866662509243,-30.0285306517394"
+                    Point3="222.866662509243,-34.0285306517394" />
                   <mssgle:LineSegment
-                    End="33.0999956041577,30.999999538064" />
+                    End="222.866662509243,-42.8999986290931" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4397,30 +4384,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\04 - Load Casualties Staging.Paths[Data Conversion Output]"
-          TopLeft="764.599990299344,141.599998509884">
+          TopLeft="1126.1333187898,104.599999061227">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.5999998658895,61.3999984651804"
+              EndConnector="87.8666647891205,113.39999769032"
               Start="0,0"
-              End="-10.5999998658895,53.8999984651804">
+              End="87.8666647891205,105.89999769032">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6999992325902" />
+                    End="0,41.8358032622413" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.6999992325902"
-                    Point2="0,30.6999992325902"
-                    Point3="-4,30.6999992325902" />
+                    Point1="0,41.8358032622413"
+                    Point2="0,45.8358032622413"
+                    Point3="4,45.8358032622413" />
                   <mssgle:LineSegment
-                    End="-6.59999986588946,30.6999992325902" />
+                    End="83.8666647891205,45.8358032622413" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.59999986588946,30.6999992325902"
-                    Point2="-10.5999998658895,30.6999992325902"
-                    Point3="-10.5999998658895,34.6999992325902" />
+                    Point1="83.8666647891205,45.8358032622413"
+                    Point2="87.8666647891205,45.8358032622413"
+                    Point3="87.8666647891205,49.8358032622413" />
                   <mssgle:LineSegment
-                    End="-10.5999998658895,53.8999984651804" />
+                    End="87.8666647891205,105.89999769032" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4431,30 +4418,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\04 - Load Casualties Staging.Paths[Row Count Output 1]"
-          TopLeft="641.999990433455,223.799996975064">
+          TopLeft="1213.99998357892,259.599996751547">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-180.799994397164,29.9999995529652"
+              EndConnector="-534.399992251396,46.3999986886977"
               Start="0,0"
-              End="-173.299994397164,29.9999995529652">
+              End="-534.399992251396,38.8999986886977">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-86.3999971985818,0" />
+                    End="0,19.1999993443489" />
                   <mssgle:CubicBezierSegment
-                    Point1="-86.3999971985818,0"
-                    Point2="-90.3999971985818,0"
-                    Point3="-90.3999971985818,4" />
+                    Point1="0,19.1999993443489"
+                    Point2="0,23.1999993443489"
+                    Point3="-4,23.1999993443489" />
                   <mssgle:LineSegment
-                    End="-90.3999971985818,25.9999995529652" />
+                    End="-530.399992251396,23.1999993443489" />
                   <mssgle:CubicBezierSegment
-                    Point1="-90.3999971985818,25.9999995529652"
-                    Point2="-90.3999971985818,29.9999995529652"
-                    Point3="-94.3999971985818,29.9999995529652" />
+                    Point1="-530.399992251396,23.1999993443489"
+                    Point2="-534.399992251396,23.1999993443489"
+                    Point3="-534.399992251396,27.1999993443489" />
                   <mssgle:LineSegment
-                    End="-173.299994397164,29.9999995529652" />
+                    End="-534.399992251396,38.8999986886977" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4465,30 +4452,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\04 - Load Casualties Staging.Paths[Flat File Source Output]"
-          TopLeft="225.999999791384,50.7999995529652">
+          TopLeft="574.999994590879,132.79999833107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="129.999994903803,38.9999994188547"
+              EndConnector="121.999995023012,42.99999935925"
               Start="0,0"
-              End="122.499994903803,38.9999994188547">
+              End="114.499995023012,42.99999935925">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="60.9999974519014,0" />
+                    End="56.9999975115059,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="60.9999974519014,0"
-                    Point2="64.9999974519014,0"
-                    Point3="64.9999974519014,4" />
+                    Point1="56.9999975115059,0"
+                    Point2="60.9999975115059,0"
+                    Point3="60.9999975115059,4" />
                   <mssgle:LineSegment
-                    End="64.9999974519014,34.9999994188547" />
+                    End="60.9999975115059,38.99999935925" />
                   <mssgle:CubicBezierSegment
-                    Point1="64.9999974519014,34.9999994188547"
-                    Point2="64.9999974519014,38.9999994188547"
-                    Point3="68.9999974519014,38.9999994188547" />
+                    Point1="60.9999975115059,38.99999935925"
+                    Point2="60.9999975115059,42.99999935925"
+                    Point3="64.9999975115059,42.99999935925" />
                   <mssgle:LineSegment
-                    End="122.499994903803,38.9999994188547" />
+                    End="114.499995023012,42.99999935925" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

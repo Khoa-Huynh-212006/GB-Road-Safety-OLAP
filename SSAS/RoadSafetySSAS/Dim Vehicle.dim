@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d8965ddd-a62d-4aaa-ad26-f22c2713a12c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e588d456-4cb4-45f7-8a21-09752341532d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Vehicle</ID>
   <Name>Dim Vehicle</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -6,6 +6,32 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1684" scrolltop="-4202" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8170" y="9356" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimVehicle" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4763" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00009b1200006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dwh_DimVehicle" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +47,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-1684</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-4202</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -42,116 +68,145 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9f99f1cb-5658-4c0a-811d-fd38ddbb406e">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="aa1871d9-9c24-4d8f-a1d1-fe5f150d29fe">
     <DataSourceViewID>Road Safety DWH</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="143a9204-8111-4f4b-b341-682e4c630ba1">
+  <ErrorConfiguration dwd:design-time-name="5da42d59-48d4-45bf-9193-4cd5fd44f04b">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="6032ebb1-1f37-48ac-a0b5-0bb7eb9085e2">
+    <Attribute dwd:design-time-name="c27ad71b-004e-4789-b940-30e07e823a18">
       <ID>Vehicle Key</ID>
       <Name>Vehicle Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="4361cdbf-703e-421b-869b-3554af298d40">
+        <KeyColumn dwd:design-time-name="e13b87af-1f61-4f7c-b874-6746e3c4a3ca">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="92e58521-0282-49c4-a68d-b79d01bedfb2">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="33ce19c8-4bb9-4a80-87bf-134c1191f2a1">
             <TableID>dwh_DimVehicle</TableID>
             <ColumnID>VehicleKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="8e7aaba2-e741-405f-beb2-ae8004b47767">
+        <AttributeRelationship dwd:design-time-name="9543002e-2d6f-4daa-9c3c-c22b357fc864">
           <AttributeID>Vehicle Type</AttributeID>
           <Name>Vehicle Type</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3723f135-b691-47c1-ab82-6454aadf66f8">
+        <AttributeRelationship dwd:design-time-name="740d2863-bc63-4a28-9afb-2c88693c7d5c">
           <AttributeID>Vehicle Manoeuvre</AttributeID>
           <Name>Vehicle Manoeuvre</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="a71cd840-e6d6-463b-b63b-fb8efd266887">
+        <AttributeRelationship dwd:design-time-name="226f4ad5-1a29-4bdf-bc0e-181bb005076d">
           <AttributeID>Skidding And Overturning</AttributeID>
           <Name>Skidding And Overturning</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="9c9ccfbc-be55-4dfd-b2e2-52f818fa3322">
+        <AttributeRelationship dwd:design-time-name="a6a78c85-be2a-4167-9da6-c9cdd7ae2603">
           <AttributeID>Vehicle Leaving Carriageway</AttributeID>
           <Name>Vehicle Leaving Carriageway</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="51874fa8-9053-47ed-9306-799233a40c39">
+    <Attribute dwd:design-time-name="d8a93073-b486-4bcd-ab84-e8eede65a87d">
       <ID>Vehicle Type</ID>
       <Name>Vehicle Type</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="48764ed3-57b1-4eef-a437-09c1ba95ae46">
+        <KeyColumn dwd:design-time-name="4163cecb-629d-43dd-bc0a-2dd1d18f7ccf">
           <DataType>WChar</DataType>
           <DataSize>250</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="26fc4433-cf46-4849-b8c5-4db485e8f0f1">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e3879fa7-9657-48b3-9045-631e538d5800">
             <TableID>dwh_DimVehicle</TableID>
             <ColumnID>VehicleType</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="d9aed51b-fc47-4181-aaa2-66e28a69ba33">
+        <DataType>WChar</DataType>
+        <DataSize>250</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="195bd83c-2162-42fe-a3e8-75e8ad8794dd">
+          <TableID>dwh_DimVehicle</TableID>
+          <ColumnID>VehicleType</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="cf5550bb-c54a-4cbf-a4fa-157320b1fcad">
+    <Attribute dwd:design-time-name="6a346246-5df4-4b43-b173-d90c59e6240e">
       <ID>Vehicle Manoeuvre</ID>
       <Name>Vehicle Manoeuvre</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="5ae529ab-c9c3-443a-8a6a-f745dd95ec3a">
+        <KeyColumn dwd:design-time-name="c9b339b4-5189-4b0b-947f-4df4b63b44cc">
           <DataType>WChar</DataType>
           <DataSize>250</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b2e6d37d-c531-4f13-a7b8-07dd8a96f8b4">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="313564f4-b803-4f2f-91c1-59948c8e87f2">
             <TableID>dwh_DimVehicle</TableID>
             <ColumnID>VehicleManoeuvre</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="5a9362b9-65e8-4909-91cb-175be4cf1c1f">
+        <DataType>WChar</DataType>
+        <DataSize>250</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="289076fe-ecf4-4d81-bc2d-42480a7a2434">
+          <TableID>dwh_DimVehicle</TableID>
+          <ColumnID>VehicleManoeuvre</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="186bd6f0-67e4-47db-9a7b-ce87f70496fb">
+    <Attribute dwd:design-time-name="8fa02098-7aab-4031-b395-0593c872b075">
       <ID>Skidding And Overturning</ID>
       <Name>Skidding And Overturning</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="56d9eb9f-9ead-4f0d-8102-1c4fbf92ba37">
+        <KeyColumn dwd:design-time-name="621b7560-d876-4773-95f3-2fde51b1bedb">
           <DataType>WChar</DataType>
           <DataSize>250</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c4f9d27d-792c-4521-9e3d-85c40d2fe33d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d7680bc1-6d10-4569-8a39-55dd323bc3ea">
             <TableID>dwh_DimVehicle</TableID>
             <ColumnID>SkiddingAndOverturning</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="bf9f8bd4-ee6b-400f-8d30-6769e162206b">
+        <DataType>WChar</DataType>
+        <DataSize>250</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2744f2a8-0691-4f06-97d0-69cd456c8dad">
+          <TableID>dwh_DimVehicle</TableID>
+          <ColumnID>SkiddingAndOverturning</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="fc15b04c-30da-400f-894e-801f8866b226">
+    <Attribute dwd:design-time-name="2f4f054c-32a7-4e7b-b338-3e548942b8d4">
       <ID>Vehicle Leaving Carriageway</ID>
       <Name>Vehicle Leaving Carriageway</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f3ca2d4d-30dd-4eb0-b050-16cd80b943cc">
+        <KeyColumn dwd:design-time-name="06183906-ecc0-43cb-9b89-0be962a80631">
           <DataType>WChar</DataType>
           <DataSize>250</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="3b38d2c0-720d-4a56-9577-03aacdc6c4a3">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4944b86d-e7cd-41ca-92b9-26e96e1b060f">
             <TableID>dwh_DimVehicle</TableID>
             <ColumnID>VehicleLeavingCarriageway</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <OrderBy>Key</OrderBy>
+      <NameColumn dwd:design-time-name="5f9e3518-842d-430d-a53a-a79b2759d747">
+        <DataType>WChar</DataType>
+        <DataSize>250</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="69e39b96-39d4-4a9f-8491-3ab976bd8e8e">
+          <TableID>dwh_DimVehicle</TableID>
+          <ColumnID>VehicleLeavingCarriageway</ColumnID>
+        </Source>
+      </NameColumn>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
