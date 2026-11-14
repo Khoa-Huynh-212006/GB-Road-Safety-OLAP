@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/13/2026 3:34:52 PM"
@@ -8,7 +8,7 @@
   DTS:DTSID="{D69C9F9E-B81F-4F64-BFD6-75CB16FCB583}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="3072"
+  DTS:LocaleID="1033"
   DTS:ObjectName="05_Load_FactCasualty"
   DTS:PackageType="5"
   DTS:VersionBuild="12"
@@ -120,7 +120,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -227,7 +227,7 @@
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtySeverityKey]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[CollisionIndex]"
-                      cachedCodepage="1258"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CollisionIndex"
@@ -247,7 +247,7 @@
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CasualtyReference]" />
                     <inputColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].Columns[VehicleInvolvementID]"
-                      cachedCodepage="1258"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="VehicleInvolvementID"
@@ -334,7 +334,7 @@
                       name="CasualtySeverityKey" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="CollisionIndex" />
@@ -348,7 +348,7 @@
                       name="CasualtyReference" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\DST - FactCasualty.Inputs[OLE DB Destination Input].ExternalColumns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="VehicleInvolvementID" />
@@ -540,7 +540,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -665,7 +665,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -694,7 +694,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].Columns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -792,7 +792,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                       name="CasualtySeverityKey" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="CollisionIndex" />
@@ -806,7 +806,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                       name="CasualtyReference" />
                     <externalMetadataColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Output].ExternalColumns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       name="VehicleInvolvementID" />
@@ -894,7 +894,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                       name="CasualtySeverityKey" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[CollisionIndex]"
@@ -911,7 +911,7 @@ INNER JOIN dwh.DimCasualtySeverity AS CAS
                       name="CasualtyReference" />
                     <outputColumn
                       refId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"
-                      codePage="1258"
+                      codePage="1252"
                       dataType="str"
                       length="100"
                       lineageId="Package\02 - Load FactCasualty\SRC - FactCasualty Source.Outputs[OLE DB Source Error Output].Columns[VehicleInvolvementID]"

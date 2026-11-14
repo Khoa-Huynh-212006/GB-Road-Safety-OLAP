@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/13/2026 3:34:51 PM"
@@ -8,7 +8,7 @@
   DTS:DTSID="{26C2145B-F328-457A-9DD3-3B95DF48973E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
-  DTS:LocaleID="3072"
+  DTS:LocaleID="1033"
   DTS:ObjectName="04_Load_Dimensions"
   DTS:PackageType="5"
   DTS:VersionBuild="4"

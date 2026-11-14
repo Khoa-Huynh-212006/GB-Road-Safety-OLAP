@@ -1,0 +1,496 @@
+// ============================================================================
+// BỘ TRUY VẤN MDX - PHÂN TÍCH AN TOÀN GIAO THÔNG ANH (2021-2025)
+// Server: localhost | Database: RoadSafetySSAS | Cube: [Road Safety]
+// Nội dung: 15 câu hỏi trong "NỘI DUNG CÂU HỎI TRUY VẤN.docx"
+//           + 4 phép toán OLAP (Roll-up, Drill-down, Slice and Dice, Pivot)
+//           + các hàm hỗ trợ MDX.
+// ============================================================================
+
+
+// ----------------------------------------------------------------------------
+// CÂU 1 - ROLL-UP theo thời gian (Năm -> Toàn giai đoạn)
+// Số vụ va chạm và số nạn nhân thay đổi như thế nào qua từng năm 2021-2025?
+// Hàm: .Members, [All], WITH MEMBER, Divide, NON EMPTY
+// ----------------------------------------------------------------------------
+WITH
+MEMBER [Measures].[Casualties Per Collision] AS
+    Divide([Measures].[Total Casualties], [Measures].[Total Collisions]),
+    FORMAT_STRING = "0.00"
+SELECT
+    {
+        [Measures].[Total Collisions],
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate],
+        [Measures].[Casualties Per Collision]
+    } ON COLUMNS,
+    NON EMPTY {
+        [Dim Date].[Date Hierarchy].[Year].Members,
+        [Dim Date].[Date Hierarchy].[All]
+    } ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 2A - DRILL-DOWN Năm -> Quý -> Tháng cho toàn bộ 5 năm 2021-2025 (hàm DrilldownLevel lồng 2 lần)
+// Số nạn nhân và nạn nhân KSI biến động thế nào khi phân rã năm, quý, tháng?
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY DrilldownLevel(
+        DrilldownLevel(
+            [Dim Date].[Date Hierarchy].[Year].Members
+        )
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 2B - DRILL-DOWN toàn bộ 5 năm (2021-2025) bằng Descendants + tỷ trọng so với năm bằng Ancestor
+// ----------------------------------------------------------------------------
+WITH
+MEMBER [Measures].[Pct Of Year Casualties] AS
+    Divide(
+        [Measures].[Total Casualties],
+        ( [Measures].[Total Casualties],
+          Ancestor([Dim Date].[Date Hierarchy].CurrentMember,
+                   [Dim Date].[Date Hierarchy].[Year]) )
+    ),
+    FORMAT_STRING = "0.00%"
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate],
+        [Measures].[Pct Of Year Casualties]
+    } ON COLUMNS,
+    NON EMPTY Descendants(
+        [Dim Date].[Date Hierarchy].[Year].Members,
+        [Dim Date].[Date Hierarchy].[Month Name],
+        SELF_AND_BEFORE
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 3A - Ngày trong tuần x Khung giờ, sắp xếp giảm dần (CrossJoin, Order)
+// Khung giờ trong Cube: Night 0h-5h, Morning 6h-11h, Afternoon 12h-17h, Evening 18h-23h
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY Order(
+        CrossJoin(
+            [Dim Date].[Day Of Week Name].[Day Of Week Name].Members,
+            [Dim Time].[Time Hierarchy].[Time Band].Members
+        ),
+        [Measures].[Total Casualties],
+        BDESC
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 3B - PIVOT: Khung giờ lên CỘT, Ngày trong tuần ở HÀNG, giá trị = KSI Rate
+// ----------------------------------------------------------------------------
+SELECT
+    NON EMPTY [Dim Time].[Time Hierarchy].[Time Band].Members ON COLUMNS,
+    NON EMPTY [Dim Date].[Day Of Week Name].[Day Of Week Name].Members ON ROWS
+FROM [Road Safety]
+WHERE ( [Measures].[KSI Rate] );
+
+
+// ----------------------------------------------------------------------------
+// CÂU 4A - Top 10 khu vực chính quyền địa phương theo số nạn nhân KSI (TopCount)
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Collisions],
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    TopCount(
+        [Dim Location].[Local Authority Name].[Local Authority Name].Members,
+        10,
+        [Measures].[KSI Casualties]
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 4B - SLICE: cắt lát Cube tại năm 2025 (trục WHERE), rồi lấy Top 10 KSI
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Collisions],
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    TopCount(
+        [Dim Location].[Local Authority Name].[Local Authority Name].Members,
+        10,
+        [Measures].[KSI Casualties]
+    ) ON ROWS
+FROM [Road Safety]
+WHERE ( [Dim Date].[Year].&[2025] );
+
+
+// ----------------------------------------------------------------------------
+// CÂU 4C - Hàm Filter: địa phương có >= 3.000 nạn nhân VÀ tỷ lệ KSI >= 25%
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    Order(
+        Filter(
+            [Dim Location].[Local Authority Name].[Local Authority Name].Members,
+            [Measures].[Total Casualties] >= 3000
+            AND [Measures].[KSI Rate] >= 0.25
+        ),
+        [Measures].[KSI Rate],
+        BDESC
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 5 - PIVOT: Năm lên CỘT, Top 10 địa phương ở HÀNG
+// Thêm thành viên tính toán: chênh lệch, % thay đổi, nhãn xu hướng (IIF lồng nhau)
+// Ngưỡng nhãn: >= +10% "Tang manh", > 0 "Tang", > -10% "Giam", còn lại "Giam manh"
+// ----------------------------------------------------------------------------
+WITH
+MEMBER [Dim Date].[Year].[Diff 2025 vs 2021] AS
+    ([Dim Date].[Year].&[2025]) - ([Dim Date].[Year].&[2021])
+MEMBER [Dim Date].[Year].[Pct Change 21-25] AS
+    Divide(
+        ([Dim Date].[Year].&[2025]) - ([Dim Date].[Year].&[2021]),
+        ([Dim Date].[Year].&[2021])
+    ),
+    FORMAT_STRING = "0.00%"
+MEMBER [Dim Date].[Year].[Trend Note] AS
+    IIF([Dim Date].[Year].[Pct Change 21-25] >= 0.10, "Tang manh",
+    IIF([Dim Date].[Year].[Pct Change 21-25] > 0,     "Tang",
+    IIF([Dim Date].[Year].[Pct Change 21-25] > -0.10, "Giam", "Giam manh")))
+SELECT
+    {
+        [Dim Date].[Year].&[2021],
+        [Dim Date].[Year].&[2022],
+        [Dim Date].[Year].&[2023],
+        [Dim Date].[Year].&[2024],
+        [Dim Date].[Year].&[2025],
+        [Dim Date].[Year].[Diff 2025 vs 2021],
+        [Dim Date].[Year].[Pct Change 21-25],
+        [Dim Date].[Year].[Trend Note]
+    } ON COLUMNS,
+    TopCount(
+        [Dim Location].[Local Authority Name].[Local Authority Name].Members,
+        10,
+        ( [Measures].[Total Casualties], [Dim Date].[Year].[All] )
+    ) ON ROWS
+FROM [Road Safety]
+WHERE ( [Measures].[Total Casualties] );
+
+
+// ----------------------------------------------------------------------------
+// CÂU 6 - Cấp đường x Loại đường
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Collisions],
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY Order(
+        CrossJoin(
+            [Dim Road].[First Road Class].[First Road Class].Members,
+            [Dim Road].[Road Type].[Road Type].Members
+        ),
+        [Measures].[Total Casualties],
+        BDESC
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 7 - DICE: khối con {Urban, Rural} x {các mức tốc độ, bỏ "Unknown"}
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY CrossJoin(
+        { [Dim Road].[Urban Or Rural Area].&[Urban],
+          [Dim Road].[Urban Or Rural Area].&[Rural] },
+        Filter(
+            [Dim Road].[Speed Limit].[Speed Limit].Members,
+            [Dim Road].[Speed Limit].CurrentMember.Name <> "Unknown"
+        )
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 8 - Loại nút giao x Hình thức điều khiển (Top 15 theo số nạn nhân)
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY TopCount(
+        CrossJoin(
+            [Dim Junction].[Junction Detail].[Junction Detail].Members,
+            [Dim Junction].[Junction Control].[Junction Control].Members
+        ),
+        15,
+        [Measures].[Total Casualties]
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 9A - Tổ hợp Ánh sáng x Thời tiết x Mặt đường (Top 15, toàn giai đoạn)
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY TopCount(
+        CrossJoin(
+            [Dim Environment].[Light Conditions].[Light Conditions].Members,
+            CrossJoin(
+                [Dim Environment].[Weather Conditions].[Weather Conditions].Members,
+                [Dim Environment].[Road Surface Conditions].[Road Surface Conditions].Members
+            )
+        ),
+        15,
+        [Measures].[Total Casualties]
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 9B - "Qua từng năm": PIVOT Năm lên CỘT, Điều kiện ánh sáng ở HÀNG
+// Đổi WHERE thành [Measures].[Total Casualties] để xem số nạn nhân
+// ----------------------------------------------------------------------------
+SELECT
+    NON EMPTY [Dim Date].[Year].[Year].Members ON COLUMNS,
+    NON EMPTY [Dim Environment].[Light Conditions].[Light Conditions].Members ON ROWS
+FROM [Road Safety]
+WHERE ( [Measures].[KSI Rate] );
+
+
+// ----------------------------------------------------------------------------
+// CÂU 9C - "Qua từng năm": Điều kiện thời tiết
+// ----------------------------------------------------------------------------
+SELECT
+    NON EMPTY [Dim Date].[Year].[Year].Members ON COLUMNS,
+    NON EMPTY [Dim Environment].[Weather Conditions].[Weather Conditions].Members ON ROWS
+FROM [Road Safety]
+WHERE ( [Measures].[KSI Rate] );
+
+
+// ----------------------------------------------------------------------------
+// CÂU 9D - "Qua từng năm": Bề mặt đường
+// ----------------------------------------------------------------------------
+SELECT
+    NON EMPTY [Dim Date].[Year].[Year].Members ON COLUMNS,
+    NON EMPTY [Dim Environment].[Road Surface Conditions].[Road Surface Conditions].Members ON ROWS
+FROM [Road Safety]
+WHERE ( [Measures].[KSI Rate] );
+
+
+// ----------------------------------------------------------------------------
+// CÂU 10A - Cơ cấu Tử vong / Nghiêm trọng / Nhẹ qua từng năm, kèm tỷ trọng
+// ----------------------------------------------------------------------------
+WITH
+MEMBER [Measures].[Severity Share] AS
+    Divide(
+        [Measures].[Total Casualties],
+        ( [Measures].[Total Casualties],
+          [Dim Casualty Severity].[Casualty Severity].[All] )
+    ),
+    FORMAT_STRING = "0.00%"
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[Severity Share]
+    } ON COLUMNS,
+    NON EMPTY CrossJoin(
+        [Dim Date].[Year].[Year].Members,
+        [Dim Casualty Severity].[Casualty Severity].[Casualty Severity].Members
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 10B - ROLL-UP theo mức độ (bước 1 - chi tiết): Fatal / Serious / Slight
+// ----------------------------------------------------------------------------
+SELECT
+    { [Measures].[Total Casualties] } ON COLUMNS,
+    NON EMPTY [Dim Casualty Severity].[Casualty Severity].[Casualty Severity].Members ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 10C - ROLL-UP theo mức độ (bước 2 - cuộn lên): nhóm KSI / Non-KSI và All
+// KSI = Fatal + Serious, Non-KSI = Slight
+// ----------------------------------------------------------------------------
+SELECT
+    { [Measures].[Total Casualties] } ON COLUMNS,
+    [Dim Casualty Severity].[Casualty Severity Group].Members ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 11A - Nhóm tuổi x Giới tính nạn nhân (dạng bảng dọc)
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY CrossJoin(
+        [Dim Casualty].[Age Band Of Casualty].[Age Band Of Casualty].Members,
+        { [Dim Casualty].[Sex Of Casualty].&[Male],
+          [Dim Casualty].[Sex Of Casualty].&[Female] }
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 11B - PIVOT: Giới tính x Độ đo lên CỘT, Nhóm tuổi ở HÀNG
+// ----------------------------------------------------------------------------
+SELECT
+    NON EMPTY CrossJoin(
+        { [Dim Casualty].[Sex Of Casualty].&[Male],
+          [Dim Casualty].[Sex Of Casualty].&[Female] },
+        { [Measures].[Total Casualties],
+          [Measures].[KSI Casualties],
+          [Measures].[KSI Rate] }
+    ) ON COLUMNS,
+    NON EMPTY [Dim Casualty].[Age Band Of Casualty].[Age Band Of Casualty].Members ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 12A - Phân bố MỨC ĐỘ thương vong (Fatal/Serious/Slight) theo VAI TRÒ nạn nhân
+// Thành viên tính toán dạng tuple (độ đo, thành viên mức độ)
+// ----------------------------------------------------------------------------
+WITH
+MEMBER [Measures].[Fatal]   AS ([Measures].[Total Casualties], [Dim Casualty Severity].[Casualty Severity].&[1])
+MEMBER [Measures].[Serious] AS ([Measures].[Total Casualties], [Dim Casualty Severity].[Casualty Severity].&[2])
+MEMBER [Measures].[Slight]  AS ([Measures].[Total Casualties], [Dim Casualty Severity].[Casualty Severity].&[3])
+MEMBER [Measures].[Fatal Rate] AS
+    Divide([Measures].[Fatal], [Measures].[Total Casualties]), FORMAT_STRING = "0.00%"
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[Fatal], [Measures].[Serious], [Measures].[Slight],
+        [Measures].[Fatal Rate], [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY [Dim Casualty].[Casualty Class].[Casualty Class].Members ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 12B - Như 12A nhưng chi tiết Vai trò x Loại đối tượng (Top 10)
+// ----------------------------------------------------------------------------
+WITH
+MEMBER [Measures].[Fatal]   AS ([Measures].[Total Casualties], [Dim Casualty Severity].[Casualty Severity].&[1])
+MEMBER [Measures].[Serious] AS ([Measures].[Total Casualties], [Dim Casualty Severity].[Casualty Severity].&[2])
+MEMBER [Measures].[Slight]  AS ([Measures].[Total Casualties], [Dim Casualty Severity].[Casualty Severity].&[3])
+MEMBER [Measures].[Fatal Rate] AS
+    Divide([Measures].[Fatal], [Measures].[Total Casualties]), FORMAT_STRING = "0.00%"
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[Fatal], [Measures].[Serious], [Measures].[Slight],
+        [Measures].[Fatal Rate], [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY TopCount(
+        CrossJoin(
+            [Dim Casualty].[Casualty Class].[Casualty Class].Members,
+            [Dim Casualty].[Casualty Type].[Casualty Type].Members
+        ),
+        10,
+        [Measures].[Total Casualties]
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 13 - Loại phương tiện
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Vehicles Linked To Casualties],
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY Order(
+        [Dim Vehicle].[Vehicle Type].[Vehicle Type].Members,
+        [Measures].[Total Casualties],
+        BDESC
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 14 - Thao tác xe x Trượt/lật x Rời khỏi phần đường (Top 15 theo KSI)
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY TopCount(
+        CrossJoin(
+            [Dim Vehicle].[Vehicle Manoeuvre].[Vehicle Manoeuvre].Members,
+            CrossJoin(
+                [Dim Vehicle].[Skidding And Overturning].[Skidding And Overturning].Members,
+                [Dim Vehicle].[Vehicle Leaving Carriageway].[Vehicle Leaving Carriageway].Members
+            )
+        ),
+        15,
+        [Measures].[KSI Casualties]
+    ) ON ROWS
+FROM [Road Safety];
+
+
+// ----------------------------------------------------------------------------
+// CÂU 15 - Nhóm tuổi x Giới tính người lái phương tiện liên quan
+// ----------------------------------------------------------------------------
+SELECT
+    {
+        [Measures].[Total Casualties],
+        [Measures].[KSI Casualties],
+        [Measures].[KSI Rate]
+    } ON COLUMNS,
+    NON EMPTY CrossJoin(
+        [Dim Driver].[Age Band Of Driver].[Age Band Of Driver].Members,
+        { [Dim Driver].[Sex Of Driver].&[Male],
+          [Dim Driver].[Sex Of Driver].&[Female] }
+    ) ON ROWS
+FROM [Road Safety];
