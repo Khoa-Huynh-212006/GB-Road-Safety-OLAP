@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5b7b7c63-edf9-4e27-bd73-0b682f648957" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="31d94b5a-e25e-4ede-9c67-139d64c66242" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Road Safety</ID>
   <Name>Road Safety</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -410,243 +410,243 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="1822a7a8-dd48-4777-a91f-beb1fae202ef">
+    <Dimension dwd:design-time-name="7da53b51-718d-4c28-b163-27e3fdfdc7d8">
       <ID>Dim Vehicle</ID>
       <Name>Dim Vehicle</Name>
       <DimensionID>Dim Vehicle</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="ce50d7a1-60b0-4364-a0cb-a5f629c39770">
+        <Attribute dwd:design-time-name="d94a097f-debb-42c8-b5a7-0a03cbf540fe">
           <AttributeID>Vehicle Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1724e379-4697-4c1c-bc0c-0f7744f85dd0">
+        <Attribute dwd:design-time-name="bf5e4eca-544b-4886-b4f2-ccf02e8de28f">
           <AttributeID>Vehicle Type</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1d6fc0d4-36bf-471b-bd6a-0788fae5660e">
+        <Attribute dwd:design-time-name="878719bd-289e-4f75-bf74-4f701b08a631">
           <AttributeID>Vehicle Manoeuvre</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d98766a7-1afd-4fb4-830a-23a90023e39b">
+        <Attribute dwd:design-time-name="34466b10-8572-451a-92f9-c9236d4ce667">
           <AttributeID>Skidding And Overturning</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="837ca0b1-a323-45e2-bbc8-036dfe5133b7">
+        <Attribute dwd:design-time-name="c490bceb-c7dd-4321-8d06-626113bff248">
           <AttributeID>Vehicle Leaving Carriageway</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="4d474e33-8af5-453f-9ac9-9a060180f89b">
+    <Dimension dwd:design-time-name="c6c15c9a-20d2-4cde-ab2e-5c0fac016f8e">
       <ID>Dim Time</ID>
       <Name>Dim Time</Name>
       <DimensionID>Dim Time</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="8b59e9db-db0b-4368-9b9c-3d21868e4c4a">
+        <Attribute dwd:design-time-name="2dba6c38-684e-4445-8589-5fa08856f054">
           <AttributeID>Time Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="1929ebe9-f62b-4bdf-9085-eca1c1cb9851">
+        <Attribute dwd:design-time-name="c0f01208-b744-48ca-ae67-5a6a48a60873">
           <AttributeID>Hour</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5c314ab3-db9c-49d8-b076-5cf8f0e6f725">
+        <Attribute dwd:design-time-name="9e818887-5458-4eea-87fd-1f451dccde9e">
           <AttributeID>Minute</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="818cd8bf-6774-4fa9-a942-507c61b33fd6">
+        <Attribute dwd:design-time-name="ad5adc18-e3c2-4149-847a-da940c9c8ecf">
           <AttributeID>Time Band</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="da7271df-b421-4acf-876d-53573ca21bea">
+        <Hierarchy dwd:design-time-name="3133dca1-15b1-47ff-9ce5-072309be0b3d">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="506e3a59-8092-41f7-b8d4-f74090e98ad8">
+    <Dimension dwd:design-time-name="e21ca4f6-c255-4a2c-adec-6d8fc69f4c07">
       <ID>Dim Driver</ID>
       <Name>Dim Driver</Name>
       <DimensionID>Dim Driver</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="4bc5cf0c-e82c-4e53-b707-d00e9129bc96">
+        <Attribute dwd:design-time-name="d0a73e7e-80b5-4577-a5b6-c0c016cd6b67">
           <AttributeID>Driver Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="fe50f380-f0cd-4e9d-b019-55c58d41261f">
+        <Attribute dwd:design-time-name="51618708-7f48-42bb-8e36-282df9f4b3c7">
           <AttributeID>Sex Of Driver</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="985f6aa8-2c13-401e-a006-eb82f1663b80">
+        <Attribute dwd:design-time-name="a6d5cb99-b101-4c2f-8c9d-c3aa831d2577">
           <AttributeID>Age Band Of Driver</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="b882eda2-43ff-499c-a312-4ace40d4f828">
+    <Dimension dwd:design-time-name="91342649-99b3-446a-a432-38346497ca08">
       <ID>Dim Road</ID>
       <Name>Dim Road</Name>
       <DimensionID>Dim Road</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="0a138f91-6e7f-4ba0-9276-c538095d99ae">
+        <Attribute dwd:design-time-name="b1073a77-0aa5-4809-8dcb-251b45ff234d">
           <AttributeID>Road Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="e55fac2d-9456-4b3d-9bee-8965ca609eb3">
+        <Attribute dwd:design-time-name="407d808b-e48d-4e1f-8fd5-07454fcc9438">
           <AttributeID>First Road Class</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="a1d7bab8-165e-44b0-b05a-893500552461">
+        <Attribute dwd:design-time-name="8e07b135-a363-4479-aefa-166b83e313c2">
           <AttributeID>Road Type</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="3f1b1953-4b72-46b9-8f02-85721b4ec501">
+        <Attribute dwd:design-time-name="bf0f40a2-e4a1-46a5-ac3a-f16079b92515">
           <AttributeID>Speed Limit</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="12e975e6-8eca-440d-b74c-321a834342ad">
+        <Attribute dwd:design-time-name="54356daf-346b-4b86-b44c-33e1e8455ac9">
           <AttributeID>Urban Or Rural Area</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="4b4360e3-76ec-4ba3-8162-a9ccce41a01d">
+    <Dimension dwd:design-time-name="44a1bac7-0456-44b1-a440-3293af04b7dc">
       <ID>Dim Junction</ID>
       <Name>Dim Junction</Name>
       <DimensionID>Dim Junction</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="cf260339-f8f7-47a5-9733-cd88e80b78d7">
+        <Attribute dwd:design-time-name="d659b216-ec04-486c-a124-bdde13e55653">
           <AttributeID>Junction Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7f99f7e6-58f0-43c7-afba-9f3a836a7365">
+        <Attribute dwd:design-time-name="449b2a9b-5d49-4d61-898f-c188010c74c5">
           <AttributeID>Junction Detail</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="40f2e199-e549-4883-9ac5-ab3c7cef7cc2">
+        <Attribute dwd:design-time-name="8323fd7c-f9c0-44e5-bc6a-e933dddb2b33">
           <AttributeID>Junction Control</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="dee343de-8be9-4231-9cba-594faad4e6c6">
+        <Attribute dwd:design-time-name="2b22f5f9-1df3-43c1-b77c-3f32f55fa4a2">
           <AttributeID>Pedestrian Crossing</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="bf1c3beb-f03a-4c68-ae80-def784110c15">
+    <Dimension dwd:design-time-name="5552c02d-19d1-43c7-b95c-8d4b2e8c8f68">
       <ID>Dim Location</ID>
       <Name>Dim Location</Name>
       <DimensionID>Dim Location</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="98627133-0780-4db4-a10f-6bab5a712665">
+        <Attribute dwd:design-time-name="f10c01e2-00b9-475b-916b-cb364c73355e">
           <AttributeID>Location Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4ec94bd3-a73b-4970-9d54-5c68f0e1aebf">
+        <Attribute dwd:design-time-name="d2c93b41-c99a-485e-9ae9-b04aecec2fa1">
           <AttributeID>Local Authority Code</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="bff1ee6e-6549-4613-88b2-b127cb6f6889">
+        <Attribute dwd:design-time-name="d8a1cbba-4bdd-40d1-a794-cfc978f20044">
           <AttributeID>Local Authority Name</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="85a3a1fd-9f92-4d06-be05-3a601f8008f4">
+    <Dimension dwd:design-time-name="327e07e8-17dd-4c4a-ab90-4d5cf4a737e7">
       <ID>Dim Casualty</ID>
       <Name>Dim Casualty</Name>
       <DimensionID>Dim Casualty</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="64bf3f3c-8e1b-451d-87dc-2f7e7209347e">
+        <Attribute dwd:design-time-name="d0111630-671e-49bc-9de6-b51426d4f660">
           <AttributeID>Casualty Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="494f8b0e-d46c-41bb-8606-c3cab4730888">
+        <Attribute dwd:design-time-name="4b047c6e-f859-468a-a544-c6aec65a1116">
           <AttributeID>Casualty Class</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="72920d6d-0c3b-4442-872c-59b843314d67">
+        <Attribute dwd:design-time-name="889951c2-06ef-4f48-a38b-f699969604c4">
           <AttributeID>Sex Of Casualty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="172552f8-8792-48fe-8e31-2598ef3c9328">
+        <Attribute dwd:design-time-name="ac8763dc-8201-45ac-af3b-bc0e7cf190ee">
           <AttributeID>Age Band Of Casualty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="cbbfad86-4bb4-4120-84c5-38cecc14af15">
+        <Attribute dwd:design-time-name="7791796e-d42b-4325-a95e-6fe74e025533">
           <AttributeID>Casualty Type</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="fa6d3f71-a4a8-4cfe-9e39-44c191032e4b">
+    <Dimension dwd:design-time-name="db4accc0-91fb-4861-9fca-92df800cf3af">
       <ID>Dim Environment</ID>
       <Name>Dim Environment</Name>
       <DimensionID>Dim Environment</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="b4f4378b-04aa-4d2a-bbc8-02184afefffd">
+        <Attribute dwd:design-time-name="1110e71e-3a7c-4a90-901a-4c3ec26e85f2">
           <AttributeID>Environment Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="33642027-79d1-4ae8-8208-b19aeadf7d4d">
+        <Attribute dwd:design-time-name="c86cad58-8bcd-4619-992a-b9ff158a150e">
           <AttributeID>Light Conditions</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="e22b25e4-af9a-4fd3-b98d-01d737cc693b">
+        <Attribute dwd:design-time-name="6597e7f0-7090-4ca5-ae55-2a24177c5df3">
           <AttributeID>Weather Conditions</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="a99df081-95d4-455b-b9be-88711c70cbc6">
+        <Attribute dwd:design-time-name="3a775895-9fff-4b9c-b963-a6ee1fb27262">
           <AttributeID>Road Surface Conditions</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="7b7d85ca-797f-4cac-a5dc-9e9c5fb352eb">
+    <Dimension dwd:design-time-name="699a4496-2516-46e4-9206-c1985a46d081">
       <ID>Dim Date</ID>
       <Name>Dim Date</Name>
       <DimensionID>Dim Date</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="86f0e0dd-776d-40ef-9f8d-cf85d643696e">
+        <Attribute dwd:design-time-name="5ef69e94-45d2-4aff-8b1a-696fef8ffc6e">
           <AttributeID>Date Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="83ab4835-a57f-4f98-80e1-130fd91c27a0">
+        <Attribute dwd:design-time-name="daadedc0-7122-41c0-a065-c18a845af2b6">
           <AttributeID>Full Date</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="287bb7e8-b41c-43ed-a67c-b6d51ee0d977">
+        <Attribute dwd:design-time-name="073e69f0-934a-46f8-a9fd-bb7e48d4ba39">
           <AttributeID>Day</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="f7877697-05a9-4f3e-ae8f-d08f331f0800">
+        <Attribute dwd:design-time-name="b212f2ad-b031-4006-9267-c6d95f9d40b5">
           <AttributeID>Month Number</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6e5e8787-c75e-4809-b1a9-0252c5eba5a5">
+        <Attribute dwd:design-time-name="20f86956-0181-4fd1-9b86-ac0d0aaed327">
           <AttributeID>Month Name</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="38ff62d0-f814-4d67-ba1e-1e6420c018d0">
+        <Attribute dwd:design-time-name="d800f73a-ee37-4a3e-a9cd-0fe78ec3c443">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b89c10ac-13ee-4ad1-bb87-8eda29130470">
+        <Attribute dwd:design-time-name="83552ce5-4cfc-45a6-9af7-4d5f48703c12">
           <AttributeID>Year</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="78b3af74-3bdd-4521-b0f4-fb7693971be6">
+        <Attribute dwd:design-time-name="811abb1f-67ef-4509-bacc-c547e71c3b2c">
           <AttributeID>Day Of Week Number</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4ef6bed7-9a45-4a14-bccf-0f86696d3c3e">
+        <Attribute dwd:design-time-name="936e7103-d75b-495a-89e5-b166c21388bf">
           <AttributeID>Day Of Week Name</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4cbce245-d9c3-4af4-a682-c06984197cfe">
+        <Attribute dwd:design-time-name="8f7aed1d-623b-439b-abae-0217a0d796c0">
           <AttributeID>Is Weekend</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="daa54338-233d-4f84-b7d0-b112e49ee4a5">
+        <Hierarchy dwd:design-time-name="ed81ff74-c7e6-424d-94ff-c3eca422743e">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="b3aaa1de-b978-4063-a2a4-70d4890bcdd1">
+    <Dimension dwd:design-time-name="583086a7-b22b-4180-a69a-fabd03c00f42">
       <ID>Dim Casualty Severity</ID>
       <Name>Dim Casualty Severity</Name>
       <DimensionID>Dim Casualty Severity</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="803ea977-ee7e-4a7d-86c2-e18a1be0d73f">
+        <Attribute dwd:design-time-name="54be1fcf-22ed-4a7a-aba0-35e02ab189a2">
           <AttributeID>Casualty Severity Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="acd5cc84-9255-45e0-8e57-064dd5dedf86">
+        <Attribute dwd:design-time-name="55a83ffa-4dfa-42ce-bfc7-8881d557c8f4">
           <AttributeID>Casualty Severity</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5322d1f8-319c-4ac3-8015-700c635b47d6">
+        <Attribute dwd:design-time-name="1c91fcd2-05e7-4d26-893c-f009b559064d">
           <AttributeID>Casualty Severity Group</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="a761669a-2d87-4e89-91d4-dfd6388679f4">
+    <Dimension dwd:design-time-name="1ed2e127-3bd5-4b78-9377-310676ec9b56">
       <ID>Dim Collision Severity</ID>
       <Name>Dim Collision Severity</Name>
       <DimensionID>Dim Collision Severity</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="3179ad76-3ea3-42ef-81d1-48720d18e34d">
+        <Attribute dwd:design-time-name="eb5f9902-f236-4fa2-a179-0122a2db80f8">
           <AttributeID>Collision Severity Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ec14f960-d78b-4e40-8cc2-8a8cf8c06654">
+        <Attribute dwd:design-time-name="fec08cb2-b7bb-4cb9-ade5-6f9d1f932843">
           <AttributeID>Collision Severity</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2c801394-ac08-47a9-aa46-014c1cc6810e">
+        <Attribute dwd:design-time-name="86da456a-5223-4b0d-a49e-6aca4af9e6be">
           <AttributeID>Collision Severity Group</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="be3e33c1-1d8d-482c-9512-5a4718be523e">
+    <MeasureGroup dwd:design-time-name="283553ea-fe30-4d1b-9218-dcbb0b5f079d">
       <ID>Fact Casualty</ID>
       <Name>Casualty Measures</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -654,26 +654,26 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="21e13562-ac3f-4658-9101-6dd921492825">
+        <Measure dwd:design-time-name="0bb01a2b-ef6f-42d7-804e-9a8f5afdd037">
           <ID>Casualty Count</ID>
           <Name>Total Casualties</Name>
           <DataType>BigInt</DataType>
-          <Source dwd:design-time-name="3179e0da-e680-4666-91a3-296f604da474">
+          <Source dwd:design-time-name="95bcf6ce-74fb-498a-a0c6-4b126602fe7a">
             <DataType>BigInt</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="d30d1eb7-a421-4136-8b32-476e0a5b5803">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="eeac6127-9c39-4beb-a642-ef93141a2fda">
               <TableID>dwh_FactCasualty</TableID>
               <ColumnID>CasualtyCount</ColumnID>
             </Source>
           </Source>
           <FormatString>#,##0</FormatString>
         </Measure>
-        <Measure dwd:design-time-name="2b4384c6-f5b4-43d0-9116-0d6040aae1a7">
+        <Measure dwd:design-time-name="046a8f8c-bb6e-47dc-b832-91e9bac77463">
           <ID>KSI Casualty Count</ID>
           <Name>KSI Casualties</Name>
           <DataType>BigInt</DataType>
-          <Source dwd:design-time-name="50e405a6-0b3b-4e24-9a5c-e98f841fc5d4">
+          <Source dwd:design-time-name="0a4d805b-9cc5-47c6-8d7f-5f4cce5cae03">
             <DataType>BigInt</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="3cc92c76-eb71-42b3-83d3-b19f0a24b48b">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="19742266-801a-4757-8ff2-db15bab22c38">
               <TableID>dwh_FactCasualty</TableID>
               <ColumnID>KSICasualtyCount</ColumnID>
             </Source>
@@ -684,15 +684,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="11bd3b50-16cd-4dc9-b498-474884d18853">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0288a6f3-7e7c-4adb-9c19-6678d0b1793b">
           <CubeDimensionID>Dim Vehicle</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="03ada7b9-1abb-4f3d-ad24-a4f8a9ed9dd2">
+            <Attribute dwd:design-time-name="9c6f18ea-dbed-4a26-bf7b-68a1e975e271">
               <AttributeID>Vehicle Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e2141b85-224d-4557-8fef-849cf01be6bf">
+                <KeyColumn dwd:design-time-name="d4cb5ec7-530d-43c2-bc9a-75f761df9c7e">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="793274d8-5123-4d32-89bd-eab3e3eeceee">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fadf95f3-9ea7-401e-81ac-61c0f0dbfe70">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>VehicleKey</ColumnID>
                   </Source>
@@ -702,15 +702,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="97af5a3f-8e0f-4d76-85ad-2a323d2aef37">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a7c489e0-2a10-44d2-bd4c-2962fdd829ac">
           <CubeDimensionID>Dim Time</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0af77b89-daf2-4e35-8361-f9690e17fb91">
+            <Attribute dwd:design-time-name="19fa2856-4c22-46dd-8f85-e9b0faa4b5a4">
               <AttributeID>Time Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="94d31b50-05e1-42bc-bf2c-7c40bd3a7934">
+                <KeyColumn dwd:design-time-name="ccf6c00f-13e4-4da1-bd80-1afea03e783c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0dba9a98-108f-4a63-bfb8-4c5c676ff3f9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c00f41bd-3158-4eaf-b90f-379ee76443f9">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>TimeKey</ColumnID>
                   </Source>
@@ -720,15 +720,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f4ab6f56-91e0-469a-bdbf-2291eecc895a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="cc8a1e4f-af88-41ef-923b-d69d189790ca">
           <CubeDimensionID>Dim Driver</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c354dc0f-79fe-4934-94f6-da772c41d381">
+            <Attribute dwd:design-time-name="6d902d40-e6ff-43ed-8076-03f32f5eaacf">
               <AttributeID>Driver Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="d96c3335-552b-4b14-8938-2f34b7226d01">
+                <KeyColumn dwd:design-time-name="7dc45473-8678-44c0-9b0f-595ab3a6c7df">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0143290a-a981-46a3-9106-65876767bcc9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5397acd4-4624-48ea-be36-d9e697a55568">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>DriverKey</ColumnID>
                   </Source>
@@ -738,15 +738,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fd15283a-08a1-40fa-a98d-95291fe7a8b7">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="301e8723-be99-49da-b54e-9f652ec0ffbc">
           <CubeDimensionID>Dim Road</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7f15bb25-17e1-49b1-84c1-cf2e8af7bfa4">
+            <Attribute dwd:design-time-name="fc83c599-affb-424b-b371-81f04174c5ed">
               <AttributeID>Road Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="96293514-e06d-49cb-8f78-cbc54d3ff1ff">
+                <KeyColumn dwd:design-time-name="8e9707ad-c922-4098-9d50-12a566e9bc94">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="330ad3c8-3da8-4eea-9665-d56e07c19ad8">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="780d4f7d-2592-4bb9-bd61-945145d900d5">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>RoadKey</ColumnID>
                   </Source>
@@ -756,15 +756,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3948272d-737d-4f19-b90b-1aa9ef94106b">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="239cbebb-219f-4861-b3ef-ec2b219e29c4">
           <CubeDimensionID>Dim Junction</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="36edb297-5a9a-417b-b4a6-6138a45e351a">
+            <Attribute dwd:design-time-name="153cecfe-b9be-4187-87b7-3538f4823e04">
               <AttributeID>Junction Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e3d12cd1-1f41-43a0-875f-f73ab0b37edd">
+                <KeyColumn dwd:design-time-name="a183de58-8b17-4014-9a8d-4c446fa7a7ed">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8bd7b19a-03f5-43f1-b882-e04e24c74d42">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d5586c52-66d8-4618-bd79-26267cea98b0">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>JunctionKey</ColumnID>
                   </Source>
@@ -774,15 +774,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9da31e0e-3364-4ed2-8fa1-124e17b23190">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f5150bbe-1261-472b-b755-97f8e7fd5636">
           <CubeDimensionID>Dim Location</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="02b74560-7780-44eb-9e1b-71dfd8da4a84">
+            <Attribute dwd:design-time-name="630434c4-d885-4451-9029-07838bdb3465">
               <AttributeID>Location Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="67832de9-b8b4-48b5-b6ea-193ff46e3a27">
+                <KeyColumn dwd:design-time-name="1bfda0e5-2550-4724-8904-ae860f3803e4">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="556becf6-afaf-4b6f-a57c-c6458def1952">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9d633d49-f565-4298-95b6-064c99a989f9">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>LocationKey</ColumnID>
                   </Source>
@@ -792,15 +792,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="74e32cb7-741e-4867-9615-66a0da4f4c52">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="606ce83e-b1f9-452d-9877-755d17d181ae">
           <CubeDimensionID>Dim Casualty</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c9849d37-7f4a-421a-8f9b-a468e952c9ea">
+            <Attribute dwd:design-time-name="194737af-3f07-4663-964a-3379c56b7bde">
               <AttributeID>Casualty Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e334a7c4-06f8-4d98-af23-c8d3146b4644">
+                <KeyColumn dwd:design-time-name="84cc6203-0cd0-46f8-a02c-e9ecaaddf33c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="196201d7-087b-416f-8e6d-cddfacbf9351">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="82e558f8-5a9a-49fb-861d-639d75b0695d">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CasualtyKey</ColumnID>
                   </Source>
@@ -810,15 +810,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5b180dc7-3d4c-483e-b341-dc9b1305865f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="93941497-b89b-44a2-93b4-2e4e885226ac">
           <CubeDimensionID>Dim Environment</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="642e2578-ee0d-4869-8152-a251c5eeb51d">
+            <Attribute dwd:design-time-name="c78d23b6-07fd-4da1-9866-bf28f1f3e1c2">
               <AttributeID>Environment Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="7d3a6254-0724-4f99-8eb8-d8254a6d1a63">
+                <KeyColumn dwd:design-time-name="bc855079-2f24-4549-aeb5-d0a427da9f59">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="911578c2-8bc6-41cb-bf44-1127109754a1">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="652921be-c20f-4ca5-9ada-f5d6bf0e2c06">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>EnvironmentKey</ColumnID>
                   </Source>
@@ -828,15 +828,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b91e74ff-f2cf-4a98-80e8-e50888138b34">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2e966833-a421-442b-99a5-10035589a6f7">
           <CubeDimensionID>Dim Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e2ec891d-3522-4bab-a5d0-4975a9cdf703">
+            <Attribute dwd:design-time-name="58020095-eac9-4b48-9ee6-139e71b5d742">
               <AttributeID>Date Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="a907e278-3954-407f-b5fe-69ad08995f1f">
+                <KeyColumn dwd:design-time-name="67177afd-fbdf-4b86-a316-b024b4f903fe">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3eef1831-fe73-40ed-8309-7ce72490707d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d97611f6-7fa8-4b5d-a049-bc47cfa19a0d">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>DateKey</ColumnID>
                   </Source>
@@ -846,15 +846,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="073f30da-28de-42aa-8cd6-1b1064cfd300">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3581263d-0e59-4074-8899-18849551c7d7">
           <CubeDimensionID>Dim Casualty Severity</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d4dfb5d5-164f-4688-9301-095e34f788e4">
+            <Attribute dwd:design-time-name="57af3a6f-3b8c-49f6-96b5-eababdd79db2">
               <AttributeID>Casualty Severity Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="3ac18e66-c501-4bca-9b95-b507c7f71971">
+                <KeyColumn dwd:design-time-name="c2796fde-3229-4d6d-b294-d4c39cc26b3c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a2d76bed-e350-43d7-b361-85368cf841eb">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="29539e00-2bb1-421b-ac77-be53df7e873c">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CasualtySeverityKey</ColumnID>
                   </Source>
@@ -864,15 +864,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1bc544ea-4702-4ff7-a7f0-3651889ca9b3">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="da0adc7d-1be0-4c0c-bdc5-772e00632d2d">
           <CubeDimensionID>Dim Collision Severity</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="f3742627-cd58-44ef-93fc-00484deebabc">
+            <Attribute dwd:design-time-name="962b0f3f-d7c3-4462-a3c2-c97f9889f520">
               <AttributeID>Collision Severity Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="5ca0bacc-3944-4fa8-9d02-1961546907d7">
+                <KeyColumn dwd:design-time-name="ac1d3e6e-aa39-4ac3-a1d5-4f1fd82183b8">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="33215f8d-abaf-4c5f-a0f2-e86a5ee76535">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="34e99702-abe0-4839-a0b7-da1cf8277772">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CollisionSeverityKey</ColumnID>
                   </Source>
@@ -883,9 +883,8 @@
           </Attributes>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="a9fe0f8a-921f-4f8b-bbe3-ae56edd57ba1">
+    <MeasureGroup dwd:design-time-name="5ddb4ec3-b00f-4133-94d0-bd6af062af97">
       <ID>Casualty Measures</ID>
       <Name>Collision Distinct Count</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -893,14 +892,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="4ee51338-6d0c-4a4d-b1a3-5bcc886d10b0">
+        <Measure dwd:design-time-name="71c1d17a-2cf5-4c8e-9299-d584aaa1e843">
           <ID>Collision Index Distinct Count</ID>
           <Name>Total Collisions</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>BigInt</DataType>
-          <Source dwd:design-time-name="d7e69bf8-7d2d-452e-8731-2ad70ec4e764">
+          <Source dwd:design-time-name="951a96ea-e119-432b-ba0b-29bd8ff1d9ef">
             <DataType>WChar</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="5e159ac1-f812-4c94-908d-37db43788862">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d8c1a66c-16d4-4de1-858f-018faa1bd85e">
               <TableID>dwh_FactCasualty</TableID>
               <ColumnID>CollisionIndex</ColumnID>
             </Source>
@@ -911,15 +910,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="be9bc89c-2602-44e8-8683-08cc32e2a165">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0b698074-c0ee-451d-acb8-bbf149c0cc4d">
           <CubeDimensionID>Dim Vehicle</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="644f969d-82de-4d3e-a059-7ab7c6418aea">
+            <Attribute dwd:design-time-name="1a103ad0-de0a-4f91-aab6-38ff010a0be8">
               <AttributeID>Vehicle Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="535318c3-6121-410b-966c-eec8439df737">
+                <KeyColumn dwd:design-time-name="3a6ef0b6-debe-4f93-9199-ae68f7784acc">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="74709a9d-0c0c-4744-a94c-278ef39f22ad">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="87d6c9f6-9a16-4673-b169-f995e65e6e4d">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>VehicleKey</ColumnID>
                   </Source>
@@ -929,15 +928,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2e7c759d-6cb5-43bb-95c5-f20d52cd5b52">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2e1a5b15-385e-4c49-9965-d01be7eb4398">
           <CubeDimensionID>Dim Time</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="fb6a77f7-6627-43a9-8885-bfa6370c2dcb">
+            <Attribute dwd:design-time-name="04e00681-9786-430c-9afd-81c7f9c28260">
               <AttributeID>Time Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="a420a3f8-821e-4b32-8559-586747a5b8fd">
+                <KeyColumn dwd:design-time-name="7ea5b74b-2cfc-4a39-9398-662cb1b71b30">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="da1e60ab-51ef-40bf-86a9-0634cb28a6c4">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="93d8eb9e-8be6-48ed-9069-ead0597eafbf">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>TimeKey</ColumnID>
                   </Source>
@@ -947,15 +946,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2517c8ca-61d0-4675-8739-f2d584d48b35">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="72ecd303-6c3d-461b-af9f-1bf328c239e8">
           <CubeDimensionID>Dim Driver</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="09b0fe3e-2c0e-4342-a071-3db3b8bb6aef">
+            <Attribute dwd:design-time-name="b5598fbe-8134-43be-a17d-4221b329027e">
               <AttributeID>Driver Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="8ee31e20-08c4-4a1f-b232-c11e70c0440f">
+                <KeyColumn dwd:design-time-name="a3deaa37-8d4a-4179-ab9d-6d036c61aca4">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a0d2ffb4-779d-4729-9038-bc19e40f743f">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="42c5d52b-54a2-441e-b4c1-72dc666077cb">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>DriverKey</ColumnID>
                   </Source>
@@ -965,15 +964,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fc7fa826-af55-4a6e-985f-709f5bd5e205">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4e3d4630-553e-4ebd-b4aa-e3bf1ce8d627">
           <CubeDimensionID>Dim Road</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="9d6d4493-ba80-43b7-9adb-f59dddfa756a">
+            <Attribute dwd:design-time-name="e4982d21-3a70-43c5-bd9c-2aa88cc80958">
               <AttributeID>Road Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="41169e49-bc21-4d46-bfcf-1f3e09ddc754">
+                <KeyColumn dwd:design-time-name="a8b37ddf-c999-4938-8445-2ab789d0119d">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="133253a1-7940-44c6-aab7-8db8a7b4079e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="52211869-706d-4779-aa12-89f47c3e50ef">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>RoadKey</ColumnID>
                   </Source>
@@ -983,15 +982,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1f172170-34f1-44fe-bf0b-bf9a56f0ad57">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b1172601-d1a7-4dba-bb61-5a4fa9fe96fa">
           <CubeDimensionID>Dim Junction</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="6eaf5952-129f-44e8-afee-73ea589324b3">
+            <Attribute dwd:design-time-name="82385f0c-236a-4f37-8f28-4ce6f62920bc">
               <AttributeID>Junction Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="f463c01f-2ec4-4d5f-a009-d18841aef333">
+                <KeyColumn dwd:design-time-name="ec420e6e-9a2d-415b-8224-bf29303716bc">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="de78d82b-3025-400c-9c4f-65e12685c9ec">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b2069344-96a1-4110-b5b7-ec25a31d47ca">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>JunctionKey</ColumnID>
                   </Source>
@@ -1001,15 +1000,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ea76aec9-f899-41eb-8932-8b78c59f9f14">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="131806a8-a771-4952-9708-c29c51543d6a">
           <CubeDimensionID>Dim Location</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="1957a1a0-4fd0-4aec-bb50-11f977f76fb0">
+            <Attribute dwd:design-time-name="892cd0e5-c989-4542-bad1-1983b5d1e28f">
               <AttributeID>Location Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="33f9023c-1d38-4a76-8efb-ed3fca3d959f">
+                <KeyColumn dwd:design-time-name="daa7ad85-1f84-4aee-b493-5faa315a074c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="11371f70-fa71-43d9-ac82-46f06b208422">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5eb082cb-8977-417e-8815-9ccad8d5e59d">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>LocationKey</ColumnID>
                   </Source>
@@ -1019,15 +1018,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b08374cb-17ab-4f58-88bd-73fdbc72d6b8">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3d489b99-f099-4076-9f2d-e5539d41051f">
           <CubeDimensionID>Dim Casualty</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d06d0d66-174e-473c-b9b7-f1fb7f48c390">
+            <Attribute dwd:design-time-name="c23873a8-5e3f-4a37-b6c5-dfeaf64c6cda">
               <AttributeID>Casualty Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="7ebe4a0a-0df2-48ca-a4bb-5d88c3d21be8">
+                <KeyColumn dwd:design-time-name="2fc35dae-4160-4113-8ab7-76833ad57c3e">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="48d9c326-ac0a-434e-8fab-e15de1ff13eb">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5a8a7a47-f301-4286-a81c-a69ae40787a5">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CasualtyKey</ColumnID>
                   </Source>
@@ -1037,15 +1036,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="82b0b407-2696-4eb7-ac8e-0bc28064bb0a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8da9efb4-aa6a-45a5-9912-7fd5eddf5f98">
           <CubeDimensionID>Dim Environment</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="6c59e57d-0bc4-47f2-b593-0afd249b5092">
+            <Attribute dwd:design-time-name="94640278-c021-4190-aea5-f504ee6b235e">
               <AttributeID>Environment Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e0a0e732-fa63-4a0a-bb7c-35ea5a846755">
+                <KeyColumn dwd:design-time-name="e774aa6b-01b7-4cbd-b1b7-4b88c9207c1c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fa8511e0-32c6-4da6-8722-0de4951aed56">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="98d6be26-d1ce-45bd-ae5c-954910f46ca4">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>EnvironmentKey</ColumnID>
                   </Source>
@@ -1055,15 +1054,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="da335efa-bfea-4ab2-b380-864a0cff5930">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6fc01434-014b-491b-b64d-1cfe8e3495c5">
           <CubeDimensionID>Dim Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="8fcff8d2-7642-4698-bde8-dcc4b20a8e89">
+            <Attribute dwd:design-time-name="bcd0cc54-7699-4ca8-b01f-8f39127cd758">
               <AttributeID>Date Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="4adb9526-002a-47a4-98d3-22840ed6209c">
+                <KeyColumn dwd:design-time-name="2febb083-0058-4113-8775-b09c8eee7f09">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="957685f2-0033-4bf9-b4d4-d86b4b957d7c">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5f9bdde3-1c7c-4282-b7b5-f4aaaf21691f">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>DateKey</ColumnID>
                   </Source>
@@ -1073,15 +1072,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="13481d33-9527-4c71-bea0-5ce697350791">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="397ba129-5d94-4a2c-95da-73885366909c">
           <CubeDimensionID>Dim Casualty Severity</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ba2aa179-d35b-4310-a369-ffdb987b0ee2">
+            <Attribute dwd:design-time-name="c66ee2c9-2589-49ec-bc93-64acef94e50f">
               <AttributeID>Casualty Severity Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="8126036f-53c6-438a-a6be-5354093d4012">
+                <KeyColumn dwd:design-time-name="7724d3d9-ab99-428b-b00f-25869e60bded">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0b97c385-06d8-4c7c-b229-6e531a554a1a">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1fe0c895-fe57-4c6f-a4f0-14dab4a967f3">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CasualtySeverityKey</ColumnID>
                   </Source>
@@ -1091,15 +1090,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="44dbc21b-6315-489d-bcec-dc2fbc7c7c7f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b268d951-d26d-4551-bb59-b00e57d87cc6">
           <CubeDimensionID>Dim Collision Severity</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c6de50ca-0b7f-4d0d-a5cd-bf3a321b3fe4">
+            <Attribute dwd:design-time-name="a2d97287-968a-44ba-b997-b9115fd1a788">
               <AttributeID>Collision Severity Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="d3138dc0-7554-4093-971b-2b41c90a09ad">
+                <KeyColumn dwd:design-time-name="f726c877-c5e6-4bbb-89f7-5b0eaff9303a">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="daa337ea-5997-4e14-b9fa-e9abe86ae0cb">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c8afd7b0-75a6-4b03-beff-130cce2f8f1e">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CollisionSeverityKey</ColumnID>
                   </Source>
@@ -1110,9 +1109,8 @@
           </Attributes>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="beb9f855-cf5e-4b9f-8623-5652c29f076d">
+    <MeasureGroup dwd:design-time-name="46d40455-a6b0-4be4-b29b-842e6cada12f">
       <ID>Casualty Measures 1</ID>
       <Name>Vehicle Distinct Count</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1120,14 +1118,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="de2cbcd9-74bb-4dd3-82ed-17c477585059">
+        <Measure dwd:design-time-name="ea77dcda-37e6-498a-81f7-f339545d8ded">
           <ID>Vehicle Involvement ID Distinct Count</ID>
           <Name>Vehicles Linked To Casualties</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>BigInt</DataType>
-          <Source dwd:design-time-name="720d6c78-addc-4538-97b9-0d7f0c361f0c">
+          <Source dwd:design-time-name="909fe1b4-2887-497c-b1d0-9751a022ce2b">
             <DataType>WChar</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="ddfda86b-8a1f-4e18-b02c-2b65ea26fc12">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cf75318d-d9a4-478f-9892-ae563b8bf0d8">
               <TableID>dwh_FactCasualty</TableID>
               <ColumnID>VehicleInvolvementID</ColumnID>
             </Source>
@@ -1138,15 +1136,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d238d627-09eb-46ed-903b-69e0f897e087">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9ccef41e-bd01-457c-98b1-ea8365380f88">
           <CubeDimensionID>Dim Vehicle</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="86237224-da97-42f7-aac2-425117b37ba5">
+            <Attribute dwd:design-time-name="9fbe79cd-36a4-4bd0-9c64-7709fae60ee3">
               <AttributeID>Vehicle Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="dfaabc98-5cf0-497e-8432-c30d4f2e2923">
+                <KeyColumn dwd:design-time-name="a6a008a2-bac0-4ca1-bf7d-a2f1e54b20f5">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f470b510-de3d-4019-b1ad-9bdab46abdf9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="580ddc26-ad62-4d98-b8b1-ed7873e2c468">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>VehicleKey</ColumnID>
                   </Source>
@@ -1156,15 +1154,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8d933020-0120-467d-9396-949fcfcad5d1">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2671780a-562e-45a0-b999-053246756653">
           <CubeDimensionID>Dim Time</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="cff3e713-b150-4463-89d9-c30e9dcb92dc">
+            <Attribute dwd:design-time-name="a50c2c0d-7ef4-4ecc-b71d-09ab1246e50b">
               <AttributeID>Time Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="e0969e09-83e1-4070-a20c-acdc38364be4">
+                <KeyColumn dwd:design-time-name="306ae43a-d744-4814-aa86-743218d427e4">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e98efcde-1664-42fc-9e29-995c9e77d9f2">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="957a7a4a-0661-47d9-bf92-67b5ca509ff5">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>TimeKey</ColumnID>
                   </Source>
@@ -1174,15 +1172,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="bd3cec60-89e8-4e1d-81e2-80bbe0048e4e">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4f76be5a-90ca-45cd-bab1-1e57b2c32e68">
           <CubeDimensionID>Dim Driver</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="2a06a925-f386-41bb-972a-57e15b09a9bc">
+            <Attribute dwd:design-time-name="3cb844f0-3a5c-45ae-ab5d-cbfb03233631">
               <AttributeID>Driver Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="92059163-7817-48b2-8118-28870e5c9241">
+                <KeyColumn dwd:design-time-name="494b7606-d61f-4488-a214-f35e32738212">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9a3420f5-57e9-4ad7-8220-0c4a3227d3eb">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e1cf73a4-b417-485c-9ef1-6bc6947cb214">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>DriverKey</ColumnID>
                   </Source>
@@ -1192,15 +1190,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3da3e7d9-8123-4842-af52-db4ad6506cea">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5f1026f6-6991-4c26-85c7-a1ac6a3148fb">
           <CubeDimensionID>Dim Road</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d913455f-a62c-40cf-9ade-ee35d42de656">
+            <Attribute dwd:design-time-name="1a8ba0fb-ce06-4614-b195-601f33483713">
               <AttributeID>Road Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="7e8511f6-da2f-4881-8502-6c0e9f3e74d8">
+                <KeyColumn dwd:design-time-name="3207f834-7e67-4e7e-a0a0-174e1c29e514">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ba6c460d-2eda-43f8-95ce-4ba02bd2f5f9">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1ab1b64c-a14a-43df-99c0-4be17c45a970">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>RoadKey</ColumnID>
                   </Source>
@@ -1210,15 +1208,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="05375525-2b0a-4c72-8f20-4e6da7582f55">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="045358c6-53f1-41b1-8ed8-fc9a42c7f50f">
           <CubeDimensionID>Dim Junction</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="942c9ffd-a943-4553-9abe-273d884d4ee1">
+            <Attribute dwd:design-time-name="2f1cada7-44bd-43be-89e5-70ef5a6fb4f9">
               <AttributeID>Junction Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="8254dcab-e2cb-4580-aa90-7f1222d87075">
+                <KeyColumn dwd:design-time-name="4cf5ee64-2f2c-4e19-96ce-3f16952d924b">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f4ea9087-b11d-45dc-b48b-6469174f2837">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="07c12f86-6aa8-422b-aca7-9be6dc9652ac">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>JunctionKey</ColumnID>
                   </Source>
@@ -1228,15 +1226,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="aed9c9be-c227-4b5a-a87a-4720de8fb5f6">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1621a06c-e959-4a1c-8cd1-d9b175b0d4c2">
           <CubeDimensionID>Dim Location</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a1f62344-3591-41a2-a881-729dcaf142ff">
+            <Attribute dwd:design-time-name="571e8ea1-bcda-4b3a-a416-36dfa45c003f">
               <AttributeID>Location Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="fe9b0be4-8a46-4dc2-a3e8-1d4a1cd0856c">
+                <KeyColumn dwd:design-time-name="31188b9e-59bb-4881-85eb-71c04a9a84d5">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c74e416f-bbfb-45bc-838b-d145f1e1b207">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1e460a88-fd9d-404b-bbeb-041d18153a61">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>LocationKey</ColumnID>
                   </Source>
@@ -1246,15 +1244,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="412f9bfd-7a06-4f9c-957f-3218a0a5ceaf">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b1548be2-0684-4393-87c3-da23c5cc72b2">
           <CubeDimensionID>Dim Casualty</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="66d1a8a0-efb1-4e75-81d9-2e05b0970804">
+            <Attribute dwd:design-time-name="c7241208-d18a-4e84-99c7-f76b737862fd">
               <AttributeID>Casualty Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="99cf95ef-e63a-46bc-8a83-966dfa24cb02">
+                <KeyColumn dwd:design-time-name="bae2582a-67b7-4c4d-9918-d87bc1837bfd">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d92e3801-0da3-44ad-8f4e-f176cb4b9a7a">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6dfd8ccc-5964-4584-a113-37599e299ee5">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CasualtyKey</ColumnID>
                   </Source>
@@ -1264,15 +1262,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="91034916-1fbe-4958-9523-c356a34dbb0c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2bb800de-64eb-4899-ac36-494176ce0805">
           <CubeDimensionID>Dim Environment</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="47e08a9d-ffe4-44aa-99a0-7a12b57a69d3">
+            <Attribute dwd:design-time-name="5efd771c-5822-48c5-8291-86ef610272b6">
               <AttributeID>Environment Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="10c6a4c4-20b9-4624-8cf8-646e3e5a70c6">
+                <KeyColumn dwd:design-time-name="ac0c866b-56e2-43f2-95dc-fa9df7d7898f">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="addacefd-a6e1-4d86-9fd5-afc3bc857f74">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="da16824e-ee6f-4d21-b663-79856be4b01a">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>EnvironmentKey</ColumnID>
                   </Source>
@@ -1282,15 +1280,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ea013a5b-0630-4568-a56b-050b4c0e1689">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d9e93c36-be58-4e0c-adbc-18beae84d992">
           <CubeDimensionID>Dim Date</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0f6060af-65dd-4faa-bd8c-7d077eb35e2f">
+            <Attribute dwd:design-time-name="fdefa53c-5bb6-44f1-a700-095aaaff5d1f">
               <AttributeID>Date Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="22936402-f898-426a-be31-e39532fa7a70">
+                <KeyColumn dwd:design-time-name="48015e46-da67-4963-85a0-25779ed2ca40">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1c7fe8e6-c67e-4bcf-a5ca-4ca43305d35c">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d159af45-c5ed-49b9-84f3-c7ed8ee10458">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>DateKey</ColumnID>
                   </Source>
@@ -1300,15 +1298,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ab51cb6c-30c1-46ca-b1c5-85bf09a2fdf3">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="414a8e63-21bc-4911-a2a7-43c9a0c5e9a7">
           <CubeDimensionID>Dim Casualty Severity</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="784b2568-590d-48f9-8ccc-2e7f30ed526c">
+            <Attribute dwd:design-time-name="2277e897-9904-45a5-9d0a-419335af7d53">
               <AttributeID>Casualty Severity Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="5ea70b34-be21-462e-b3ec-f2dc2922041b">
+                <KeyColumn dwd:design-time-name="a4907b1f-6e5f-42a0-aeef-054d09d3424e">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="377a9a4d-e63f-484d-8e35-daedc7c94541">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2b9afd37-2c59-4de3-9449-2d77e19c5083">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CasualtySeverityKey</ColumnID>
                   </Source>
@@ -1318,15 +1316,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6b703c4d-3e2c-4acd-b0c1-87c1e8746cab">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="89b9d815-67f4-445f-b399-3863f64d2bab">
           <CubeDimensionID>Dim Collision Severity</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0eb0b73e-d554-4fbe-839f-4d27ddaaabb8">
+            <Attribute dwd:design-time-name="2f011fb0-9999-46b7-af87-58cadf64718a">
               <AttributeID>Collision Severity Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="16591d4b-39a8-4334-b90f-b26b410985ac">
+                <KeyColumn dwd:design-time-name="25a2bab5-a38e-4bdd-ac3e-5c2c569f0f54">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="51cc4b99-fe32-4088-8530-3349ad7b1c79">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8aea7911-5ea5-47ba-8269-0217d5c3811a">
                     <TableID>dwh_FactCasualty</TableID>
                     <ColumnID>CollisionSeverityKey</ColumnID>
                   </Source>
@@ -1337,14 +1335,13 @@
           </Attributes>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="172e069c-56e4-4d11-9e9f-93bb27465d06">
+  <Source dwd:design-time-name="3863fc3a-5340-4011-a978-27562fb21abb">
     <DataSourceViewID>Road Safety DWH</DataSourceViewID>
   </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="276e693f-ac7b-4718-aac8-29600a315307">
+    <MdxScript dwd:design-time-name="68cbfeb1-a02f-4332-8813-985cafa95749">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1356,7 +1353,31 @@ The CALCULATE command controls the aggregation of leaf cells in the cube.
 If the CALCULATE command is deleted or modified, the data within the cube is affected.
 You should edit this command only if you manually specify how the cube is aggregated.
 */
-CALCULATE;
+CALCULATE; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Top Local Authority]
+ AS TOPCOUNT(
+    EXCEPT(
+        [Dim Location].[Local Authority Name].[Local Authority Name].MEMBERS,
+        { [Dim Location].[Local Authority Name].[All] }
+    ),
+    1,
+    [Measures].[Total Collisions]
+).ITEM(0).NAME, 
+VISIBLE = 1  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Junction Collision Rate]
+ AS IIF(
+    [Measures].[Total Collisions] = 0,
+    NULL,
+    (
+        [Measures].[Total Collisions] 
+        - (
+            [Measures].[Total Collisions], 
+            [Dim Junction].[Junction Detail].&amp;[Not at junction or within 20 metres]
+        )
+    ) / [Measures].[Total Collisions]
+), 
+FORMAT_STRING = "0.00%", 
+VISIBLE = 1  ; 
 
 CREATE MEMBER CURRENTCUBE.[Measures].[KSI Rate]
 AS
@@ -1365,7 +1386,7 @@ AS
         [Measures].[Total Casualties]
     ),
 FORMAT_STRING = "0.00%",
-VISIBLE = 1;</Text>
+VISIBLE = 1; </Text>
         </Command>
       </Commands>
     </MdxScript>
