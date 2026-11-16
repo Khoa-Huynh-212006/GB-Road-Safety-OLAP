@@ -61,12 +61,12 @@ Raw CSVs (2021–2025) ──► Python Profiling ──► SSIS ETL Pipeline �
 ### Part 1: Power BI (Time, Geography, Infrastructure & Environment)
 | 1. Executive Overview | 2. Geo & Road Analysis | 3. Environment Analysis |
 | :---: | :---: | :---: |
-| ![Executive Overview](Docs/images/powerbi_overview.png) | ![Geo & Road Analysis](Docs/images/powerbi_geo_road.png) | ![Environment Analysis](Docs/images/powerbi_environment.png) |
+| ![Executive Overview](Assets/pbi_overview.png) | ![Geo & Road Analysis](Assets/pbi_geo_road.png) | ![Environment Analysis](Assets/pbi_environment.png) |
 
 ### Part 2: Looker Studio (Vehicle Physics, Demographics & KSI Deep-Dive)
 | 4. Vehicle & Maneuver | 5. Human & Demographics | 6. KSI Deep-Dive |
 | :---: | :---: | :---: |
-| ![Vehicle & Maneuver](Docs/images/looker_vehicle.png) | ![Human & Demographics](Docs/images/looker_demographics.png) | ![KSI Deep-Dive](Docs/images/looker_ksi.png) |
+| ![Vehicle & Maneuver](Assets/looker_vehicle.png) | ![Human & Demographics](Assets/looker_human.png) | ![KSI Deep-Dive](Assets/looker_ksi.png) |
 
 ---
 
