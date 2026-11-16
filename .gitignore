@@ -432,3 +432,16 @@ __marimo__/
 *.user
 *.dtproj.user
 *.ispac
+
+# Large datasets (>50MB - ignored for GitHub 100MB limit)
+Data/Raw/*.csv
+Data/Processed/*.csv
+
+# Visual Studio / SSIS / SSAS build & cache artifacts
+.vs/
+*/.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.cache
