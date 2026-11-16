@@ -445,3 +445,6 @@ Data/Processed/*.csv
 *.user
 *.suo
 *.cache
+# Ignore large CSV datasets
+Data/Raw/*.csv
+Data/Processed/*.csv
